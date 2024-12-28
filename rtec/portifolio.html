@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RizonTec - Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <style>
+        .swiper-pagination {
+            margin-top: 420px; /* Move as bolinhas para a parte inferior */
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-50 bg-blue-600 bg-opacity-90 text-white py-4 shadow-lg">
+        <div class="container mx-auto px-auto flex justify-between items-center">
+            <!-- Logo -->
+            <a href="/" class="flex items-center space-x-3">
+                <img src="img/Rtec1.png" alt="Logo RizonTec" width="230" height="200" class="object-contain">
+            </a>
+
+            <!-- Links (Desktop) -->
+            <div class="hidden md:flex items-center space-x-8 font-medium">
+                <a href="index.html" class="hover:text-gray-300">HOME</a>
+                <a href="servicos.html" class="hover:text-gray-300">SERVIÇOS</a>
+                <a href="contato.html" class="hover:text-gray-300">CONTATO</a>
+                <a href="portifolio.html" class="hover:text-gray-300">PORTFÓLIO</a>
+            </div>
+
+            <!-- Botão do Menu Hambúrguer (Mobile) -->
+            <button class="md:hidden text-white text-[28px] focus:outline-none" onclick="toggleMenu()">
+                ☰
+            </button>
+        </div>
+
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" class="md:hidden fixed top-0 left-0 w-full h-screen bg-blue-600 bg-opacity-95 backdrop-blur-lg z-50 transform -translate-y-full transition-transform duration-300">
+            <div class="flex flex-col items-center pt-16 space-y-6">
+                <a href="/" class="text-white hover:text-gray-300" onclick="toggleMenu()">Home</a>
+                <a href="/sites" class="text-white hover:text-gray-300" onclick="toggleMenu()">Sites</a>
+                <a href="/design" class="text-white hover:text-gray-300" onclick="toggleMenu()">Design</a>
+                <a href="/tpaid" class="text-white hover:text-gray-300" onclick="toggleMenu()">Tráfego Pago</a>
+                <a href="/contact" class="text-white hover:text-gray-300" onclick="toggleMenu()">Contato</a>
+                <a href="/enterprise" class="text-white hover:text-gray-300" onclick="toggleMenu()">Empresa</a>
+            </div>
+        </div>
+    </nav>

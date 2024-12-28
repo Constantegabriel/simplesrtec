@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RizonTec - Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <style>
+        .swiper-pagination {
+            margin-top: 420px; /* Move as bolinhas para a parte inferior */
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-50 bg-blue-600 bg-opacity-90 text-white py-4 shadow-lg">
+        <div class="container mx-auto px-auto flex justify-between items-center">
+            <!-- Logo -->
+            <a href="/" class="flex items-center space-x-3">
+                <img src="img/Rtec1.png" alt="Logo RizonTec" width="230" height="200" class="object-contain">
+            </a>
+
+            <!-- Links (Desktop) -->
+            <div class="hidden md:flex items-center space-x-8 font-medium">
+                <a href="index.html" class="hover:text-gray-300">HOME</a>
+                <a href="servicos.html" class="hover:text-gray-300">SERVIÇOS</a>
+                <a href="contato.html" class="hover:text-gray-300">CONTATO</a>
+                <a href="portifolio.html" class="hover:text-gray-300">PORTFÓLIO</a>
+            </div>
+
+            <!-- Botão do Menu Hambúrguer (Mobile) -->
+            <button class="md:hidden text-white text-[28px] focus:outline-none" onclick="toggleMenu()">
+                ☰
+            </button>
+        </div>
+
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" class="md:hidden fixed top-0 left-0 w-full h-screen bg-blue-600 bg-opacity-95 backdrop-blur-lg z-50 transform -translate-y-full transition-transform duration-300">
+            <div class="flex flex-col items-center pt-16 space-y-6">
+                <a href="/" class="text-white hover:text-gray-300" onclick="toggleMenu()">Home</a>
+                <a href="/sites" class="text-white hover:text-gray-300" onclick="toggleMenu()">Sites</a>
+                <a href="/design" class="text-white hover:text-gray-300" onclick="toggleMenu()">Design</a>
+                <a href="/tpaid" class="text-white hover:text-gray-300" onclick="toggleMenu()">Tráfego Pago</a>
+                <a href="/contact" class="text-white hover:text-gray-300" onclick="toggleMenu()">Contato</a>
+                <a href="/enterprise" class="text-white hover:text-gray-300" onclick="toggleMenu()">Empresa</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="mt-20 bg-gray-100">
+        <!-- Hero Section -->
+        <section class="relative bg-blue-600 text-white">
+            <div class="container mx-auto px-6 py-16">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h1 class="text-4xl font-bold leading-tight">
+                            Soluções Digitais Profissionais para o Seu Sucesso
+                        </h1>
+                        <p class="mt-4 text-lg">
+                            Oferecemos sites modernos, design atrativo e estratégias de tráfego pago para impulsionar seu negócio.
+                        </p>
+                        <div class="mt-6 flex space-x-4">
+                            <a href="/contact" class="bg-white text-blue-600 px-6 py-3 rounded-lg hover:bg-gray-200">
+                                Entre em Contato
+                            </a>
+                            <a href="/sites" class="bg-transparent border border-white px-6 py-3 rounded-lg hover:bg-white hover:text-blue-600">
+                                Ver Nossos Serviços
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="img/mkt.jpg" alt="Imagem de Sucesso Digital" class="rounded-lg shadow-lg w-full">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Other Sections... -->
+
+    </main>
+
+    <!-- Services Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-8">Nossos Serviços</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="service-card bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold">Criação de Sites</h3>
+                    <p class="mt-4 text-gray-600">
+                        Sites modernos e responsivos, ideais para seu negócio, com foco em design e desempenho.
+                    </p>
+                    <a href="/sites" class="mt-4 inline-block text-blue-600 hover:underline">Saiba mais</a>
+                </div>
+                <div class="service-card bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold">Design Gráfico</h3>
+                    <p class="mt-4 text-gray-600">
+                        Criação de identidades visuais, logos, e materiais gráficos que destacam a sua marca.
+                    </p>
+                    <a href="/design" class="mt-4 inline-block text-blue-600 hover:underline">Saiba mais</a>
+                </div>
+                <div class="service-card bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold">Trafego Pago</h3>
+                    <p class="mt-4 text-gray-600">
+                        Estratégias de tráfego pago para aumentar o alcance e as conversões do seu negócio.
+                    </p>
+                    <a href="/tpaid" class="mt-4 inline-block text-blue-600 hover:underline">Saiba mais</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section with Swiper -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-8">Portfólio</h2>
+            <div class="swiper-container overflow-x-hidden">
+                <div class="swiper-wrapper">
+                    <!-- Item 1 -->
+                    <div class="swiper-slide flex flex-col items-center">
+                        <img src="img/mkt.jpg" alt="Portfólio RizonTec" class="rounded-lg shadow-lg w-3/4 md:w-2/3 lg:w-1/2">
+                        <h3 class="mt-4 text-xl font-semibold">Projeto 1</h3>
+                        <p class="mt-2 text-gray-600 text-center">Descrição curta do projeto.</p>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="swiper-slide flex flex-col items-center">
+                        <img src="img/mkt.jpg" alt="Portfólio RizonTec" class="rounded-lg shadow-lg w-3/4 md:w-2/3 lg:w-1/2">
+                        <h3 class="mt-4 text-xl font-semibold">Projeto 2</h3>
+                        <p class="mt-2 text-gray-600 text-center">Descrição curta do projeto.</p>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="swiper-slide flex flex-col items-center">
+                        <img src="img/mkt.jpg" alt="Portfólio RizonTec" class="rounded-lg shadow-lg w-3/4 md:w-2/3 lg:w-1/2">
+                        <h3 class="mt-4 text-xl font-semibold">Projeto 3</h3>
+                        <p class="mt-2 text-gray-600 text-center">Descrição curta do projeto.</p>
+                    </div>
+                </div>
+        
+                <!-- Swiper Pagination -->
+                <div class="swiper-pagination swiper-pagination-bottom"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-blue-600 text-white py-16">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold">Transforme Seu Negócio com Nossos Serviços</h2>
+            <p class="mt-4 text-lg">
+                Entre em contato agora e descubra como podemos ajudar a elevar sua presença online.
+            </p>
+            <a href="/contact" class="mt-6 bg-white text-blue-600 px-8 py-4 rounded-lg hover:bg-gray-200">
+                Fale Conosco Agora
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-8">Fale Conosco</h2>
+            <div class="max-w-lg mx-auto">
+                <form action="/contact" method="post" class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="mb-4">
+                        <label for="name" class="block text-gray-700">Nome</label>
+                        <input type="text" id="name" name="name" class="w-full border border-gray-300 rounded-lg px-4 py-2 mt-2" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-gray-700">Email</label>
+                        <input type="email" id="email" name="email" class="w-full border border-gray-300 rounded-lg px-4 py-2 mt-2" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="message" class="block text-gray-700">Mensagem</label>
+                        <textarea id="message" name="message" rows="4" class="w-full border border-gray-300 rounded-lg px-4 py-2 mt-2" required></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700">
+                        Enviar
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+<!-- footer.html -->
+<footer class="bg-blue-600 text-white py-8">
+    <div class="container mx-auto px-6">
+        <div class="text-center">
+            <p>&copy; 2024 RizonTec. Todos os direitos reservados.</p>
+        </div>
+    </div>
+</footer>
+
+
+
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('-translate-y-full');
+        }
+
+        var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            autoplay: {
+                delay: 3000, // 3 segundos de intervalo entre as transições
+                disableOnInteraction: false,
+            },
+        });
+    </script>
+
+</body>
+</html>
