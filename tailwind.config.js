@@ -1,10 +1,11 @@
-// tailwind.config.js
 module.exports = {
   content: [
-    './**/*.html', // Inclua os arquivos HTML da sua aplicação
+    './contato.html',
+    './portifolio.html',
+    './servicos.html',
   ],
   theme: {
     extend: {},
   },
   plugins: [],
-};
+}

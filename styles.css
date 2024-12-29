@@ -3,99 +3,93 @@
 @tailwind utilities;
 
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f8f8f8;
-    margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f8f8;
+  margin: 0;
 }
 
 header {
-    position: sticky;
-    top: 0;
-    z-index: 50;
+  position: sticky;
+  top: 0;
+  z-index: 50;
 }
 
 nav {
-    background-color: #1a202c; /* Dark gray navbar */
+  background-color: #1a202c; /* Dark gray navbar */
 }
 
 footer {
-    background-color: #1a202c; /* Dark gray footer */
+  background-color: #1a202c; /* Dark gray footer */
 }
 
 .swiper-container {
-    position: relative;
-    overflow: hidden;
-    height: 800px;
-    margin-bottom: -80px;
+  position: relative;
+  overflow: hidden;
+  height: 800px;
+  margin-bottom: -80px;
 }
 
 .swiper-pagination {
+  position: absolute;
+  margin-bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  width: auto;
+  z-index: 10; /* Garante que fique acima do conteúdo do swiper */
+}
+
+.swiper-slide img {
+  width: 90%;
+  height: auto; /* Garante que as imagens sejam responsivas */
+  display: block;
+  object-fit: cover; /* Ajusta a imagem ao tamanho do slide */
+}
+
+main {
+  margin-top: calc(56px + 2rem); /* Espaço dinâmico considerando a altura do navbar */
+}
+
+/* celular */
+@media (max-width: 768px) {
+  nav .container {
+    padding: 0 3rem; /* Reduzindo espaçamento no mobile */
+    height: 23px;
+  }
+
+  nav img {
+    max-width: 100px; /* Diminuindo tamanho da logo no mobile */
+  }
+
+  main {
+    margin-top: calc(36px + 2rem); /* Espaço dinâmico considerando a altura do navbar */
+  }
+
+  .swiper-slide img {
+    width: 100%;
+    height: auto; /* Garante que as imagens sejam responsivas */
+    display: block;
+    object-fit: cover; /* Ajusta a imagem ao tamanho do slide */
+  }
+
+  .swiper-pagination {
     position: absolute;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     justify-content: center;
     width: auto;
     z-index: 10; /* Garante que fique acima do conteúdo do swiper */
+  }
+
+  .swiper-container {
+    position: relative;
+    overflow: hidden;
+    height: 300px;
+    padding-top: -180px;
+    margin-bottom: -30px;
+    margin-top: -40px;
+  }
 }
-
-.swiper-slide img {
-    width: 90%;
-    height: auto; /* Garante que as imagens sejam responsivas */
-    display: block;
-    object-fit: cover; /* Ajusta a imagem ao tamanho do slide */
-}
-
-main {
-    margin-top: calc(56px + 2rem); /* Espaço dinâmico considerando a altura do navbar */
-}
-
-/* celular */
-/* celular */
-/* celular */
-
-@media (max-width: 768px) {
-    nav .container {
-        padding: 0 3rem; /* Reduzindo espaçamento no mobile */
-        height: 23px;
-    }
-
-    nav img {
-        max-width: 100px; /* Diminuindo tamanho da logo no mobile */
-    }
-
-    main {
-        margin-top: calc(36px + 2rem); /* Espaço dinâmico considerando a altura do navbar */
-    }
-
-    .swiper-slide img {
-        width: 100%;
-        height: auto; /* Garante que as imagens sejam responsivas */
-        display: block;
-        object-fit: cover; /* Ajusta a imagem ao tamanho do slide */
-    }
-
-    .swiper-pagination {
-        position: absolute;
-        margin-bottom: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-        display: flex;
-        justify-content: center;
-        width: auto;
-        z-index: 10; /* Garante que fique acima do conteúdo do swiper */
-    }
-    .swiper-container {
-        position: relative;
-        overflow: hidden;
-        height: 300px;
-        padding-top: -180px;
-        margin-bottom: -30px;
-        margin-top: -40px;
-    }
-
-}
-
-/* celular */
-
