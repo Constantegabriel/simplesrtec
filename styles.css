@@ -55,7 +55,7 @@ main {
 @media (max-width: 768px) {
   nav .container {
     padding: 0 3rem; /* Reduzindo espaçamento no mobile */
-    height: 23px;
+    height: 25px;
   }
 
   nav img {
