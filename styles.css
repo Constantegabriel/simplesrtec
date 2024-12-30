@@ -25,20 +25,9 @@ footer {
 .swiper-container {
   position: relative;
   overflow: hidden;
-  height: 800px;
-  margin-bottom: -80px;
+  margin-bottom: 30px;
 }
 
-.swiper-pagination {
-  position: absolute;
-  margin-bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  justify-content: center;
-  width: auto;
-  z-index: 10; /* Garante que fique acima do conteúdo do swiper */
-}
 
 .swiper-slide img {
   width: 90%;
@@ -73,23 +62,29 @@ main {
     object-fit: cover; /* Ajusta a imagem ao tamanho do slide */
   }
 
-  .swiper-pagination {
-    position: absolute;
-    margin-bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    justify-content: center;
-    width: auto;
-    z-index: 10; /* Garante que fique acima do conteúdo do swiper */
-  }
-
   .swiper-container {
     position: relative;
     overflow: hidden;
-    height: 300px;
-    padding-top: -180px;
-    margin-bottom: -30px;
-    margin-top: -40px;
+    height: 450px;
+    margin-bottom: -10px;
   }
+  .swiper-container-1 {
+    position: relative;
+    overflow: hidden;
+    height: 450px;
+    margin-bottom: -190px;
+  }
+
+  .swiper-slide img {
+    width: 100%;
+    height: auto; /* Garante que as imagens sejam responsivas */
+    display: block;
+    object-fit: cover; /* Ajusta a imagem ao tamanho do slide */
+  }
+   .swiper-text{
+margin-bottom: 30px;
+margin-top: 10px;
+   }
+
 }
+
