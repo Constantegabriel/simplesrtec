@@ -36,6 +36,19 @@ footer {
   object-fit: cover; /* Ajusta a imagem ao tamanho do slide */
 }
 
+/* Estilização dos links de serviço */
+.service-link {
+  color: #1e40af; /* Cor dos links */
+  text-decoration: none; /* Remove o sublinhado padrão */
+  font-weight: bold; /* Deixa os textos em negrito para maior destaque */
+}
+
+.service-link:hover {
+  color: #2563eb; /* Cor de destaque ao passar o mouse */
+  text-decoration: underline; /* Sublinhado ao passar o mouse */
+}
+
+
 main {
   margin-top: calc(56px + 2rem); /* Espaço dinâmico considerando a altura do navbar */
 }
@@ -72,7 +85,8 @@ main {
     position: relative;
     overflow: hidden;
     height: 450px;
-    margin-bottom: -190px;
+    margin-bottom: -100px;
+
   }
 
   .swiper-slide img {

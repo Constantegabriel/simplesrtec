@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <style>
+        a.active span {
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
     <nav id="navbar" class="fixed top-0 w-full z-50 bg-blue-700 bg-opacity-100 text-white py-9 shadow-lg transition-transform duration-300">
@@ -68,27 +73,47 @@
             menu.classList.toggle('-translate-y-full');
             menu.classList.toggle('translate-y-0');
         }
-
-        document.getElementById('menu-button').addEventListener('click', toggleMenu);
-        document.getElementById('close-menu').addEventListener('click', toggleMenu);
-
-        // Navbar Show/Hide on Scroll
-        let lastScrollTop = 0;
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-            if (currentScroll > lastScrollTop) {
-                navbar.style.transform = 'translateY(-100%)'; // Esconde o navbar
-            } else {
-                navbar.style.transform = 'translateY(0)'; // Mostra o navbar
+    
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuButton = document.getElementById('menu-button');
+            const closeMenu = document.getElementById('close-menu');
+            const navbar = document.getElementById('navbar');
+    
+            // Adiciona os eventos de clique para abrir e fechar o menu
+            if (menuButton && closeMenu) {
+                menuButton.addEventListener('click', toggleMenu);
+                closeMenu.addEventListener('click', toggleMenu);
             }
-            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+    
+            // Navbar Show/Hide on Scroll
+            let lastScrollTop = 0;
+            if (navbar) {
+                window.addEventListener('scroll', () => {
+                    const currentScroll = window.pageYOffset;
+                    if (currentScroll > lastScrollTop) {
+                        navbar.style.transform = 'translateY(-100%)'; // Esconde o navbar
+                    } else {
+                        navbar.style.transform = 'translateY(0)'; // Mostra o navbar
+                    }
+                    lastScrollTop = Math.max(currentScroll, 0); // Garante que o valor não seja negativo
+                });
+            }
+    
+            // Adicionar classe 'active' ao link da página atual
+            const links = document.querySelectorAll('nav a');
+            const currentPath = window.location.pathname.split('/').pop().toLowerCase();
+    
+            links.forEach(link => {
+                const linkPath = link.getAttribute('href').toLowerCase();
+                if (linkPath === currentPath || (currentPath === '' && linkPath === 'index.html')) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
         });
     </script>
 
-
-
-    
 
     <main class="mt-24 bg-gray-100">
         <section class="relative bg-blue-600 text-white">
@@ -162,26 +187,26 @@
                 <!-- Item 1 -->
                 <div class="swiper-slide flex flex-col items-center">
                     <img src="img/mkt.jpg" alt="Portfólio RizonTec" class="rounded-lg shadow-lg w-3/4 md:w-2/3 lg:w-1/2">
-                    <h3 class="mt-4 text-xl font-semibold">Criação de Sites</h3>
-                    <p class="mt-2 text-gray-600 text-center">Desenvolvimento de websites responsivos e personalizados, com foco em funcionalidade, design atraente e experiência do usuário, para ajudar seu negócio a se destacar online.</p>
+                    <h3 class="mt-4 text-3xl font-semibold">Criação de Sites</h3>
+                    <p class="mt-2 text-gray-600 text-left">Desenvolvimento de websites responsivos e personalizados, com foco em funcionalidade, design atraente e experiência do usuário, para ajudar seu negócio a se destacar online.</p>
                 </div>
                 <!-- Item 2 -->
                 <div class="swiper-slide flex flex-col items-center">
                     <img src="img/mkt.jpg" alt="Portfólio RizonTec" class="rounded-lg shadow-lg w-3/4 md:w-2/3 lg:w-1/2">
-                    <h3 class="mt-4 text-xl font-semibold">Automações</h3>
-                    <p class="mt-2 text-gray-600 text-center">Implementação de processos automatizados para otimizar tarefas repetitivas, aumentar a eficiência e liberar seu tempo, utilizando ferramentas de automação em diversas áreas do seu negócio.</p>
+                    <h3 class="mt-4 text-3xl font-semibold">Automações</h3>
+                    <p class="mt-2 text-gray-600 text-left">Implementação de processos automatizados para otimizar tarefas repetitivas, aumentar a eficiência e liberar seu tempo, utilizando ferramentas de automação em diversas áreas do seu negócio.</p>
                 </div>
                 <!-- Item 3 -->
                 <div class="swiper-slide flex flex-col items-center">
                     <img src="img/mkt.jpg" alt="Portfólio RizonTec" class="rounded-lg shadow-lg w-3/4 md:w-2/3 lg:w-1/2">
-                    <h3 class="mt-4 text-xl font-semibold">Design</h3>
-                    <p class="mt-2 text-gray-600 text-center">Criação de designs exclusivos para social media, logos, posts para Instagram, camisetas, cartões de visita e muito mais, garantindo uma identidade visual única e impactante para sua marca.</p>
+                    <h3 class="mt-4 text-3xl font-semibold">Design</h3>
+                    <p class="mt-2 text-gray-600 text-left">Criação de designs exclusivos para social media, logos, posts para Instagram, camisetas, cartões de visita e muito mais, garantindo uma identidade visual única e impactante para sua marca.</p>
                 </div>
                 <!-- Item 4 -->
                 <div class="swiper-slide flex flex-col items-center">
                     <img src="img/mkt.jpg" alt="Portfólio RizonTec" class="rounded-lg shadow-lg w-3/4 md:w-2/3 lg:w-1/2">
-                    <h3 class="mt-4 text-xl font-semibold">Tráfego Pago</h3>
-                    <p class="mt-2 text-gray-600 text-center">Gestão e otimização de campanhas de tráfego pago (Google Ads, Facebook Ads, Instagram Ads) para aumentar a visibilidade online, gerar leads qualificados e impulsionar vendas de forma eficaz.</p>
+                    <h3 class="mt-4 text-3xl font-semibold">Tráfego Pago</h3>
+                    <p class="mt-2 text-gray-600 text-left">Gestão e otimização de campanhas de tráfego pago (Google Ads, Facebook Ads, Instagram Ads) para aumentar a visibilidade online, gerar leads qualificados e impulsionar vendas de forma eficaz.</p>
                 </div>
             </div>
         </div>
@@ -364,7 +389,7 @@
             <!-- Localização -->
             <div class="text-center md:text-left">
                 <h3 class="text-xl font-bold">Localização</h3>
-                <p class="mt-2 text-gray-200">Rua Exemplo, 123 • Cidade, Estado • CEP: 12345-678</p>
+                <p class="mt-2 text-gray-200">Av. Luiz Boiteux Piazza, 130 - Cachoeira do Bom Jesus, Florianópolis - SC, 88056-000</p>
             </div>
 
             <!-- Bordão da Empresa -->
