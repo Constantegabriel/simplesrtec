@@ -102,3 +102,25 @@ margin-top: 10px;
 
 }
 
+/* Classe padrão para o tamanho do RizonBot */
+.rizonbot-size {
+  width: 12rem; /* 48px */
+  height: 12rem; /* 48px */
+}
+
+/* Redução de tamanho para telas de PC */
+@media (min-width: 1024px) {
+  .rizonbot-size {
+    width: 9.6rem; /* 20% menor */
+    height: 9.6rem; /* 20% menor */
+  }
+}
+
+/* Redução de tamanho para celulares */
+@media (max-width: 768px) {
+  .rizonbot-size {
+    width: 6rem; /* Ajuste para telas pequenas */
+    height: 6rem; /* Ajuste para telas pequenas */
+  }
+}
+

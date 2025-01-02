@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RizonTec - Home</title>
+    <title>RizonTec - Empresa</title>
     <link href="styles.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
@@ -43,7 +43,7 @@
                     <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 ease-in-out group-hover:w-full"></span>
                 </a>
                 <a href="portifolio.html" class="group relative">
-                    PORTFÓLIO
+                    EMPRESA
                     <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 ease-in-out group-hover:w-full"></span>
                 </a>
             </div>
@@ -61,7 +61,7 @@
                 <a href="index.html" class="text-lg text-white" onclick="toggleMenu()">HOME</a>
                 <a href="servicos.html" class="text-lg text-white" onclick="toggleMenu()">SERVIÇOS</a>
                 <a href="contato.html" class="text-lg text-white" onclick="toggleMenu()">CONTATO</a>
-                <a href="portifolio.html" class="text-lg text-white" onclick="toggleMenu()">PORTFÓLIO</a>
+                <a href="portifolio.html" class="text-lg text-white" onclick="toggleMenu()">EMPRESA</a>
             </div>
         </div>
     </nav>
@@ -114,6 +114,172 @@
         });
     </script>
     
+
+
+<!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot-->
+
+
+<div class="fixed bottom-5 right-5 z-50 text-center">
+    <!-- Balão de fala acima do robô -->
+    <div 
+      id="speech-bubble"
+      class="relative inline-block bg-white text-gray-800 text-sm py-1 px-3 rounded-full opacity-70 mb-2 shadow-md">
+      Fale com o RizonBot!
+      <div class="absolute left-1/2 bottom-[-5px] transform -translate-x-1/2 w-0 h-0 border-t-4 border-t-white border-x-4 border-x-transparent"></div>
+    </div>
+  
+    <!-- Botão do robô -->
+    <img 
+      src="img/rizonbot.png" 
+      alt="Chatbot RizonTec" 
+      class="rizonbot-size cursor-pointer mx-auto" 
+      id="robot-button"
+    />
+  
+    <!-- Caixa de opções -->
+    <div 
+      id="chat-options" 
+      class="hidden bg-white shadow-lg rounded-3xl p-6 w-80 mt-2">
+      <div class="flex justify-between items-center mb-5">
+        <p class="text-xl font-semibold font-sans text-gray-800">O que você precisa?</p>
+        <button 
+          id="close-chat" 
+          class="text-gray-500 hover:text-red-500 text-3xl"
+        >&times;</button>
+      </div>
+      <button 
+        class="w-full bg-blue-500 text-white py-3 rounded-lg mb-3 shadow hover:bg-blue-600" 
+        data-target="landing-page">
+        Landing Page
+      </button>
+      <button 
+        class="w-full bg-blue-500 text-white py-3 rounded-lg mb-3 shadow hover:bg-blue-600" 
+        data-target="site-institucional">
+        Site Institucional
+      </button>
+      <button 
+        class="w-full bg-blue-500 text-white py-3 rounded-lg mb-3 shadow hover:bg-blue-600" 
+        data-target="site-profissional">
+        Site Profissional
+      </button>
+      <button 
+        class="w-full bg-blue-500 text-white py-3 rounded-lg mb-3 shadow hover:bg-blue-600" 
+        data-target="automacao">
+        Automação
+      </button>
+      <button 
+        class="w-full bg-blue-500 text-white py-3 rounded-lg shadow hover:bg-blue-600"
+        onclick="redirectToWhatsAppDirect('Quero um RizonBot')">
+        Quero um RizonBot
+      </button>
+    </div>
+  
+    <!-- Sub-opções genéricas -->
+    <div 
+      id="sub-options" 
+      class="hidden bg-white shadow-lg rounded-3xl p-6 w-80 mt-2">
+      <div class="flex justify-between items-center mb-5">
+        <p class="text-xl font-semibold font-sans text-gray-800">Escolha uma opção</p>
+        <button 
+          id="close-suboptions" 
+          class="text-gray-500 hover:text-red-500 text-2xl"
+        >&times;</button>
+      </div>
+      <div id="dynamic-buttons"></div>
+    </div>
+  </div>
+  
+<script>
+    const robotButton = document.getElementById('robot-button');
+const chatOptions = document.getElementById('chat-options');
+const subOptions = document.getElementById('sub-options');
+const speechBubble = document.getElementById('speech-bubble');
+const closeChat = document.getElementById('close-chat');
+const closeSuboptions = document.getElementById('close-suboptions');
+const dynamicButtons = document.getElementById('dynamic-buttons');
+
+const optionsMap = {
+  'landing-page': [
+    { text: 'Quero uma Landing Page.', message: 'Quero uma Landing Page.' },
+    { text: 'Quero Atualizar minha Landing Page.', message: 'Quero atualizar minha Landing Page.' },
+    { text: 'Saber Mais Sobre Landing Page.', message: 'Saber Mais Sobre Landing Page.' },
+  ],
+  'site-institucional': [
+    { text: 'Quero um Site Institucional.', message: 'Quero um Site Institucional.' },
+    { text: 'Quero Atualizar meu Site Institucional.', message: 'Quero atualizar meu Site Institucional.' },
+    { text: 'Saber Mais Sobre Site Institucional.', message: 'Saber Mais Sobre Site Institucional.' },
+  ],
+  'site-profissional': [
+    { text: 'Quero um Site Profissional.', message: 'Quero um Site Profissional.' },
+    { text: 'Quero Atualizar meu Site Profissional.', message: 'Quero atualizar meu Site Profissional.' },
+    { text: 'Saber Mais Sobre Site Profissional.', message: 'Saber Mais Sobre Site Profissional.' },
+  ],
+  'automacao': [
+    { text: 'Quero Automação.', message: 'Quero Automação.' },
+    { text: 'Quero Atualizar minha Automação.', message: 'Quero atualizar minha Automação.' },
+    { text: 'Saber Mais Sobre sobre Automação.', message: 'Saber Mais Sobre Automação.' },
+  ],
+};
+
+// Abrir chat e esconder balão de fala
+robotButton.addEventListener('click', () => {
+  chatOptions.classList.add('hidden');
+  subOptions.classList.add('hidden');
+  chatOptions.classList.toggle('hidden');
+  speechBubble.classList.add('hidden');
+});
+
+// Fechar chat principal
+closeChat.addEventListener('click', () => {
+  chatOptions.classList.add('hidden');
+});
+
+// Fechar subopções
+closeSuboptions.addEventListener('click', () => {
+  subOptions.classList.add('hidden');
+  chatOptions.classList.remove('hidden');
+});
+
+// Exibir subopções
+chatOptions.querySelectorAll('button').forEach((button) => {
+  button.addEventListener('click', () => {
+    const target = button.getAttribute('data-target');
+    if (optionsMap[target]) {
+      generateButtons(optionsMap[target]);
+      chatOptions.classList.add('hidden');
+      subOptions.classList.remove('hidden');
+    }
+  });
+});
+
+// Gerar botões dinâmicos
+function generateButtons(options) {
+  dynamicButtons.innerHTML = '';
+  options.forEach((option) => {
+    const btn = document.createElement('button');
+    btn.className = 'w-full bg-blue-500 text-white py-3 rounded-lg mb-3 shadow hover:bg-blue-600';
+    btn.textContent = option.text;
+    btn.onclick = () => redirectToWhatsApp(option.message);
+    dynamicButtons.appendChild(btn);
+  });
+}
+
+// Redirecionar para WhatsApp
+function redirectToWhatsApp(message) {
+  const phoneNumber = "+5548998143419"; // Número do WhatsApp
+  const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+  window.open(url, '_blank');
+}
+
+// Redirecionar direto para WhatsApp
+function redirectToWhatsAppDirect(message) {
+  const phoneNumber = "+5548998143419"; // Número do WhatsApp
+  const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+  window.open(url, '_blank');
+}
+</script>
+
+<!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot-->
 
 
 
