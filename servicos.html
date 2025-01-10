@@ -3,98 +3,284 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RizonTec - Serviços</title>
+    <title>RizonTec - Contato</title>
     <link href="styles.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <style>
-        /* Corrigindo o estilo que não estava finalizado */
-        a.active { width: 100%; }
+        a.active span {
+            width: 100%;
+        }
     </style>
 </head>
 <body>
-
-<nav id="navbar" class="fixed top-0 w-full z-50 bg-blue-700 bg-opacity-100 text-white py-9 shadow-lg transition-transform duration-300">
-    <div class="container mx-auto px-4 flex justify-between items-center">
-        <!-- Logo -->
-        <a href="/" class="flex items-center space-x-3">
-            <img src="img/Rtec1.png" alt="Logotipo RizonTec" class="w-32 h-auto object-contain">
-        </a>
-
-        <!-- Botão do Menu Hambúrguer (Mobile) -->
-        <button id="menu-button" class="md:hidden text-white text-[28px] focus:outline-none">☰</button>
-
-        <!-- Links (Desktop) -->
-        <div class="hidden md:flex items-center space-x-8 font-medium">
-            <a href="index.html" class="group relative">HOME</a>
-            <a href="servicos.html" class="group relative">SERVIÇOS</a>
-            <a href="contato.html" class="group relative">CONTATO</a>
-            <a href="portifolio.html" class="group relative">EMPRESA</a>
+    <nav id="navbar" class="fixed top-0 w-full z-50 bg-blue-700 bg-opacity-0 text-white py-9 shadow-lg transition-all duration-300">
+        <div class="container mx-auto px-6 lg:px-12 flex justify-between items-center"> <!-- Ajustei para ter um espaçamento maior -->
+            <!-- Logo -->
+            <a href="/" class="flex items-center space-x-3">
+                <img src="img/Rtec1.png" alt="Logo RizonTec" class="w-32 h-auto object-contain">
+            </a>
+    
+            <!-- Botão do Menu Hambúrguer (Mobile) -->
+            <button id="menu-button" class="md:hidden text-white text-[28px] focus:outline-none">
+                ☰
+            </button>
+    
+            <!-- Links (Desktop) -->
+            <div class="hidden md:flex items-center space-x-6 font-medium">
+                <a href="index.html" class="group relative nav-link">HOME</a> <!-- Adicionada a classe nav-link -->
+                <span class="text-white">|</span> <!-- Barra de divisão -->
+                <a href="servicos.html" class="group relative nav-link">SERVIÇOS</a>
+                <span class="text-white">|</span> <!-- Barra de divisão -->
+                <a href="blog.html" class="group relative nav-link">BLOG</a>
+                <span class="text-white">|</span> <!-- Barra de divisão -->
+                <a href="contato.html" class="group relative nav-link">CONTATO</a>
+                <span class="text-white">|</span> <!-- Barra de divisão -->
+                <a href="portifolio.html" class="group relative nav-link">EMPRESA</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Menu Mobile -->
+    <div id="mobile-menu" class="md:hidden fixed top-0 left-0 w-full h-screen bg-blue-600 bg-opacity-95 backdrop-blur-lg z-50 transform -translate-y-full transition-transform duration-300">
+        <div class="flex flex-col items-center pt-16 space-y-6">
+            <button id="close-menu" class="text-white text-2xl absolute top-4 right-4">
+                &times;
+            </button>
+            <a href="index.html" class="text-lg text-white" onclick="toggleMenu()">HOME</a>
+            <a href="servicos.html" class="text-lg text-white" onclick="toggleMenu()">SERVIÇOS</a>
+            <a href="blog.html" class="text-lg text-white" onclick="toggleMenu()">BLOG</a>
+            <a href="contato.html" class="text-lg text-white" onclick="toggleMenu()">CONTATO</a>
+            <a href="portifolio.html" class="text-lg text-white" onclick="toggleMenu()">EMPRESA</a>
         </div>
     </div>
-</nav>
+    
+    <script>
+        // Função para alternar o menu mobile
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('-translate-y-full');
+            menu.classList.toggle('translate-y-0');
+        }
+    
+        // Script para manipular a navbar
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuButton = document.getElementById('menu-button');
+            const closeMenu = document.getElementById('close-menu');
+            const navbar = document.getElementById('navbar');
+            const navLinks = document.querySelectorAll('.nav-link'); // Selecionando todos os links da navegação
+    
+            // Abre e fecha o menu no mobile
+            if (menuButton && closeMenu) {
+                menuButton.addEventListener('click', toggleMenu);
+                closeMenu.addEventListener('click', toggleMenu);
+            }
+    
+            // Modifica a opacidade da navbar ao rolar a página
+            let lastScrollTop = 0;
+            if (navbar) {
+                window.addEventListener('scroll', () => {
+                    const currentScroll = window.pageYOffset;
+    
+                    // Verifica se rolou a página
+                    if (currentScroll > 0) {
+                        navbar.classList.remove('bg-opacity-0');
+                        navbar.classList.add('bg-opacity-100');
+                    } else {
+                        navbar.classList.remove('bg-opacity-100');
+                        navbar.classList.add('bg-opacity-0');
+                    }
+    
+                    // Lógica para esconder/mostrar a navbar durante o scroll
+                    if (currentScroll > lastScrollTop) {
+                        navbar.style.transform = 'translateY(-100%)'; // Esconde a navbar ao descer
+                    } else {
+                        navbar.style.transform = 'translateY(0)'; // Mostra a navbar ao subir
+                    }
+                    lastScrollTop = Math.max(currentScroll, 0);
+                });
+            }
+    
+            // Verifica qual link está na página atual e aplica a borda
+            navLinks.forEach(link => {
+                const linkPath = link.getAttribute('href').toLowerCase();
+                const currentPath = window.location.pathname.split('/').pop().toLowerCase();
+    
+                if (linkPath === currentPath || (currentPath === '' && linkPath === 'index.html')) {
+                    link.classList.add('border-b-2', 'border-white'); // Adiciona borda quando estiver na página
+                }
+            });
+        });
+    </script>
+    
+    <style>
+        .nav-link {
+            position: relative;
+            padding-bottom: 4px;
+            transition: all 0.3s ease;
+        }
+    
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: transparent;
+            transition: all 0.3s ease;
+        }
+    
+        .nav-link:hover::after {
+            background-color: white;
+            width: 100%;
+        }
+    </style>
+    
+    
 
-<!-- Menu Mobile -->
-<div id="mobile-menu" class="md:hidden fixed top-0 left-0 w-full h-screen bg-blue-600 bg-opacity-95 backdrop-blur-lg z-50 transform -translate-y-full transition-transform duration-300">
-    <div class="flex flex-col items-center pt-16 space-y-6">
-        <!-- Botão para fechar o menu -->
-        <button id="close-menu" class="text-white text-2xl absolute top-4 right-4">×</button>
 
-        <!-- Links para o Menu Mobile -->
-        <a href="index.html" class="text-lg text-white" onclick="toggleMenu()">PÁGINA INICIAL</a>
-        <a href="servicos.html" class="text-lg text-white" onclick="toggleMenu()">SERVIÇOS</a>
-        <a href="contato.html" class="text-lg text-white" onclick="toggleMenu()">CONTATO</a>
-        <a href="portifolio.html" class="text-lg text-white" onclick="toggleMenu()">EMPRESA</a>
-    </div>
-</div>
+
+<main class="mt-0">
+    <section class="relative">
+        <!-- Swiper -->
+        <div class="swiper h-screen">
+            <div class="swiper-wrapper" id="swiper-wrapper">
+                <!-- As imagens serão carregadas dinamicamente -->
+            </div>
+        </div>
+    </section>
+</main>
 
 <script>
-    // Alternar menu
-    function toggleMenu() {
-        const menu = document.getElementById('mobile-menu');
-        menu.classList.toggle('-translate-y-full');
-        menu.classList.toggle('translate-y-0');
+// Inicializa o Swiper
+document.addEventListener('DOMContentLoaded', () => {
+    const swiperWrapper = document.getElementById('swiper-wrapper');
+
+    // Define as imagens para desktop e mobile
+    const desktopImages = [
+        { src: 'img/sp1.webp', title: 'Soluções Digitais', text: 'Transformamos ideias em resultados para o seu negócio.' },
+        { src: 'img/sp2.webp', title: 'Estratégias Eficientes', text: 'Aumente sua visibilidade com soluções profissionais.' },
+        { src: 'img/sp3.webp', title: 'Resultados Garantidos', text: 'Conquiste novos patamares com nossa equipe.' },
+        { src: 'img/sp4.jpg', title: 'Inovação e Qualidade', text: 'Projetos que atendem suas necessidades.' },
+    ];
+
+    const mobileImages = [
+        { src: 'img/spc1.jpg', title: 'Soluções Digitais', text: 'Transformamos ideias em resultados para o seu negócio.' },
+        { src: 'img/spc2.jpeg', title: 'Estratégias Eficientes', text: 'Aumente sua visibilidade com soluções profissionais.' },
+        { src: 'img/spc3.jpeg', title: 'Resultados Garantidos', text: 'Conquiste novos patamares com nossa equipe.' },
+        { src: 'img/spc4.jpeg', title: 'Inovação e Qualidade', text: 'Projetos que atendem suas necessidades.' },
+    ];
+
+    // Função para carregar as imagens com base no tamanho da tela
+    function loadSwiperImages() {
+        swiperWrapper.innerHTML = ''; // Limpa os slides atuais
+        const images = window.innerWidth < 768 ? mobileImages : desktopImages;
+
+        images.forEach(({ src, title, text }) => {
+            const slide = document.createElement('div');
+            slide.className = 'swiper-slide relative';
+            slide.innerHTML = `
+                <img src="${src}" alt="${title}" class="absolute inset-0 w-full h-full object-cover">
+                <div class="absolute inset-0 flex items-center justify-center sm:items-end sm:justify-start sm:px-8 sm:pb-8 text-white">
+                    <div class="text-center sm:text-left">
+                        <h1 class="text-2xl md:text-4xl font-bold mb-4">${title}</h1>
+                        <p class="mb-6 text-sm md:text-lg">${text}</p>
+                        <div class="flex justify-center sm:justify-start space-x-4">
+                            <a href="contato.html" class="bg-blue-600 px-4 py-2 rounded-lg hover:bg-blue-700">
+                                Entre em Contato
+                            </a>
+                            <a href="servicos.html" class="bg-transparent border border-white px-4 py-2 rounded-lg hover:bg-white hover:text-blue-600">
+                                Ver Nossos Serviços
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            `;
+            swiperWrapper.appendChild(slide);
+        });
+
+        // Re-inicializa o Swiper para reconhecer os novos slides
+        new Swiper('.swiper', {
+            loop: true,
+            autoplay: {
+                delay: 5000,
+            },
+        });
     }
 
-    document.addEventListener('DOMContentLoaded', () => {
-        const menuButton = document.getElementById('menu-button');
-        const closeMenu = document.getElementById('close-menu');
-        const navbar = document.getElementById('navbar');
-
-        // Adiciona os eventos de clique para abrir e fechar o menu
-        if (menuButton && closeMenu) {
-            menuButton.addEventListener('click', toggleMenu);
-            closeMenu.addEventListener('click', toggleMenu);
-        }
-
-        // Mostrar/Ocultar barra de navegação ao rolar
-        let lastScrollTop = 0;
-        if (navbar) {
-            window.addEventListener('scroll', () => {
-                const currentScroll = window.pageYOffset;
-                if (currentScroll > lastScrollTop) {
-                    navbar.style.transform = 'translateY(-100%)'; // Esconde a barra de navegação
-                } else {
-                    navbar.style.transform = 'translateY(0)'; // Mostra a barra de navegação
-                }
-                lastScrollTop = Math.max(currentScroll, 0); // Garante que o valor não seja negativo
-            });
-        }
-
-        // Adicionar classe 'active' ao link da página atual
-        const links = document.querySelectorAll('nav a');
-        const currentPath = window.location.pathname.split('/').pop().toLowerCase();
-        links.forEach(link => {
-            const linkPath = link.getAttribute('href').toLowerCase();
-            if (linkPath === currentPath || (currentPath === '' && linkPath === 'index.html')) {
-                link.classList.add('active');
-            } else {
-                link.classList.remove('active');
-            }
-        });
-    });
+    // Carrega as imagens ao iniciar e quando a janela é redimensionada
+    loadSwiperImages();
+    window.addEventListener('resize', loadSwiperImages);
+});
 </script>
+
+<section class="py-16 bg-slate-100">
+    <div class="container mx-auto px-6">
+        <h2 class="text-5xl font-bold text-center mb-8 text-blue-600">Nossos Serviços</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Card 1: Site Institucional -->
+            <div class="service-card relative bg-blue-700 text-white p-6 rounded-3xl shadow-2xl transform translate-y-10 transition-all duration-1000 ease-in-out hover:scale-105 hover:opacity-100  flex flex-col justify-between">
+                <div>
+                    <div class="icon-container mb-4 text-center">
+                        <i class="fas fa-laptop text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center">Sites Institucionais</h3>
+                    <p class="mt-4">
+                        Desenvolvemos sites institucionais modernos e funcionais para empresas de todos os portes, ajudando a fortalecer sua presença online e melhorar a comunicação com o público.
+                    </p>
+                </div>
+                <div class="mt-4">
+                    <button onclick="window.location.href='https://wa.me/+5548998143419?text=Gostaria%20de%20saber%20mais%20sobre%20sites%20institucionais.'" class="bg-white text-blue-700 px-6 py-3 rounded-full mb-2 w-full">Saiba mais</button>
+                    <button onclick="window.location.href='https://wa.me/+5548998143419?text=Quero%20um%20site%20institucional%20para%20minha%20empresa.'" class="bg-white text-blue-700 px-6 py-3 rounded-full mb-2 w-full">Solicitar Orçamento</button>
+                    <button onclick="window.location.href='https://wa.me/+5548998143419?text=Tenho%20interesse%20em%20um%20site%20institucional.'" class="bg-white text-blue-700 px-6 py-3 rounded-full mb-2 w-full">Mais Informações</button>
+                    <button onclick="window.location.href='https://wa.me/+5548998143419?text=Quero%20falar%20sobre%20um%20site%20institucional.'" class="bg-white text-blue-700 px-6 py-3 rounded-full w-full">Falar com um especialista</button>
+                </div>
+            </div>
+
+            <!-- Card 2: Sites Complexos -->
+            <div class="service-card relative bg-blue-700 text-white p-6 rounded-3xl shadow-2xl transform translate-y-10 transition-all duration-1000 ease-in-out hover:scale-105 hover:opacity-100 flex flex-col justify-between">
+                <div>
+                    <div class="icon-container mb-4 text-center">
+                        <i class="fas fa-laptop-code text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center">Sites Complexos</h3>
+                    <p class="mt-4">
+                        Criamos sites complexos com funcionalidades avançadas, como e-commerce, sistemas personalizados e integrações com outras plataformas, garantindo uma experiência completa para o usuário.
+                    </p>
+                </div>
+                <div class="mt-4">
+                    <button onclick="window.location.href='https://wa.me/+5548998143419?text=Gostaria%20de%20saber%20mais%20sobre%20sites%20complexos.'" class="bg-white text-blue-700 px-6 py-3 rounded-full mb-2 w-full">Saiba mais</button>
+                    <button onclick="window.location.href='https://wa.me/+5548998143419?text=Quero%20um%20site%20complexo%20para%20minha%20empresa.'" class="bg-white text-blue-700 px-6 py-3 rounded-full mb-2 w-full">Solicitar Orçamento</button>
+                    <button onclick="window.location.href='https://wa.me/+5548998143419?text=Tenho%20interesse%20em%20um%20site%20complexo.'" class="bg-white text-blue-700 px-6 py-3 rounded-full mb-2 w-full">Mais Informações</button>
+                    <button onclick="window.location.href='https://wa.me/+5548998143419?text=Quero%20falar%20sobre%20um%20site%20complexo.'" class="bg-white text-blue-700 px-6 py-3 rounded-full w-full">Falar com um especialista</button>
+                </div>
+            </div>
+
+            <!-- Card 3: Design e Gerenciamento de Redes Sociais -->
+            <div class="service-card relative bg-blue-700 text-white p-6 rounded-3xl shadow-2xl transform translate-y-10 transition-all duration-1000 ease-in-out hover:scale-105 hover:opacity-100 flex flex-col justify-between">
+                <div>
+                    <div class="icon-container mb-4 text-center">
+                        <i class="fas fa-users-cog text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center">Redes Sociais</h3>
+                    <p class="mt-4">
+                        Oferecemos serviços completos de design e gerenciamento de redes sociais, criando conteúdos visuais impactantes e estratégias eficazes para engajar seu público e aumentar a presença online da sua marca.
+                    </p>
+                </div>
+                <div class="mt-4">
+                    <button onclick="window.location.href='https://wa.me/+5548998143419?text=Gostaria%20de%20saber%20mais%20sobre%20redes%20sociais.'" class="bg-white text-blue-700 px-6 py-3 rounded-full mb-2 w-full">Saiba mais</button>
+                    <button onclick="window.location.href='https://wa.me/+5548998143419?text=Quero%20gerenciar%20minhas%20redes%20sociais.'" class="bg-white text-blue-700 px-6 py-3 rounded-full mb-2 w-full">Solicitar Orçamento</button>
+                    <button onclick="window.location.href='https://wa.me/+5548998143419?text=Tenho%20interesse%20em%20redes%20sociais.'" class="bg-white text-blue-700 px-6 py-3 rounded-full mb-2 w-full">Mais Informações</button>
+                    <button onclick="window.location.href='https://wa.me/+5548998143419?text=Quero%20falar%20sobre%20redes%20sociais.'" class="bg-white text-blue-700 px-6 py-3 rounded-full w-full">Falar com um especialista</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 
 
 
@@ -264,238 +450,6 @@ function redirectToWhatsAppDirect(message) {
 <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot-->
 
 
-    <main class="pt-24 pb-12 bg-gray-100">
-        <div class="container mx-auto px-6">
-            <h1 class="text-3xl md:text-4xl font-bold text-center text-blue-700 mb-10">Explore Nossos Serviços</h1>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Serviço: Criação de Sites -->
-                <div class="service-card bg-white p-6 rounded-lg shadow-md text-center" onclick="toggleDetails('site')">
-                    <i class="fas fa-laptop-code text-4xl text-blue-700 mb-4"></i>
-                    <h2 class="text-xl font-bold mb-2">Criação de Sites</h2>
-                    <p class="text-gray-600">Explore opções como landing pages, sites corporativos e e-commerces.</p>
-                    <div id="site-details" class="service-details mt-6 flex">
-                        <div class="service-list w-1/2">
-                            <ul class="list-disc text-gray-600">
-                                <li>
-                                    <button class="text-blue-600 underline" onclick="openWhatsApp('landing-page')">Landing Pages</button>
-                                </li>
-                                <li>
-                                    <button class="text-blue-600 underline" onclick="openWhatsApp('corporate-site')">Sites Profissionais</button>
-                                </li>
-                                <li>
-                                    <button class="text-blue-600 underline" onclick="openWhatsApp('ecommerce')">Plataformas de E-commerce</button>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="w-1/2 text-left">
-                            <!-- Opções já criadas -->
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Serviço: Automações -->
-                <div class="service-card bg-white p-6 rounded-lg shadow-md text-center" onclick="toggleDetails('automations')">
-                    <i class="fas fa-cogs text-4xl text-blue-700 mb-4"></i>
-                    <h2 class="text-xl font-bold mb-2">Automações</h2>
-                    <p class="text-gray-600">Sistema de automação para otimizar processos e otimizar resultados.</p>
-                    <div id="automations-details" class="service-details mt-6 flex">
-                        <div class="service-list w-1/2">
-                            <ul class="list-disc text-gray-600">
-                                <li>
-                                    <button class="text-blue-600 underline" onclick="openWhatsApp('marketing-automation')">Automação de Marketing</button>
-                                </li>
-                                <li>
-                                    <button class="text-blue-600 underline" onclick="openWhatsApp('workflow-automation')">Gestão de Fluxos de Trabalho</button>
-                                </li>
-                                <li>
-                                    <button class="text-blue-600 underline" onclick="openWhatsApp('integration-systems')">Integração de Sistemas</button>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="w-1/2 text-left">
-                            <!-- Opções já criadas -->
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Serviço: Aplicativos -->
-                <div class="service-card bg-white p-6 rounded-lg shadow-md text-center" onclick="toggleDetails('apps')">
-                    <i class="fas fa-mobile-alt text-4xl text-blue-700 mb-4"></i>
-                    <h2 class="text-xl font-bold mb-2">Desenvolvimento de Aplicativos</h2>
-                    <p class="text-gray-600">Aplicativos personalizados para atender suas demandas específicas.</p>
-                    <div id="apps-details" class="service-details mt-6 flex">
-                        <div class="service-list w-1/2">
-                            <ul class="list-disc text-gray-600">
-                                <li>
-                                    <button class="text-blue-600 underline" onclick="openWhatsApp('native-apps')">Aplicativos Nativos</button>
-                                </li>
-                                <li>
-                                    <button class="text-blue-600 underline" onclick="openWhatsApp('hybrid-apps')">Aplicativos Híbridos</button>
-                                </li>
-                                <li>
-                                    <button class="text-blue-600 underline" onclick="openWhatsApp('rapid-prototyping')">Prototipagem Rápida</button>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="w-1/2 text-left">
-                            <!-- Opções já criadas -->
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Serviço: Gerenciamento de Redes Sociais -->
-                <div class="service-card bg-white p-6 rounded-lg shadow-md text-center" onclick="toggleDetails('social')">
-                    <i class="fas fa-share-alt text-4xl text-blue-700 mb-4"></i>
-                    <h2 class="text-xl font-bold mb-2">Gestão de Redes Sociais</h2>
-                    <p class="text-gray-600">Impulsione seu Instagram com estratégias de marketing.</p>
-                    <div id="social-details" class="service-details mt-6 flex">
-                        <div class="service-list w-1/2">
-                            <ul class="list-disc text-gray-600">
-                                <li>
-                                    <button class="text-blue-600 underline" onclick="openWhatsApp('content-creation')">Criação de Conteúdo</button>
-                                </li>
-                                <li>
-                                    <button class="text-blue-600 underline" onclick="openWhatsApp('ad-campaigns')">Campanhas Pagas</button>
-                                </li>
-                                <li>
-                                    <button class="text-blue-600 underline" onclick="openWhatsApp('engagement-management')">Gestão de Engajamento</button>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="w-1/2 text-left">
-                            <!-- Opções já criadas -->
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Serviço: Design Gráfico -->
-                <div class="service-card bg-white p-6 rounded-lg shadow-md text-center" onclick="toggleDetails('design')">
-                    <i class="fas fa-paint-brush text-4xl text-blue-700 mb-4"></i>
-                    <h2 class="text-xl font-bold mb-2">Design Gráfico</h2>
-                    <p class="text-gray-600">Criação de identidade visual, branding e materiais gráficos.</p>
-                    <div id="design-details" class="service-details mt-6 flex">
-                        <div class="service-list w-1/2">
-                            <ul class="list-disc text-gray-600">
-                                <li>
-                                    <button class="text-blue-600 underline" onclick="openWhatsApp('logos')">Logotipos</button>
-                                </li>
-                                <li>
-                                    <button class="text-blue-600 underline" onclick="openWhatsApp('website-design')">Design de Sites</button>
-                                </li>
-                                <li>
-                                    <button class="text-blue-600 underline" onclick="openWhatsApp('marketing-materials')">Materiais Publicitários</button>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="w-1/2 text-left">
-                            <!-- Opções já criadas -->
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Serviço: Tráfego Pago -->
-                <div class="service-card bg-white p-6 rounded-lg shadow-md text-center" onclick="toggleDetails('paid-traffic')">
-                    <i class="fas fa-dollar-sign text-4xl text-blue-700 mb-4"></i>
-                    <h2 class="text-xl font-bold mb-2">Tráfego Pago</h2>
-                    <p class="text-gray-600">Aumente a visibilidade da sua empresa com campanhas pagas eficazes.</p>
-                    <div id="paid-traffic-details" class="service-details mt-6 flex">
-                        <div class="service-list w-1/2">
-                            <ul class="list-disc text-gray-600">
-                                <li>
-                                    <button class="text-blue-600 underline" onclick="openWhatsApp('facebook-ads')">Anúncios no Facebook</button>
-                                </li>
-                                <li>
-                                    <button class="text-blue-600 underline" onclick="openWhatsApp('google-ads')">Anúncios no Google</button>
-                                </li>
-                                <li>
-                                    <button class="text-blue-600 underline" onclick="openWhatsApp('linkedin-ads')">Anúncios no LinkedIn</button>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="w-1/2 text-left">
-                            <!-- Opções já criadas -->
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Serviço: Guia para Sua Empresa -->
-                <div class="service-card bg-white p-6 rounded-lg shadow-md text-center" onclick="toggleDetails('business-guide')">
-                    <i class="fas fa-book-open text-4xl text-blue-700 mb-4"></i>
-                    <h2 class="text-xl font-bold mb-2">Guia para Sua Empresa</h2>
-                    <p class="text-gray-600">Conselhos e passos essenciais para guiar sua empresa ao sucesso.</p>
-                    <div id="business-guide-details" class="service-details mt-6 flex">
-                        <div class="service-list w-1/2">
-                            <ul class="list-disc text-gray-600">
-                                <li>
-                                    <button class="text-blue-600 underline" onclick="openWhatsApp('business-planning')">Planejamento de Negócios</button>
-                                </li>
-                                <li>
-                                    <button class="text-blue-600 underline" onclick="openWhatsApp('strategy-development')">Desenvolvimento de Estratégias</button>
-                                </li>
-                                <li>
-                                    <button class="text-blue-600 underline" onclick="openWhatsApp('team-management')">Gestão de Equipes</button>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="w-1/2 text-left">
-                            <!-- Opções já criadas -->
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Serviço: Cibersegurança -->
-                <div class="service-card bg-white p-6 rounded-lg shadow-md text-center" onclick="toggleDetails('cybersecurity')">
-                    <i class="fas fa-shield-alt text-4xl text-blue-700 mb-4"></i>
-                    <h2 class="text-xl font-bold mb-2">Cibersegurança</h2>
-                    <p class="text-gray-600">Proteja sua empresa contra ameaças digitais e ataques cibernéticos.</p>
-                    <div id="cybersecurity-details" class="service-details mt-6 flex">
-                        <div class="service-list w-1/2">
-                            <ul class="list-disc text-gray-600">
-                                <li>
-                                    <button class="text-blue-600 underline" onclick="openWhatsApp('security-consulting')">Consultoria de Segurança</button>
-                                </li>
-                                <li>
-                                    <button class="text-blue-600 underline" onclick="openWhatsApp('data-protection')">Proteção de Dados</button>
-                                </li>
-                                <li>
-                                    <button class="text-blue-600 underline" onclick="openWhatsApp('firewall-setup')">Configuração de Firewall</button>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="w-1/2 text-left">
-                            <!-- Opções já criadas -->
-                        </div>
-
-                    </div>
-                </div>
-
-                <!-- Serviço: Manutenção e Suporte -->
-                <div class="service-card bg-white p-6 rounded-lg shadow-md text-center" onclick="toggleDetails('maintenance')">
-                    <i class="fas fa-cogs text-4xl text-blue-700 mb-4"></i>
-                    <h2 class="text-xl font-bold mb-2">Manutenção e Suporte</h2>
-                    <p class="text-gray-600">Suporte contínuo para manter seu site funcionando sem problemas.</p>
-                    <div id="maintenance-details" class="service-details mt-6 flex">
-                        <div class="service-list w-1/2">
-                            <ul class="list-disc text-gray-600">
-                                <li>
-                                    <button class="text-blue-600 underline" onclick="openWhatsApp('site-maintenance')">Manutenção de Sites</button>
-                                </li>
-                                <li>
-                                    <button class="text-blue-600 underline" onclick="openWhatsApp('tech-support')">Suporte Técnico</button>
-                                </li>
-                                <li>
-                                    <button class="text-blue-600 underline" onclick="openWhatsApp('regular-updates')">Atualizações Regulares</button>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="w-1/2 text-left">
-                            <!-- Opções já criadas -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
 
     <footer class="bg-blue-600 text-white py-8">
         <div class="container mx-auto px-6">

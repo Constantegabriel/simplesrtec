@@ -124,3 +124,36 @@ margin-top: 10px;
   }
 }
 
+/* Animação para as divs */
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.service-card {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* Alterações adicionais para interatividade */
+.service-card:hover {
+  background-color: #2563eb; /* Azul mais escuro ao passar o mouse */
+}
+
+/* Garante que o swiper ocupe toda a tela */
+.swiper {
+  width: 100%;
+  height: 100vh; /* Ocupa toda a altura da tela */
+}
+
+/* Estilo para as imagens do swiper */
+.swiper-slide img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}

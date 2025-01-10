@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <style>
         a.active span {
             width: 100%;
@@ -16,8 +18,8 @@
     </style>
 </head>
 <body>
-    <nav id="navbar" class="fixed top-0 w-full z-50 bg-blue-700 bg-opacity-100 text-white py-9 shadow-lg transition-transform duration-300">
-        <div class="container mx-auto px-4 flex justify-between items-center">
+    <nav id="navbar" class="fixed top-0 w-full z-50 bg-blue-700 bg-opacity-0 text-white py-9 shadow-lg transition-all duration-300">
+        <div class="container mx-auto px-6 lg:px-12 flex justify-between items-center"> <!-- Ajustei para ter um espaçamento maior -->
             <!-- Logo -->
             <a href="/" class="flex items-center space-x-3">
                 <img src="img/Rtec1.png" alt="Logo RizonTec" class="w-32 h-auto object-contain">
@@ -29,94 +31,560 @@
             </button>
     
             <!-- Links (Desktop) -->
-            <div class="hidden md:flex items-center space-x-8 font-medium">
-                <a href="index.html" class="group relative">
-                    HOME
-                    <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 ease-in-out group-hover:w-full"></span>
-                </a>
-                <a href="servicos.html" class="group relative">
-                    SERVIÇOS
-                    <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 ease-in-out group-hover:w-full"></span>
-                </a>
-                <a href="contato.html" class="group relative">
-                    CONTATO
-                    <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 ease-in-out group-hover:w-full"></span>
-                </a>
-                <a href="portifolio.html" class="group relative">
-                    EMPRESA
-                    <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 ease-in-out group-hover:w-full"></span>
-                </a>
-            </div>
-        </div>
-    
-        <!-- Menu Mobile -->
-        <div id="mobile-menu" class="md:hidden fixed top-0 left-0 w-full h-screen bg-blue-600 bg-opacity-95 backdrop-blur-lg z-50 transform -translate-y-full transition-transform duration-300">
-            <div class="flex flex-col items-center pt-16 space-y-6">
-                <!-- Botão para fechar o menu -->
-                <button id="close-menu" class="text-white text-2xl absolute top-4 right-4">
-                    &times;
-                </button>
-    
-                <!-- Links do Menu Mobile -->
-                <a href="index.html" class="text-lg text-white" onclick="toggleMenu()">HOME</a>
-                <a href="servicos.html" class="text-lg text-white" onclick="toggleMenu()">SERVIÇOS</a>
-                <a href="contato.html" class="text-lg text-white" onclick="toggleMenu()">CONTATO</a>
-                <a href="portifolio.html" class="text-lg text-white" onclick="toggleMenu()">EMPRESA</a>
+            <div class="hidden md:flex items-center space-x-6 font-medium">
+                <a href="index.html" class="group relative nav-link">HOME</a> <!-- Adicionada a classe nav-link -->
+                <span class="text-white">|</span> <!-- Barra de divisão -->
+                <a href="servicos.html" class="group relative nav-link">SERVIÇOS</a>
+                <span class="text-white">|</span> <!-- Barra de divisão -->
+                <a href="blog.html" class="group relative nav-link">BLOG</a>
+                <span class="text-white">|</span> <!-- Barra de divisão -->
+                <a href="contato.html" class="group relative nav-link">CONTATO</a>
+                <span class="text-white">|</span> <!-- Barra de divisão -->
+                <a href="portifolio.html" class="group relative nav-link">EMPRESA</a>
             </div>
         </div>
     </nav>
-
+    
+    <!-- Menu Mobile -->
+    <div id="mobile-menu" class="md:hidden fixed top-0 left-0 w-full h-screen bg-blue-600 bg-opacity-95 backdrop-blur-lg z-50 transform -translate-y-full transition-transform duration-300">
+        <div class="flex flex-col items-center pt-16 space-y-6">
+            <button id="close-menu" class="text-white text-2xl absolute top-4 right-4">
+                &times;
+            </button>
+            <a href="index.html" class="text-lg text-white" onclick="toggleMenu()">HOME</a>
+            <a href="servicos.html" class="text-lg text-white" onclick="toggleMenu()">SERVIÇOS</a>
+            <a href="blog.html" class="text-lg text-white" onclick="toggleMenu()">BLOG</a>
+            <a href="contato.html" class="text-lg text-white" onclick="toggleMenu()">CONTATO</a>
+            <a href="portifolio.html" class="text-lg text-white" onclick="toggleMenu()">EMPRESA</a>
+        </div>
+    </div>
+    
     <script>
-        // Toggle Menu
+        // Função para alternar o menu mobile
         function toggleMenu() {
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('-translate-y-full');
             menu.classList.toggle('translate-y-0');
         }
     
+        // Script para manipular a navbar
         document.addEventListener('DOMContentLoaded', () => {
             const menuButton = document.getElementById('menu-button');
             const closeMenu = document.getElementById('close-menu');
             const navbar = document.getElementById('navbar');
+            const navLinks = document.querySelectorAll('.nav-link'); // Selecionando todos os links da navegação
     
-            // Adiciona os eventos de clique para abrir e fechar o menu
+            // Abre e fecha o menu no mobile
             if (menuButton && closeMenu) {
                 menuButton.addEventListener('click', toggleMenu);
                 closeMenu.addEventListener('click', toggleMenu);
             }
     
-            // Navbar Show/Hide on Scroll
+            // Modifica a opacidade da navbar ao rolar a página
             let lastScrollTop = 0;
             if (navbar) {
                 window.addEventListener('scroll', () => {
                     const currentScroll = window.pageYOffset;
-                    if (currentScroll > lastScrollTop) {
-                        navbar.style.transform = 'translateY(-100%)'; // Esconde o navbar
+    
+                    // Verifica se rolou a página
+                    if (currentScroll > 0) {
+                        navbar.classList.remove('bg-opacity-0');
+                        navbar.classList.add('bg-opacity-100');
                     } else {
-                        navbar.style.transform = 'translateY(0)'; // Mostra o navbar
+                        navbar.classList.remove('bg-opacity-100');
+                        navbar.classList.add('bg-opacity-0');
                     }
-                    lastScrollTop = Math.max(currentScroll, 0); // Garante que o valor não seja negativo
+    
+                    // Lógica para esconder/mostrar a navbar durante o scroll
+                    if (currentScroll > lastScrollTop) {
+                        navbar.style.transform = 'translateY(-100%)'; // Esconde a navbar ao descer
+                    } else {
+                        navbar.style.transform = 'translateY(0)'; // Mostra a navbar ao subir
+                    }
+                    lastScrollTop = Math.max(currentScroll, 0);
                 });
             }
     
-            // Adicionar classe 'active' ao link da página atual
-            const links = document.querySelectorAll('nav a');
-            const currentPath = window.location.pathname.split('/').pop().toLowerCase();
-    
-            links.forEach(link => {
+            // Verifica qual link está na página atual e aplica a borda
+            navLinks.forEach(link => {
                 const linkPath = link.getAttribute('href').toLowerCase();
+                const currentPath = window.location.pathname.split('/').pop().toLowerCase();
+    
                 if (linkPath === currentPath || (currentPath === '' && linkPath === 'index.html')) {
-                    link.classList.add('active');
-                } else {
-                    link.classList.remove('active');
+                    link.classList.add('border-b-2', 'border-white'); // Adiciona borda quando estiver na página
                 }
             });
         });
     </script>
+    
+    <style>
+        .nav-link {
+            position: relative;
+            padding-bottom: 4px;
+            transition: all 0.3s ease;
+        }
+    
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: transparent;
+            transition: all 0.3s ease;
+        }
+    
+        .nav-link:hover::after {
+            background-color: white;
+            width: 100%;
+        }
+    </style>
+    
+    
 
+
+
+<main class="mt-0">
+    <section class="relative">
+        <!-- Swiper -->
+        <div class="swiper h-screen">
+            <div class="swiper-wrapper" id="swiper-wrapper">
+                <!-- As imagens serão carregadas dinamicamente -->
+            </div>
+        </div>
+    </section>
+</main>
+
+<script>
+// Inicializa o Swiper
+document.addEventListener('DOMContentLoaded', () => {
+    const swiperWrapper = document.getElementById('swiper-wrapper');
+
+    // Define as imagens para desktop e mobile
+    const desktopImages = [
+        { src: 'img/sp1.webp', title: 'Soluções Digitais', text: 'Transformamos ideias em resultados para o seu negócio.' },
+        { src: 'img/sp2.webp', title: 'Estratégias Eficientes', text: 'Aumente sua visibilidade com soluções profissionais.' },
+        { src: 'img/sp3.webp', title: 'Resultados Garantidos', text: 'Conquiste novos patamares com nossa equipe.' },
+        { src: 'img/sp4.jpg', title: 'Inovação e Qualidade', text: 'Projetos que atendem suas necessidades.' },
+    ];
+
+    const mobileImages = [
+        { src: 'img/spc1.jpg', title: 'Soluções Digitais', text: 'Transformamos ideias em resultados para o seu negócio.' },
+        { src: 'img/spc2.jpeg', title: 'Estratégias Eficientes', text: 'Aumente sua visibilidade com soluções profissionais.' },
+        { src: 'img/spc3.jpeg', title: 'Resultados Garantidos', text: 'Conquiste novos patamares com nossa equipe.' },
+        { src: 'img/spc4.jpeg', title: 'Inovação e Qualidade', text: 'Projetos que atendem suas necessidades.' },
+    ];
+
+    // Função para carregar as imagens com base no tamanho da tela
+    function loadSwiperImages() {
+        swiperWrapper.innerHTML = ''; // Limpa os slides atuais
+        const images = window.innerWidth < 768 ? mobileImages : desktopImages;
+
+        images.forEach(({ src, title, text }) => {
+            const slide = document.createElement('div');
+            slide.className = 'swiper-slide relative';
+            slide.innerHTML = `
+                <img src="${src}" alt="${title}" class="absolute inset-0 w-full h-full object-cover">
+                <div class="absolute inset-0 flex items-center justify-center sm:items-end sm:justify-start sm:px-8 sm:pb-8 text-white">
+                    <div class="text-center sm:text-left">
+                        <h1 class="text-2xl md:text-4xl font-bold mb-4">${title}</h1>
+                        <p class="mb-6 text-sm md:text-lg">${text}</p>
+                        <div class="flex justify-center sm:justify-start space-x-4">
+                            <a href="contato.html" class="bg-blue-600 px-4 py-2 rounded-lg hover:bg-blue-700">
+                                Entre em Contato
+                            </a>
+                            <a href="servicos.html" class="bg-transparent border border-white px-4 py-2 rounded-lg hover:bg-white hover:text-blue-600">
+                                Ver Nossos Serviços
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            `;
+            swiperWrapper.appendChild(slide);
+        });
+
+        // Re-inicializa o Swiper para reconhecer os novos slides
+        new Swiper('.swiper', {
+            loop: true,
+            autoplay: {
+                delay: 5000,
+            },
+        });
+    }
+
+    // Carrega as imagens ao iniciar e quando a janela é redimensionada
+    loadSwiperImages();
+    window.addEventListener('resize', loadSwiperImages);
+});
+</script>
+
+
+
+<section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+            <!-- Texto sobre a empresa -->
+            <div class="text-black transform opacity-0 translate-y-10 transition-all duration-1000 ease-in-out hover:scale-105 hover:opacity-100 hover:translate-y-0">
+                <h2 class="text-3xl md:text-5xl font-extrabold mb-6 text-gradient bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400">
+                    Sobre a RizonTec
+                </h2>
+                <p class="mb-4 text-lg leading-relaxed">
+                    A RizonTec é uma empresa focada em soluções digitais inovadoras. Trabalhamos com o objetivo de transformar a presença online de nossos clientes, oferecendo serviços personalizados e com alta qualidade. 
+                    <br><br>
+                    Desde a criação de sites até o gerenciamento de redes sociais, buscamos sempre entender as necessidades de cada cliente para oferecer as melhores soluções. Nossa missão é criar experiências digitais impactantes, que gerem resultados reais e concretos.
+                </p>
+                <p class="text-lg leading-relaxed mb-6">
+                    Com uma equipe altamente capacitada e apaixonada pelo que faz, a RizonTec é a parceira ideal para o seu sucesso digital.
+                </p>
+
+                <!-- Botão Elegante -->
+                <div class="mt-6 text-start">
+                    <a href="/portifolio.html" class="inline-block text-white bg-blue-600 border-2 border-blue-600 py-3 px-6 rounded-full font-semibold text-lg transition-all duration-300 hover:bg-transparent hover:text-blue-600 hover:scale-110 focus:outline-none shadow-lg hover:shadow-xl">
+                        Saiba mais sobre nós
+                    </a>
+                </div>
+            </div>
+
+            <!-- Imagem sobre a empresa -->
+            <div class="transform opacity-0 translate-y-10 transition-all duration-1000 ease-in-out hover:scale-105 hover:opacity-100 hover:translate-y-0">
+                <img src="img/sp3.webp" alt="Sobre a RizonTec" class="w-full rounded-lg shadow-xl object-cover h-full">
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    // Animação de entrada quando rolar a página
+    document.addEventListener('DOMContentLoaded', () => {
+        const sections = document.querySelectorAll('.transform');
+        const options = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                }
+            });
+        }, options);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    });
+</script>
+
+
+
+
+<section class="py-16 bg-blue-700">
+    <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-8 text-white">Nossos Serviços</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Card 1: Site Institucional -->
+            <div class="service-card relative bg-blue-700 text-white p-6 rounded-3xl shadow-2xl transform opacity-0 translate-y-10 transition-all duration-1000 ease-in-out hover:scale-105 hover:opacity-100 hover:translate-y-0 flex flex-col justify-between">
+                <div>
+                    <div class="icon-container mb-4">
+                        <i class="fas fa-laptop text-4xl"></i> <!-- Ícone de identidade visual no 2º bloco -->
+                    </div>
+                    <h3 class="text-xl font-semibold">Sites Institucionais</h3>
+                    <p class="mt-4">
+                        Desenvolvemos sites institucionais modernos e funcionais para empresas de todos os portes, ajudando a fortalecer sua presença online e melhorar a comunicação com o público.
+                    </p>
+                </div>
+                <a href="servicos.html" class="mt-4 inline-block text-white bg-blue-800 px-6 py-3 rounded-full text-sm transition-all duration-300 hover:bg-blue-700">Saiba mais</a>
+            </div>
+
+            <!-- Card 2: Sites Complexos -->
+            <div class="service-card relative bg-blue-700 text-white p-6 rounded-3xl shadow-2xl transform opacity-0 translate-y-10 transition-all duration-1000 ease-in-out hover:scale-105 hover:opacity-100 hover:translate-y-0 flex flex-col justify-between">
+                <div>
+                    <div class="icon-container mb-4">
+                        <i class="fas fa-laptop-code text-4xl"></i> <!-- Ícone de site simples no 1º bloco -->
+                    </div>
+                    <h3 class="text-xl font-semibold">Sites Complexos</h3>
+                    <p class="mt-4">
+                        Criamos sites complexos com funcionalidades avançadas, como e-commerce, sistemas personalizados e integrações com outras plataformas, garantindo uma experiência completa para o usuário.
+                    </p>
+                </div>
+                <a href="servicos.html" class="mt-4 inline-block text-white bg-blue-800 px-6 py-3 rounded-full text-sm transition-all duration-300 hover:bg-blue-700">Saiba mais</a>
+            </div>
+
+            <!-- Card 3: Design e Gerenciamento de Redes Sociais -->
+            <div class="service-card relative bg-blue-700 text-white p-6 rounded-3xl shadow-2xl transform opacity-0 translate-y-10 transition-all duration-1000 ease-in-out hover:scale-105 hover:opacity-100 hover:translate-y-0 flex flex-col justify-between">
+                <div>
+                    <div class="icon-container mb-4">
+                        <i class="fas fa-users-cog text-4xl"></i> <!-- Ícone de redes sociais -->
+                    </div>
+                    <h3 class="text-xl font-semibold">Design e Gerenciamento de Redes Sociais</h3>
+                    <p class="mt-4">
+                        Oferecemos serviços completos de design e gerenciamento de redes sociais, criando conteúdos visuais impactantes e estratégias eficazes para engajar seu público e aumentar a presença online da sua marca.
+                    </p>
+                </div>
+                <a href="servicos.html" class="mt-4 inline-block text-white bg-blue-800 px-6 py-3 rounded-full text-sm transition-all duration-300 hover:bg-blue-700">Saiba mais</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Adicionar Font Awesome para ícones -->
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+<script>
+    // Animação de entrada quando rolar a página
+    document.addEventListener('DOMContentLoaded', () => {
+        const serviceCards = document.querySelectorAll('.service-card');
+        const options = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                }
+            });
+        }, options);
+
+        serviceCards.forEach(card => {
+            observer.observe(card);
+        });
+    });
+</script>
+
+
+<!-- Adicionar Font Awesome para ícones -->
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+<script>
+    // Animação de entrada quando rolar a página
+    document.addEventListener('DOMContentLoaded', () => {
+        const serviceCards = document.querySelectorAll('.service-card');
+        const options = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                }
+            });
+        }, options);
+
+        serviceCards.forEach(card => {
+            observer.observe(card);
+        });
+    });
+</script>
+
+    
+
+<!-- Portfolio Section with Swiper -->
+<section class="py-24 bg-gray-100" style="margin-bottom: 0;">
+    <div class="container mx-auto px-6" style="margin-bottom: 0;">
+        <h2 class="swiper-text text-3xl font-bold text-center mb-8">Portfólio</h2>
+        <div class="swiper-container-1 overflow-x-hidden">
+            <div class="swiper-wrapper">
+                <!-- Item 1 -->
+                <div class="swiper-slide flex flex-col items-center">
+                    <img src="img/mkt.jpg" alt="Portfólio RizonTec" class="rounded-lg shadow-lg w-3/4 md:w-2/3 lg:w-1/2">
+                    <h3 class="mt-4 text-3xl font-semibold">Criação de Sites</h3>
+                    <p class="mt-2 text-gray-600 text-left">Desenvolvimento de websites responsivos e personalizados, com foco em funcionalidade, design atraente e experiência do usuário, para ajudar seu negócio a se destacar online.</p>
+                </div>
+                <!-- Item 2 -->
+                <div class="swiper-slide flex flex-col items-center">
+                    <img src="img/mkt.jpg" alt="Portfólio RizonTec" class="rounded-lg shadow-lg w-3/4 md:w-2/3 lg:w-1/2">
+                    <h3 class="mt-4 text-3xl font-semibold">Automações</h3>
+                    <p class="mt-2 text-gray-600 text-left">Implementação de processos automatizados para otimizar tarefas repetitivas, aumentar a eficiência e liberar seu tempo, utilizando ferramentas de automação em diversas áreas do seu negócio.</p>
+                </div>
+                <!-- Item 3 -->
+                <div class="swiper-slide flex flex-col items-center">
+                    <img src="img/mkt.jpg" alt="Portfólio RizonTec" class="rounded-lg shadow-lg w-3/4 md:w-2/3 lg:w-1/2">
+                    <h3 class="mt-4 text-3xl font-semibold">Design</h3>
+                    <p class="mt-2 text-gray-600 text-left">Criação de designs exclusivos para social media, logos, posts para Instagram, camisetas, cartões de visita e muito mais, garantindo uma identidade visual única e impactante para sua marca.</p>
+                </div>
+                <!-- Item 4 -->
+                <div class="swiper-slide flex flex-col items-center">
+                    <img src="img/mkt.jpg" alt="Portfólio RizonTec" class="rounded-lg shadow-lg w-3/4 md:w-2/3 lg:w-1/2">
+                    <h3 class="mt-4 text-3xl font-semibold">Tráfego Pago</h3>
+                    <p class="mt-2 text-gray-600 text-left">Gestão e otimização de campanhas de tráfego pago (Google Ads, Facebook Ads, Instagram Ads) para aumentar a visibilidade online, gerar leads qualificados e impulsionar vendas de forma eficaz.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    var swiper = new Swiper('.swiper-container-1', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        autoplay: {
+            delay: 3000, // 3 segundos de intervalo entre as transições
+            disableOnInteraction: false,
+        },
+    });
+</script>
+
+
+<!-- CTA Section -->
+<section class="bg-blue-600 text-white py-16">
+    <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold">
+            Transforme Seu Negócio com Nossos Serviços
+        </h2>
+        <p class="mt-4 text-lg md:text-xl">
+            Entre em contato agora e descubra como podemos ajudar a elevar sua presença online.
+        </p>
+        <a href="contato.html" 
+           class="inline-block mt-6 bg-white text-blue-600 font-medium px-8 py-3 rounded-lg hover:bg-gray-200 transition">
+            Fale Conosco Agora
+        </a>
+    </div>
+</section>
+
+<section class="bg-gray-100 py-16">
+    <div class="container mx-auto px-6">
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Block 1: Serviços Executados -->
+            <div class="text-center p-8 bg-white rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+                <h3 class="text-5xl font-bold text-blue-600">+10</h3>
+                <p class="mt-2 text-gray-600">Serviços Executados</p>
+            </div>
+
+            <!-- Block 2: Clientes Atendidos -->
+            <div class="text-center p-8 bg-white rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+                <h3 class="text-5xl font-bold text-blue-600">+10</h3>
+                <p class="mt-2 text-gray-600">Clientes Atendidos</p>
+            </div>
+
+            <!-- Block 3: Horas Trabalhadas -->
+            <div class="text-center p-8 bg-white rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+                <h3 class="text-5xl font-bold text-blue-600">+100</h3>
+                <p class="mt-2 text-gray-600">Horas Trabalhadas</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-gray-100 py-16">
+    <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-8">Nossos Casos de Sucesso</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Case 1 -->
+            <div class="bg-white p-8 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+                <a href="#" target="_blank">
+                    <img src="img/mkt.jpg" alt="Case de Sucesso 1" class="w-full rounded-lg">
+                    <h3 class="mt-4 text-xl font-semibold text-blue-600">Site Marmoraria Florianópolis</h3>
+                    <p class="mt-2 text-gray-600">Criamos um site moderno e funcional para a Marmoraria Florianópolis, destacando seus serviços e facilitando o contato com clientes. O design foi pensado para ser completo, intuitivo e eficiente.</p>
+                </a>
+            </div>
+
+            <!-- Case 2 -->
+            <div class="bg-white p-8 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+                <a href="#" target="_blank">
+                    <img src="img/mkt.jpg" alt="Case de Sucesso 2" class="w-full rounded-lg">
+                    <h3 class="mt-4 text-xl font-semibold text-blue-600">Site Marmoraria Florianópolis</h3>
+                    <p class="mt-2 text-gray-600">Criamos um site moderno e funcional para a Marmoraria Florianópolis, destacando seus serviços e facilitando o contato com clientes. O design foi pensado para ser completo, intuitivo e eficiente.</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="bg-gray-100 py-16">
+    <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-8">O que Nossos Clientes Dizem</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Depoimento 1 -->
+            <div class="p-8 bg-white rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+                <p class="text-gray-600">
+                    "A RizonTec elevou nossa presença online a um nível nunca visto antes. A qualidade e o atendimento fazem a diferença."
+                </p>
+                <p class="mt-4 font-semibold text-blue-600">— Gabriel Constante, CEO da RizonTec</p>
+            </div>
+
+            <!-- Depoimento 2 -->
+            <div class="p-8 bg-white rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+                <p class="text-gray-600">
+                    "Equipe incrível! Soluções digitais que realmente fazem sentido e trazem resultados."
+                </p>
+                <p class="mt-4 font-semibold text-blue-600">— Gabriel Constante, CEO da RizonTec</p>
+            </div>
+
+            <!-- Depoimento 3 -->
+            <div class="p-8 bg-white rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+                <p class="text-gray-600">
+                    "Equipe incrível! Soluções digitais que realmente fazem sentido e trazem resultados."
+                </p>
+                <p class="mt-4 font-semibold text-blue-600">— Gabriel Constante, CEO da RizonTec</p>
+            </div>
+
+            <!-- Depoimento 4 -->
+            <div class="p-8 bg-white rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+                <p class="text-gray-600">
+                    "Equipe incrível! Soluções digitais que realmente fazem sentido e trazem resultados."
+                </p>
+                <p class="mt-4 font-semibold text-blue-600">— Gabriel Constante, CEO da RizonTec</p>
+            </div>
+        </div>
+    </div>
+</section>
 
 <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot-->
 
+<button id="scrollToTop" class="fixed bottom-80 right-10 bg-blue-700 text-white text-2xl p-4 rounded-full opacity-70 transition-opacity duration-300">↑</button>
+<button id="scrollToBottom" class="fixed bottom-60 right-10 bg-blue-700 text-white text-2xl p-4 rounded-full opacity-70 transition-opacity duration-300">↓</button>
+
+<script>
+    const scrollToTopButton = document.getElementById('scrollToTop');
+const scrollToBottomButton = document.getElementById('scrollToBottom');
+
+window.addEventListener('scroll', () => {
+  // Mostrar ou esconder o botão de topo
+  if (window.scrollY > 100) {
+    scrollToTopButton.classList.remove('opacity-0', 'pointer-events-none');
+    scrollToTopButton.classList.add('opacity-50');
+  } else {
+    scrollToTopButton.classList.remove('opacity-50');
+    scrollToTopButton.classList.add('opacity-0', 'pointer-events-none');
+  }
+
+  // Mostrar ou esconder o botão de final
+  if (window.scrollY < document.body.scrollHeight - window.innerHeight - 100) {
+    scrollToBottomButton.classList.remove('opacity-0', 'pointer-events-none');
+    scrollToBottomButton.classList.add('opacity-50');
+  } else {
+    scrollToBottomButton.classList.remove('opacity-50');
+    scrollToBottomButton.classList.add('opacity-0', 'pointer-events-none');
+  }
+});
+
+scrollToTopButton.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+scrollToBottomButton.addEventListener('click', () => {
+  window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+});
+
+</script>
 
 <div class="fixed bottom-5 right-5 z-50 text-center">
     <!-- Balão de fala acima do robô -->
@@ -280,268 +748,6 @@ function redirectToWhatsAppDirect(message) {
 
 <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot-->
 
-
-    <main class="mt-24 bg-gray-100">
-        <section class="relative bg-blue-600 text-white">
-            <div class="container mx-auto px-4 py-12">
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <h1 class="text-3xl md:text-4xl font-bold leading-tight">
-                            Soluções Digitais Para o Seu Negocio
-                        </h1>
-                        <p class="mt-4 text-sm md:text-lg">
-                            Oferecemos sites modernos e responsivos, designs atrativos para destacar sua marca e estratégias de tráfego pago para aumentar sua visibilidade e resultados. Nossa missão é ajudar seu negócio a crescer com soluções digitais eficazes.
-                        </p>
-                        <div class="mt-6 flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
-                            <a href="contato.html" class="bg-white text-blue-600 px-4 py-2 rounded-lg hover:bg-gray-200">
-                                Entre em Contato
-                            </a>
-                            <a href="servicos.html" class="bg-transparent border border-white px-4 py-2 rounded-lg hover:bg-white hover:text-blue-600">
-                                Ver Nossos Serviços
-                            </a>
-                        </div>
-                    </div>
-                    <div>
-                        <img src="img/mkt.jpg" alt="Imagem de Sucesso Digital" class="rounded-lg shadow-lg w-full">
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-    
-    <section class="py-16">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-8">Nossos Serviços</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Card 1: Criação de Sites -->
-                <div class="service-card bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
-                    <h3 class="text-xl font-semibold">Criação de Sites</h3>
-                    <p class="mt-4 text-gray-600">
-                        Sites modernos e responsivos, ideais para seu negócio, com foco em design e desempenho.
-                    </p>
-                    <a href="servicos.html" class="mt-4 inline-block text-blue-600 hover:underline">Saiba mais</a>
-                </div>
-    
-                <!-- Card 2: Design Gráfico -->
-                <div class="service-card bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
-                    <h3 class="text-xl font-semibold">Design Gráfico</h3>
-                    <p class="mt-4 text-gray-600">
-                        Criação de identidades visuais, logos, e materiais gráficos que destacam a sua marca.
-                    </p>
-                    <a href="servicos.html" class="mt-10 inline-block text-blue-600 hover:underline">Saiba mais</a>
-                </div>
-    
-                <!-- Card 3: Tráfego Pago -->
-                <div class="service-card bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
-                    <h3 class="text-xl font-semibold">Trafego Pago</h3>
-                    <p class="mt-4 text-gray-600">
-                        Estratégias de tráfego pago para aumentar o alcance e as conversões do seu negócio.
-                    </p>
-                    <a href="servicos.html" class="mt-5 inline-block text-blue-600 hover:underline">Saiba mais</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-
-<!-- Portfolio Section with Swiper -->
-<section class="py-6 bg-gray-100" style="margin-bottom: 0;">
-    <div class="container mx-auto px-6" style="margin-bottom: 0;">
-        <h2 class="swiper-text text-3xl font-bold text-center mb-8">Portfólio</h2>
-        <div class="swiper-container-1 overflow-x-hidden">
-            <div class="swiper-wrapper">
-                <!-- Item 1 -->
-                <div class="swiper-slide flex flex-col items-center">
-                    <img src="img/mkt.jpg" alt="Portfólio RizonTec" class="rounded-lg shadow-lg w-3/4 md:w-2/3 lg:w-1/2">
-                    <h3 class="mt-4 text-3xl font-semibold">Criação de Sites</h3>
-                    <p class="mt-2 text-gray-600 text-left">Desenvolvimento de websites responsivos e personalizados, com foco em funcionalidade, design atraente e experiência do usuário, para ajudar seu negócio a se destacar online.</p>
-                </div>
-                <!-- Item 2 -->
-                <div class="swiper-slide flex flex-col items-center">
-                    <img src="img/mkt.jpg" alt="Portfólio RizonTec" class="rounded-lg shadow-lg w-3/4 md:w-2/3 lg:w-1/2">
-                    <h3 class="mt-4 text-3xl font-semibold">Automações</h3>
-                    <p class="mt-2 text-gray-600 text-left">Implementação de processos automatizados para otimizar tarefas repetitivas, aumentar a eficiência e liberar seu tempo, utilizando ferramentas de automação em diversas áreas do seu negócio.</p>
-                </div>
-                <!-- Item 3 -->
-                <div class="swiper-slide flex flex-col items-center">
-                    <img src="img/mkt.jpg" alt="Portfólio RizonTec" class="rounded-lg shadow-lg w-3/4 md:w-2/3 lg:w-1/2">
-                    <h3 class="mt-4 text-3xl font-semibold">Design</h3>
-                    <p class="mt-2 text-gray-600 text-left">Criação de designs exclusivos para social media, logos, posts para Instagram, camisetas, cartões de visita e muito mais, garantindo uma identidade visual única e impactante para sua marca.</p>
-                </div>
-                <!-- Item 4 -->
-                <div class="swiper-slide flex flex-col items-center">
-                    <img src="img/mkt.jpg" alt="Portfólio RizonTec" class="rounded-lg shadow-lg w-3/4 md:w-2/3 lg:w-1/2">
-                    <h3 class="mt-4 text-3xl font-semibold">Tráfego Pago</h3>
-                    <p class="mt-2 text-gray-600 text-left">Gestão e otimização de campanhas de tráfego pago (Google Ads, Facebook Ads, Instagram Ads) para aumentar a visibilidade online, gerar leads qualificados e impulsionar vendas de forma eficaz.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<script>
-    var swiper = new Swiper('.swiper-container-1', {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        autoplay: {
-            delay: 3000, // 3 segundos de intervalo entre as transições
-            disableOnInteraction: false,
-        },
-    });
-</script>
-
-
-<!-- CTA Section -->
-<section class="bg-blue-600 text-white py-16">
-    <div class="container mx-auto px-6 text-center">
-        <h2 class="text-3xl md:text-4xl font-bold">
-            Transforme Seu Negócio com Nossos Serviços
-        </h2>
-        <p class="mt-4 text-lg md:text-xl">
-            Entre em contato agora e descubra como podemos ajudar a elevar sua presença online.
-        </p>
-        <a href="contato.html" 
-           class="inline-block mt-6 bg-white text-blue-600 font-medium px-8 py-3 rounded-lg hover:bg-gray-200 transition">
-            Fale Conosco Agora
-        </a>
-    </div>
-</section>
-
-<section class="bg-gray-100 py-16">
-    <div class="container mx-auto px-6">
-        <div class="grid md:grid-cols-3 gap-8">
-            <!-- Block 1: Serviços Executados -->
-            <div class="text-center p-8 bg-white rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
-                <h3 class="text-5xl font-bold text-blue-600">3</h3>
-                <p class="mt-2 text-gray-600">Serviços Executados</p>
-            </div>
-
-            <!-- Block 2: Clientes Atendidos -->
-            <div class="text-center p-8 bg-white rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
-                <h3 class="text-5xl font-bold text-blue-600">2</h3>
-                <p class="mt-2 text-gray-600">Clientes Atendidos</p>
-            </div>
-
-            <!-- Block 3: Horas Trabalhadas -->
-            <div class="text-center p-8 bg-white rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
-                <h3 class="text-5xl font-bold text-blue-600">45</h3>
-                <p class="mt-2 text-gray-600">Horas Trabalhadas</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="bg-gray-100 py-16">
-    <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-center mb-8">Nossos Casos de Sucesso</h2>
-        <div class="grid md:grid-cols-2 gap-8">
-            <!-- Case 1 -->
-            <div class="bg-white p-8 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
-                <a href="#" target="_blank">
-                    <img src="img/mkt.jpg" alt="Case de Sucesso 1" class="w-full rounded-lg">
-                    <h3 class="mt-4 text-xl font-semibold text-blue-600">Site Marmoraria Florianópolis</h3>
-                    <p class="mt-2 text-gray-600">Criamos um site moderno e funcional para a Marmoraria Florianópolis, destacando seus serviços e facilitando o contato com clientes. O design foi pensado para ser completo, intuitivo e eficiente.</p>
-                </a>
-            </div>
-
-            <!-- Case 2 -->
-            <div class="bg-white p-8 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
-                <a href="#" target="_blank">
-                    <img src="img/mkt.jpg" alt="Case de Sucesso 2" class="w-full rounded-lg">
-                    <h3 class="mt-4 text-xl font-semibold text-blue-600">Site Marmoraria Florianópolis</h3>
-                    <p class="mt-2 text-gray-600">Criamos um site moderno e funcional para a Marmoraria Florianópolis, destacando seus serviços e facilitando o contato com clientes. O design foi pensado para ser completo, intuitivo e eficiente.</p>
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<section class="bg-gray-100 py-16">
-    <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-center mb-8">O que Nossos Clientes Dizem</h2>
-        <div class="grid md:grid-cols-2 gap-8">
-            <!-- Depoimento 1 -->
-            <div class="p-8 bg-white rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
-                <p class="text-gray-600">
-                    "A RizonTec elevou nossa presença online a um nível nunca visto antes. A qualidade e o atendimento fazem a diferença."
-                </p>
-                <p class="mt-4 font-semibold text-blue-600">— Gabriel Constante, CEO da RizonTec</p>
-            </div>
-
-            <!-- Depoimento 2 -->
-            <div class="p-8 bg-white rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
-                <p class="text-gray-600">
-                    "Equipe incrível! Soluções digitais que realmente fazem sentido e trazem resultados."
-                </p>
-                <p class="mt-4 font-semibold text-blue-600">— Gabriel Constante, CEO da RizonTec</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="py-16">
-    <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-center mb-8">Últimos Artigos e Novidades</h2>
-        <div class="grid md:grid-cols-3 gap-8">
-            <!-- Artigo 1 -->
-            <div class="bg-white p-8 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
-                <h3 class="text-xl font-semibold text-blue-600">Como Escolher o Melhor Design para Seu Negócio</h3>
-                <p class="mt-2 text-gray-600">Dicas práticas para criar um design que fortalece a marca e atrai mais clientes.</p>
-                <a href="portifolio.html" class="text-blue-600 hover:underline mt-4 inline-block">Leia mais</a>
-            </div>
-
-            <!-- Artigo 2 -->
-            <div class="bg-white p-8 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
-                <h3 class="text-xl font-semibold text-blue-600">5 Estratégias de Tráfego Pago para Aumentar Conversões</h3>
-                <p class="mt-2 text-gray-600">Descubra como impulsionar seu negócio com tráfego pago eficaz.</p>
-                <a href="portifolio.html" class="text-blue-600 hover:underline mt-4 inline-block">Leia mais</a>
-            </div>
-
-            <!-- Artigo 3 -->
-            <div class="bg-white p-8 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
-                <h3 class="text-xl font-semibold text-blue-600">Como Criar um Site Responsivo e Atraente</h3>
-                <p class="mt-2 text-gray-600">Tudo o que você precisa saber para desenvolver um site que oferece ótima experiência em qualquer dispositivo.</p>
-                <a href="portifolio.html" class="text-blue-600 hover:underline mt-4 inline-block">Leia mais</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-
-<section class="py-16 bg-gray-100">
-    <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-center mb-8">Dúvidas Frequentes</h2>
-        <div class="space-y-4">
-            <!-- Pergunta 1 -->
-            <div class="bg-white p-8 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
-                <h3 class="text-xl font-semibold text-blue-600">Como podemos ajudar seu negócio?</h3>
-                <p class="mt-2 text-gray-600">Oferecemos serviços de desenvolvimento web, design, tráfego pago e marketing digital para fortalecer sua presença online.</p>
-            </div>
-
-            <!-- Pergunta 2 -->
-            <div class="bg-white p-8 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
-                <h3 class="text-xl font-semibold text-blue-600">Quanto tempo leva para o desenvolvimento de um site?</h3>
-                <p class="mt-2 text-gray-600">O tempo varia dependendo da complexidade do projeto, mas geralmente entregamos em 4 a 8 semanas.</p>
-            </div>
-
-            <!-- Pergunta 3 -->
-            <div class="bg-white p-8 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
-                <h3 class="text-xl font-semibold text-blue-600">Quais são os métodos de pagamento aceitos?</h3>
-                <p class="mt-2 text-gray-600">Aceitamos transferência bancária, cartão de crédito e PayPal.</p>
-            </div>
-        </div>
-    </div>
-</section>
 
 <footer class="bg-blue-600 text-white py-8">
     <div class="container mx-auto px-6">
