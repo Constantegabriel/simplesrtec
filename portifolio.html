@@ -9,6 +9,17 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    rel="stylesheet"
+  />
+  
+        <!-- CSS do AOS -->
+        <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+        <!-- JS do AOS -->
+        <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    
     <style>
         a.active span {
             width: 100%;
@@ -20,7 +31,7 @@
     <div class="container mx-auto px-6 lg:px-12 flex justify-between items-center"> <!-- Ajustei para ter um espaçamento maior -->
         <!-- Logo -->
         <a href="/" class="flex items-center space-x-3">
-            <img src="img/Rtec1.png" alt="Logo RizonTec" class="w-32 h-auto object-contain">
+            <img src="img/rt-logo.png" alt="Logo RizonTec" class="w-32 h-auto object-contain">
         </a>
 
         <!-- Botão do Menu Hambúrguer (Mobile) -->
@@ -219,7 +230,7 @@ window.addEventListener('resize', loadSwiperImages);
 
 
 
-<section class="py-16 bg-slate-50">
+<section class="py-16 bg-slate-50"  data-aos="fade">
   <div class="container mx-auto px-6">
       <div class="grid md:grid-cols-2 gap-8 items-center">
           <!-- Texto sobre a empresa -->
@@ -277,45 +288,288 @@ window.addEventListener('resize', loadSwiperImages);
 </script>
 
 
-  <!-- Call-to-Action -->
-  <section class="bg-white py-12 text-center">
-    <h2 class="text-2xl font-bold mb-4">Pronto para transformar seu negócio?</h2>
-    <button class="bg-blue-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-700">
-      Solicite um Orçamento
-    </button>
-  </section>
 
-<!-- Galeria de Serviços Ajustada -->
-<section class="py-12 px-6">
-    <h2 class="text-3xl font-bold text-center mb-8">Nossos Serviços</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="bg-white rounded-lg shadow-md overflow-hidden">
-            <img src="img/mkt.jpg" alt="Serviço 1" class="w-full h-48 object-cover">
-            <div class="p-4">
-                <h3 class="text-lg font-bold mb-2">Criação de Sites</h3>
-                <p class="text-sm text-gray-600">Desenvolvimento de sites modernos e responsivos.</p>
-            </div>
+<section class="bg-gradient-to-r from-blue-400 to-blue-600 py-16" data-aos="fade">
+  <div class="container mx-auto px-6 text-white">
+    <h2 class="text-3xl font-bold text-center mb-8">Missão, Valores & Visão</h2>
+    <p class="text-lg mb-16 max-w-2xl mx-auto text-center">
+      Conheça os princípios que guiam a RizonTec, nossa visão de futuro e como nos comprometemos com a inovação e excelência.
+    </p>
+    
+    <div class="grid md:grid-cols-3 sm:grid-cols-1 gap-12">
+      <!-- Missão -->
+      <div class="group relative overflow-hidden bg-gradient-to-b from-blue-500 to-blue-600 rounded-3xl shadow-xl p-8 transition-transform duration-500 hover:scale-105 hover:shadow-2xl">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-blue-900 opacity-40 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div class="relative z-10">
+          <h3 class="text-2xl font-semibold mb-4">Nossa Missão</h3>
+          <hr class="border-t-2 border-gray-200 mb-4">
+          <p class="text-lg text-left">
+            Nossa missão é impulsionar o sucesso dos nossos clientes com soluções digitais inovadoras, focadas em resultados concretos e sustentáveis. Buscamos ser um parceiro estratégico no crescimento digital das empresas, oferecendo soluções que alinham tecnologia e criatividade para resultados reais.
+          </p>
         </div>
-        <div class="bg-white rounded-lg shadow-md overflow-hidden">
-            <img src="img/mkt.jpg" alt="Serviço 2" class="w-full h-48 object-cover">
-            <div class="p-4">
-                <h3 class="text-lg font-bold mb-2">Marketing Digital</h3>
-                <p class="text-sm text-gray-600">Estratégias para aumentar sua presença online.</p>
-            </div>
+      </div>
+
+      <!-- Valores -->
+      <div class="group relative overflow-hidden bg-gradient-to-b from-blue-500 to-blue-600 rounded-3xl shadow-xl p-8 transition-transform duration-500 hover:scale-105 hover:shadow-2xl">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-blue-900 opacity-40 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div class="relative z-10">
+          <h3 class="text-2xl font-semibold mb-4">Nossos Valores</h3>
+          <hr class="border-t-2 border-gray-200 mb-4">
+          <ul class="text-lg text-left list-inside pl-4">
+            <li class="mb-2">Inovação constante em todas as soluções que oferecemos.</li>
+            <li class="mb-2">Compromisso com a qualidade e a excelência em cada detalhe.</li>
+            <li class="mb-2">Ética, transparência e responsabilidade social em todas as nossas ações.</li>
+            <li class="mb-2">Colaboração e trabalho em equipe como base de nosso sucesso coletivo.</li>
+          </ul>
         </div>
-        <div class="bg-white rounded-lg shadow-md overflow-hidden">
-            <img src="img/mkt.jpg" alt="Serviço 3" class="w-full h-48 object-cover">
-            <div class="p-4">
-                <h3 class="text-lg font-bold mb-2">Automação de Processos</h3>
-                <p class="text-sm text-gray-600">Soluções inteligentes para otimizar sua operação.</p>
-            </div>
+      </div>
+
+      <!-- Visão -->
+      <div class="group relative overflow-hidden bg-gradient-to-b from-blue-500 to-blue-600 rounded-3xl shadow-xl p-8 transition-transform duration-500 hover:scale-105 hover:shadow-2xl">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-blue-900 opacity-40 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div class="relative z-10">
+          <h3 class="text-2xl font-semibold mb-4">Nossa Visão</h3>
+          <hr class="border-t-2 border-gray-200 mb-4">
+          <p class="text-lg text-left">
+            Ser reconhecida como líder em soluções digitais inovadoras, fornecendo resultados transformadores para nossos clientes e colaboradores, visando um futuro de crescimento e evolução contínuos para todos.
+          </p>
         </div>
+      </div>
     </div>
+  </div>
 </section>
 
 
+
+
+<section class="bg-gray-100 py-16" data-aos="fade">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">Nossa Equipe</h2>
+    <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">
+      Conheça os profissionais que estão por trás do sucesso da RizonTec.
+    </p>
+    <div class="grid md:grid-cols-3 sm:grid-cols-2 gap-8">
+      
+      <!-- Colaborador 1 -->
+      <div class="group relative overflow-hidden bg-white rounded-lg shadow-lg transition-transform duration-500 transform hover:scale-105 hover:shadow-2xl">
+        <img
+          src="/img/sp2.webp"
+          alt="João Silva"
+          class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-110"
+        />
+        <div
+          class="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900 opacity-0 group-hover:opacity-80 transition-opacity duration-500"
+        ></div>
+        <div class="absolute inset-0 flex flex-col justify-end items-center p-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+          <h3 class="text-xl font-semibold mb-2">João Silva</h3>
+          <p class="text-sm">Desenvolvedor Full-Stack</p>
+          <div class="flex gap-4 mt-4">
+            <a
+              href="#"
+              class="text-gray-300 hover:text-white transition-colors"
+              title="LinkedIn"
+            >
+              <i class="fab fa-linkedin text-2xl"></i>
+            </a>
+            <a
+              href="#"
+              class="text-gray-300 hover:text-white transition-colors"
+              title="Twitter"
+            >
+              <i class="fab fa-twitter text-2xl"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Colaborador 2 -->
+      <div class="group relative overflow-hidden bg-white rounded-lg shadow-lg transition-transform duration-500 transform hover:scale-105 hover:shadow-2xl">
+        <img
+          src="/img/sp2.webp"
+          alt="Ana Oliveira"
+          class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-110"
+        />
+        <div
+          class="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900 opacity-0 group-hover:opacity-80 transition-opacity duration-500"
+        ></div>
+        <div class="absolute inset-0 flex flex-col justify-end items-center p-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+          <h3 class="text-xl font-semibold mb-2">Ana Oliveira</h3>
+          <p class="text-sm">Especialista em UI/UX</p>
+          <div class="flex gap-4 mt-4">
+            <a
+              href="#"
+              class="text-gray-300 hover:text-white transition-colors"
+              title="LinkedIn"
+            >
+              <i class="fab fa-linkedin text-2xl"></i>
+            </a>
+            <a
+              href="#"
+              class="text-gray-300 hover:text-white transition-colors"
+              title="Twitter"
+            >
+              <i class="fab fa-twitter text-2xl"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Colaborador 3 -->
+      <div class="group relative overflow-hidden bg-white rounded-lg shadow-lg transition-transform duration-500 transform hover:scale-105 hover:shadow-2xl">
+        <img
+          src="/img/sp2.webp"
+          alt="Carlos Lima"
+          class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-110"
+        />
+        <div
+          class="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900 opacity-0 group-hover:opacity-80 transition-opacity duration-500"
+        ></div>
+        <div class="absolute inset-0 flex flex-col justify-end items-center p-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+          <h3 class="text-xl font-semibold mb-2">Carlos Lima</h3>
+          <p class="text-sm">Gestor de Projetos</p>
+          <div class="flex gap-4 mt-4">
+            <a
+              href="#"
+              class="text-gray-300 hover:text-white transition-colors"
+              title="LinkedIn"
+            >
+              <i class="fab fa-linkedin text-2xl"></i>
+            </a>
+            <a
+              href="#"
+              class="text-gray-300 hover:text-white transition-colors"
+              title="Twitter"
+            >
+              <i class="fab fa-twitter text-2xl"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Colaborador 4 -->
+      <div class="group relative overflow-hidden bg-white rounded-lg shadow-lg transition-transform duration-500 transform hover:scale-105 hover:shadow-2xl">
+        <img
+          src="/img/sp2.webp"
+          alt="Beatriz Santos"
+          class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-110"
+        />
+        <div
+          class="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900 opacity-0 group-hover:opacity-80 transition-opacity duration-500"
+        ></div>
+        <div class="absolute inset-0 flex flex-col justify-end items-center p-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+          <h3 class="text-xl font-semibold mb-2">Beatriz Santos</h3>
+          <p class="text-sm">Analista de Marketing</p>
+          <div class="flex gap-4 mt-4">
+            <a
+              href="#"
+              class="text-gray-300 hover:text-white transition-colors"
+              title="LinkedIn"
+            >
+              <i class="fab fa-linkedin text-2xl"></i>
+            </a>
+            <a
+              href="#"
+              class="text-gray-300 hover:text-white transition-colors"
+              title="Twitter"
+            >
+              <i class="fab fa-twitter text-2xl"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Colaborador 5 -->
+      <div class="group relative overflow-hidden bg-white rounded-lg shadow-lg transition-transform duration-500 transform hover:scale-105 hover:shadow-2xl">
+        <img
+          src="/img/sp2.webp"
+          alt="Lucas Costa"
+          class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-110"
+        />
+        <div
+          class="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900 opacity-0 group-hover:opacity-80 transition-opacity duration-500"
+        ></div>
+        <div class="absolute inset-0 flex flex-col justify-end items-center p-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+          <h3 class="text-xl font-semibold mb-2">Lucas Costa</h3>
+          <p class="text-sm">Designer Gráfico</p>
+          <div class="flex gap-4 mt-4">
+            <a
+              href="#"
+              class="text-gray-300 hover:text-white transition-colors"
+              title="LinkedIn"
+            >
+              <i class="fab fa-linkedin text-2xl"></i>
+            </a>
+            <a
+              href="#"
+              class="text-gray-300 hover:text-white transition-colors"
+              title="Twitter"
+            >
+              <i class="fab fa-twitter text-2xl"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Colaborador 6 -->
+      <div class="group relative overflow-hidden bg-white rounded-lg shadow-lg transition-transform duration-500 transform hover:scale-105 hover:shadow-2xl">
+        <img
+          src="/img/sp2.webp"
+          alt="Mariana Almeida"
+          class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-110"
+        />
+        <div
+          class="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900 opacity-0 group-hover:opacity-80 transition-opacity duration-500"
+        ></div>
+        <div class="absolute inset-0 flex flex-col justify-end items-center p-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+          <h3 class="text-xl font-semibold mb-2">Mariana Almeida</h3>
+          <p class="text-sm">Desenvolvedora Front-End</p>
+          <div class="flex gap-4 mt-4">
+            <a
+              href="#"
+              class="text-gray-300 hover:text-white transition-colors"
+              title="LinkedIn"
+            >
+              <i class="fab fa-linkedin text-2xl"></i>
+            </a>
+            <a
+              href="#"
+              class="text-gray-300 hover:text-white transition-colors"
+              title="Twitter"
+            >
+              <i class="fab fa-twitter text-2xl"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<section class="py-16 bg-blue-700 text-white"  data-aos="fade">
+  <div class="container mx-auto px-6 text-center">
+    <!-- Chamada para Ação -->
+    <h2 class="text-4xl font-bold mb-8">Está Pronto para Elevar o Nível da Sua Empresa?</h2>
+    <p class="text-lg mb-8">
+      Faça sua empresa se destacar com nossos serviços. Desde um site funcional até soluções completas de automação, estamos prontos para transformar suas ideias em realidade.
+    </p>
+    <a href="https://wa.me/5548998143419?text=Quero%20saber%20mais%20sobre%20os%20serviços" 
+       class="inline-block text-blue-700 bg-white px-6 py-3 rounded-lg hover:bg-gray-200 transition">
+      Entre em Contato Agora
+    </a>
+  </div>
+</section>
+
+
+
+
 <!-- Swiper de Parcerias -->
-<section class="py-10 px-6 bg-gray-100">
+<section class="py-10 px-6 bg-gray-100"  data-aos="fade">
   <h2 class="swiper-text text-3xl font-bold text-center mb-16">Nossos Parceiros</h2>
   <div class="swiper-container">
     <div class="swiper-wrapper">
@@ -391,18 +645,110 @@ window.addEventListener('resize', loadSwiperImages);
 
   
 
+<script>
+  AOS.init({
+    duration: 1000, // Duração da animação em milissegundos
+    once: true,     // Anima apenas uma vez ao aparecer
+  });
+</script>
+
+
+  <footer class="bg-blue-600 text-white py-8">
+    <div class="container mx-auto px-6">
+        <div class="grid md:grid-cols-4 gap-8">
+            <!-- Logo com frase e bordão -->
+            <div class="text-center md:text-left">
+                <img src="img/Rtec1.png" alt="Logo RizonTec" class="w-32 mx-auto md:mx-0">
+                <p class="mt-4 text-gray-200">Inovação e excelência em soluções digitais. Confie em quem entende do digital e eleve sua presença online com RizonTec.</p>
+            </div>
+
+            <!-- Localização -->
+            <div class="text-center md:text-left">
+                <h3 class="text-xl font-bold">Localização</h3>
+                <p class="mt-2 text-gray-200">Av. Luiz Boiteux Piazza, 130 - Cachoeira do Bom Jesus, Florianópolis - SC, 88056-000</p>
+            </div>
+
+            <!-- Bordão da Empresa -->
+            <div class="text-center md:text-left">
+                <h3 class="text-xl font-bold">Confie em quem entende do digital.</h3>
+                <p class="mt-4 text-gray-200">RizonTec: Elevando sua presença online com soluções digitais inovadoras.</p>
+            </div>
+
+            <!-- Redes Sociais -->
+            <div class="text-center md:text-center">
+                <h3 class="text-xl font-bold">Siga-nos nas Redes Sociais</h3>
+                <div class="mt-4 flex justify-center md:justify-center space-x-4">
+                    <a href="#" class="block w-10 h-10 bg-white rounded-full flex items-center justify-center text-blue-600 hover:bg-gray-200">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="block w-10 h-10 bg-white rounded-full flex items-center justify-center text-blue-600 hover:bg-gray-200">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="block w-10 h-10 bg-white rounded-full flex items-center justify-center text-blue-600 hover:bg-gray-200">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="#" class="block w-10 h-10 bg-white rounded-full flex items-center justify-center text-blue-600 hover:bg-gray-200">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center mt-4 text-gray-200">
+        &copy; 2024 RizonTec. Todos os direitos reservados.
+    </div>
+</footer>
+
+
+<!-- Botões de rolar -->
+<div class="button-high opacity-60 fixed bottom-52 right-16 z-50 flex flex-col items-center space-y-2">
+  <!-- Botão para rolar para cima -->
+  <button 
+      onclick="scrollToTop()" 
+      class="w-12 h-12 rounded-full bg-blue-500 opacity-60  text-white flex justify-center items-center shadow-md hover:bg-blue-600">
+      ▴
+  </button>
+  <!-- Botão para rolar para baixo -->
+  <button 
+      onclick="scrollToBottom()" 
+      class="w-12 h-12 rounded-full bg-blue-500 opacity-60  text-white flex justify-center items-center shadow-md hover:bg-blue-600">
+      ▾
+  </button>
+</div>
+
+<script>
+  // Função para rolar até o topo
+  function scrollToTop() {
+      window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+      });
+  }
+
+  // Função para rolar até o fim
+  function scrollToBottom() {
+      window.scrollTo({
+          top: document.body.scrollHeight,
+          behavior: 'smooth'
+      });
+  }
+</script>
+
+
 
 <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot-->
 
-
 <div class="fixed bottom-5 right-5 z-50 text-center">
-  <!-- Balão de fala acima do robô -->
+
+  
   <div 
-    id="speech-bubble"
-    class="relative inline-block bg-white text-gray-800 text-sm py-1 px-3 rounded-full opacity-70 mb-2 shadow-md">
-    Fale com o RizonBot!
-    <div class="absolute left-1/2 bottom-[-5px] transform -translate-x-1/2 w-0 h-0 border-t-4 border-t-white border-x-4 border-x-transparent"></div>
-  </div>
+  id="speech-bubble"
+  class="relative inline-block bg-white text-gray-800 text-sm py-1 px-3 rounded-full opacity-70 mb-2 shadow-md hidden 2xl:block">
+  Fale com o RizonBot!
+  <div class="absolute left-1/2 bottom-[-5px] transform -translate-x-1/2 w-0 h-0 border-t-4 border-t-white border-x-4 border-x-transparent"></div>
+</div>
+
+
 
   <!-- Botão do robô -->
   <img 
@@ -556,58 +902,6 @@ window.open(url, '_blank');
 </script>
 
 <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot-->
-
-
-
-  <footer class="bg-blue-600 text-white py-8">
-    <div class="container mx-auto px-6">
-        <div class="grid md:grid-cols-4 gap-8">
-            <!-- Logo com frase e bordão -->
-            <div class="text-center md:text-left">
-                <img src="img/Rtec1.png" alt="Logo RizonTec" class="w-32 mx-auto md:mx-0">
-                <p class="mt-4 text-gray-200">Inovação e excelência em soluções digitais. Confie em quem entende do digital e eleve sua presença online com RizonTec.</p>
-            </div>
-
-            <!-- Localização -->
-            <div class="text-center md:text-left">
-                <h3 class="text-xl font-bold">Localização</h3>
-                <p class="mt-2 text-gray-200">Av. Luiz Boiteux Piazza, 130 - Cachoeira do Bom Jesus, Florianópolis - SC, 88056-000</p>
-            </div>
-
-            <!-- Bordão da Empresa -->
-            <div class="text-center md:text-left">
-                <h3 class="text-xl font-bold">Confie em quem entende do digital.</h3>
-                <p class="mt-4 text-gray-200">RizonTec: Elevando sua presença online com soluções digitais inovadoras.</p>
-            </div>
-
-            <!-- Redes Sociais -->
-            <div class="text-center md:text-center">
-                <h3 class="text-xl font-bold">Siga-nos nas Redes Sociais</h3>
-                <div class="mt-4 flex justify-center md:justify-center space-x-4">
-                    <a href="#" class="block w-10 h-10 bg-white rounded-full flex items-center justify-center text-blue-600 hover:bg-gray-200">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="#" class="block w-10 h-10 bg-white rounded-full flex items-center justify-center text-blue-600 hover:bg-gray-200">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="#" class="block w-10 h-10 bg-white rounded-full flex items-center justify-center text-blue-600 hover:bg-gray-200">
-                        <i class="fab fa-whatsapp"></i>
-                    </a>
-                    <a href="#" class="block w-10 h-10 bg-white rounded-full flex items-center justify-center text-blue-600 hover:bg-gray-200">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="text-center mt-4 text-gray-200">
-        &copy; 2024 RizonTec. Todos os direitos reservados.
-    </div>
-</footer>
-
-
-</body>
-</html>
 
 
     <script>

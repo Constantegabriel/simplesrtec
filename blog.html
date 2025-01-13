@@ -3,12 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RizonTec - Home</title>
+    <title>RizonTec - Blog</title>
     <link href="styles.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- CSS do AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+    <!-- JS do AOS -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
     <style>
         a.active span {
             width: 100%;
@@ -20,7 +26,7 @@
     <div class="container mx-auto px-6 lg:px-12 flex justify-between items-center"> <!-- Ajustei para ter um espaçamento maior -->
         <!-- Logo -->
         <a href="/" class="flex items-center space-x-3">
-            <img src="img/Rtec1.png" alt="Logo RizonTec" class="w-32 h-auto object-contain">
+            <img src="img/rt-logo.png" alt="Logo RizonTec" class="w-32 h-auto object-contain">
         </a>
 
         <!-- Botão do Menu Hambúrguer (Mobile) -->
@@ -218,66 +224,117 @@ window.addEventListener('resize', loadSwiperImages);
 </script>
 
 
-
-    <main class="mt-24 bg-gray-100">
-        <section class="relative bg-blue-600 text-white">
-            <div class="container mx-auto px-4 py-12">
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <h1 class="text-3xl md:text-4xl font-bold leading-tight">
-                            Soluções Digitais Para o Seu Negocio
-                        </h1>
-                        <p class="mt-4 text-sm md:text-lg">
-                            Oferecemos sites modernos e responsivos, designs atrativos para destacar sua marca e estratégias de tráfego pago para aumentar sua visibilidade e resultados. Nossa missão é ajudar seu negócio a crescer com soluções digitais eficazes.
-                        </p>
-                        <div class="mt-6 flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
-                            <a href="contato.html" class="bg-white text-blue-600 px-4 py-2 rounded-lg hover:bg-gray-200">
-                                Entre em Contato
-                            </a>
-                            <a href="servicos.html" class="bg-transparent border border-white px-4 py-2 rounded-lg hover:bg-white hover:text-blue-600">
-                                Ver Nossos Serviços
-                            </a>
-                        </div>
-                    </div>
-                    <div>
-                        <img src="img/mkt.jpg" alt="Imagem de Sucesso Digital" class="rounded-lg shadow-lg w-full">
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <section class="py-16">
-      <div class="container mx-auto px-6">
-          <h2 class="text-3xl font-bold text-center mb-8">Últimos Artigos e Novidades</h2>
-          <div class="grid md:grid-cols-3 gap-8">
-              <!-- Artigo 1 -->
-              <div class="bg-white p-8 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
-                  <h3 class="text-xl font-semibold text-blue-600">Como Escolher o Melhor Design para Seu Negócio</h3>
-                  <p class="mt-2 text-gray-600">Dicas práticas para criar um design que fortalece a marca e atrai mais clientes.</p>
-                  <a href="portifolio.html" class="text-blue-600 hover:underline mt-4 inline-block">Leia mais</a>
-              </div>
-  
-              <!-- Artigo 2 -->
-              <div class="bg-white p-8 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
-                  <h3 class="text-xl font-semibold text-blue-600">5 Estratégias de Tráfego Pago para Aumentar Conversões</h3>
-                  <p class="mt-2 text-gray-600">Descubra como impulsionar seu negócio com tráfego pago eficaz.</p>
-                  <a href="portifolio.html" class="text-blue-600 hover:underline mt-4 inline-block">Leia mais</a>
-              </div>
-  
-              <!-- Artigo 3 -->
-              <div class="bg-white p-8 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
-                  <h3 class="text-xl font-semibold text-blue-600">Como Criar um Site Responsivo e Atraente</h3>
-                  <p class="mt-2 text-gray-600">Tudo o que você precisa saber para desenvolver um site que oferece ótima experiência em qualquer dispositivo.</p>
-                  <a href="portifolio.html" class="text-blue-600 hover:underline mt-4 inline-block">Leia mais</a>
-              </div>
-          </div>
-      </div>
+<section class="py-16 bg-gray-50"  data-aos="fade">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold text-blue-600 mb-4">Bem-vindo ao Blog da RizonTec!</h2>
+      <p class="text-lg text-gray-700 mb-6">Fique por dentro das últimas tendências, dicas e atualizações sobre tecnologia, marketing digital e muito mais. Aqui, você encontra conteúdo relevante para alavancar o seu negócio!</p>
+    </div>
   </section>
   
+  <section class="py-16 bg-blue-100"  data-aos="fade">
+    <div class="container mx-auto px-6 text-center">
+      <h3 class="text-3xl font-bold text-blue-600 mb-6">Postagem em Destaque</h3>
+      <div class="bg-white p-6 rounded-xl shadow-lg">
+        <img src="img/sp2.webp" alt="Post destaque" class="w-full h-64 object-cover rounded-lg mb-6">
+        <h4 class="text-2xl font-semibold mb-4">Como otimizar seu tempo de trabalho em 5 etapas simples</h4>
+        <p class="text-lg mb-4">Aprenda como melhorar sua produtividade e otimizar o seu tempo com essas dicas práticas.</p>
+        <button id="readMoreBtn" class="text-blue-600 hover:underline">Leia Agora</button>
+        
+        <!-- Área de texto adicional (inicialmente oculta) -->
+        <div id="extraText" class="hidden mt-6 text-lg">
+          <p>
+            Quando você está tentando melhorar sua produtividade, é importante priorizar as tarefas mais importantes. Comece com uma lista de afazeres e divida grandes tarefas em passos menores. ...
+          </p>
+          <p>
+            Um dos maiores desafios ao otimizar o tempo é a procrastinação. Para isso, defina horários e respeite-os. Use a técnica Pomodoro, que permite períodos de trabalho focado seguidos de breves intervalos.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.getElementById("readMoreBtn").addEventListener("click", function() {
+      var extraText = document.getElementById("extraText");
+      var readMoreBtn = document.getElementById("readMoreBtn");
+  
+      // Alterna a visibilidade da área de texto
+      if (extraText.classList.contains("hidden")) {
+        extraText.classList.remove("hidden");
+        readMoreBtn.textContent = "Leia Menos";  // Muda o texto do botão
+      } else {
+        extraText.classList.add("hidden");
+        readMoreBtn.textContent = "Leia Agora";  // Muda o texto do botão
+      }
+    });
+  </script>
+  
+
+  <section class="py-16 bg-white"  data-aos="fade">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold text-blue-600 mb-8">Explore Nossas Categorias</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="category-card bg-gradient-to-br from-blue-500 via-blue-700 to-blue-900 text-white p-8 rounded-3xl shadow-lg hover:scale-105 transition-all">
+          <h3 class="text-2xl font-semibold mb-4">Tecnologia</h3>
+          <p>Artigos sobre inovações tecnológicas e como aplicá-las no seu negócio.</p>
+        </div>
+        <div class="category-card bg-gradient-to-br from-green-500 via-green-700 to-green-900 text-white p-8 rounded-3xl shadow-lg hover:scale-105 transition-all">
+          <h3 class="text-2xl font-semibold mb-4">Marketing Digital</h3>
+          <p>Dicas e estratégias para aumentar sua presença online e alcançar mais clientes.</p>
+        </div>
+        <div class="category-card bg-gradient-to-br from-purple-500 via-purple-700 to-purple-900 text-white p-8 rounded-3xl shadow-lg hover:scale-105 transition-all">
+          <h3 class="text-2xl font-semibold mb-4">Empreendedorismo</h3>
+          <p>Conselhos e insights para quem quer iniciar ou expandir seu próprio negócio.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <section class="py-16 bg-gray-100"  data-aos="fade">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold text-blue-600 mb-8">Artigos Recentes</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="article-card bg-white p-6 rounded-3xl shadow-lg hover:shadow-2xl transition-all">
+          <h3 class="text-2xl font-semibold text-blue-700 mb-4">Como a Inteligência Artificial Está Transformando os Negócios</h3>
+          <p class="text-gray-600 mb-4">A IA está revolucionando diversos setores. Saiba como você pode aplicar ela no seu negócio.</p>
+          <a href="#" class="text-blue-700 hover:text-blue-500">Leia mais</a>
+        </div>
+        <div class="article-card bg-white p-6 rounded-3xl shadow-lg hover:shadow-2xl transition-all">
+          <h3 class="text-2xl font-semibold text-blue-700 mb-4">Dicas de Marketing para Pequenos Empreendedores</h3>
+          <p class="text-gray-600 mb-4">Saiba como usar o marketing digital para crescer sua pequena empresa de forma eficaz.</p>
+          <a href="#" class="text-blue-700 hover:text-blue-500">Leia mais</a>
+        </div>
+        <div class="article-card bg-white p-6 rounded-3xl shadow-lg hover:shadow-2xl transition-all">
+          <h3 class="text-2xl font-semibold text-blue-700 mb-4">5 Estratégias de Crescimento para Startups</h3>
+          <p class="text-gray-600 mb-4">Descubra táticas essenciais para expandir sua startup de forma eficiente e sustentável.</p>
+          <a href="#" class="text-blue-700 hover:text-blue-500">Leia mais</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+
+  <section class="py-16 bg-blue-600 text-white text-center"  data-aos="fade">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-6">Assine Nosso Blog</h2>
+      <p class="text-lg mb-8">Receba atualizações diretamente no seu e-mail sobre novos artigos, promoções e muito mais!</p>
+      
+      <!-- Formulário de Assinatura -->
+      <form action="https://formspree.io/f/xvggdkad" method="POST" class="flex justify-center gap-4">
+        <input type="email" name="email" class="p-3 rounded-lg w-1/2 text-gray-800" placeholder="Digite seu e-mail" required>
+        <button type="submit" class="mt-4 bg-white text-blue-600 p-3 rounded-lg hover:bg-gray-200">Assinar Agora</button>
+      </form>
+    </div>
+  </section>
+  
+
+  
+
   
   
-  <section class="py-16 bg-gray-100">
+  <section class="py-16 bg-gray-100"  data-aos="fade">
       <div class="container mx-auto px-6">
           <h2 class="text-3xl font-bold text-center mb-8">Dúvidas Frequentes</h2>
           <div class="space-y-4">
@@ -302,24 +359,150 @@ window.addEventListener('resize', loadSwiperImages);
       </div>
   </section>
 
+  <section class="py-16 bg-blue-700 text-white"  data-aos="fade">
+    <div class="container mx-auto px-6 text-center">
+      <!-- Chamada para Ação -->
+      <h2 class="text-4xl font-bold mb-8">Está Pronto para Elevar o Nível da Sua Empresa?</h2>
+      <p class="text-lg mb-8">
+        Faça sua empresa se destacar com nossos serviços. Desde um site funcional até soluções completas de automação, estamos prontos para transformar suas ideias em realidade.
+      </p>
+      <a href="https://wa.me/5548998143419?text=Quero%20saber%20mais%20sobre%20os%20serviços" 
+         class="inline-block text-blue-700 bg-white px-6 py-3 rounded-lg hover:bg-gray-200 transition">
+        Entre em Contato Agora
+      </a>
+    </div>
+  </section>
+
+  <section class="py-6 text-center"  data-aos="fade">
+    <h3 class="text-3xl font-bold mb-6">Compartilhe este Artigo</h3>
+    <div class="flex justify-center gap-4">
+      <!-- Facebook -->
+      <a href="https://www.facebook.com/sharer/sharer.php?u=URL_DA_SUA_PAGINA" target="_blank" class="text-blue-600 text-xl" aria-label="Compartilhar no Facebook">
+        <i class="fab fa-facebook"></i> Facebook
+      </a>
+  
+      <!-- Twitter -->
+      <a href="https://twitter.com/intent/tweet?url=URL_DA_SUA_PAGINA&text=Confira%20esse%20artigo!" target="_blank" class="text-blue-400 text-xl" aria-label="Compartilhar no Twitter">
+        <i class="fab fa-twitter"></i> Twitter
+      </a>
+  
+      <!-- Instagram (não possui link direto de compartilhamento, então linka para o perfil ou página) -->
+      <a href="https://www.instagram.com/YOUR_INSTAGRAM_HANDLE" target="_blank" class="text-pink-500 text-xl" aria-label="Compartilhar no Instagram">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
+  
+      <!-- WhatsApp -->
+      <a href="https://wa.me/?text=Confira%20esse%20artigo:%20URL_DA_SUA_PAGINA" target="_blank" class="text-green-500 text-xl" aria-label="Compartilhar no WhatsApp">
+        <i class="fab fa-whatsapp"></i> WhatsApp
+      </a>
+    </div>
+  </section>
+  
+<script>
+  AOS.init({
+    duration: 1000, // Duração da animação em milissegundos
+    once: true,     // Anima apenas uma vez ao aparecer
+  });
+</script>
 
 
 
+    <footer class="bg-blue-600 text-white py-8">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Logo com frase e bordão -->
+                <div class="text-center md:text-left">
+                    <img src="img/Rtec1.png" alt="Logo RizonTec" class="w-32 mx-auto md:mx-0">
+                    <p class="mt-4 text-gray-200">Inovação e excelência em soluções digitais. Confie em quem entende do digital e eleve sua presença online com RizonTec.</p>
+                </div>
+    
+                <!-- Localização -->
+                <div class="text-center md:text-left">
+                    <h3 class="text-xl font-bold">Localização</h3>
+                    <p class="mt-2 text-gray-200">Av. Luiz Boiteux Piazza, 130 - Cachoeira do Bom Jesus, Florianópolis - SC, 88056-000</p>
+                </div>
+    
+                <!-- Bordão da Empresa -->
+                <div class="text-center md:text-left">
+                    <h3 class="text-xl font-bold">Confie em quem entende do digital.</h3>
+                    <p class="mt-4 text-gray-200">RizonTec: Elevando sua presença online com soluções digitais inovadoras.</p>
+                </div>
+    
+                <!-- Redes Sociais -->
+                <div class="text-center md:text-center">
+                    <h3 class="text-xl font-bold">Siga-nos nas Redes Sociais</h3>
+                    <div class="mt-4 flex justify-center md:justify-center space-x-4">
+                        <a href="#" class="block w-10 h-10 bg-white rounded-full flex items-center justify-center text-blue-600 hover:bg-gray-200">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="block w-10 h-10 bg-white rounded-full flex items-center justify-center text-blue-600 hover:bg-gray-200">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="block w-10 h-10 bg-white rounded-full flex items-center justify-center text-blue-600 hover:bg-gray-200">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" class="block w-10 h-10 bg-white rounded-full flex items-center justify-center text-blue-600 hover:bg-gray-200">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4 text-gray-200">
+            &copy; 2024 RizonTec. Todos os direitos reservados.
+        </div>
+    </footer>
+    
+    
+<!-- Botões de rolar -->
+<div class="button-high opacity-60 fixed bottom-52 right-16 z-50 flex flex-col items-center space-y-2">
+  <!-- Botão para rolar para cima -->
+  <button 
+      onclick="scrollToTop()" 
+      class="w-12 h-12 rounded-full bg-blue-500 opacity-60  text-white flex justify-center items-center shadow-md hover:bg-blue-600">
+      ▴
+  </button>
+  <!-- Botão para rolar para baixo -->
+  <button 
+      onclick="scrollToBottom()" 
+      class="w-12 h-12 rounded-full bg-blue-500 opacity-60  text-white flex justify-center items-center shadow-md hover:bg-blue-600">
+      ▾
+  </button>
+</div>
 
+<script>
+  // Função para rolar até o topo
+  function scrollToTop() {
+      window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+      });
+  }
+
+  // Função para rolar até o fim
+  function scrollToBottom() {
+      window.scrollTo({
+          top: document.body.scrollHeight,
+          behavior: 'smooth'
+      });
+  }
+</script>
 
 
 
 <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot-->
 
-
 <div class="fixed bottom-5 right-5 z-50 text-center">
-  <!-- Balão de fala acima do robô -->
+
+  
   <div 
-    id="speech-bubble"
-    class="relative inline-block bg-white text-gray-800 text-sm py-1 px-3 rounded-full opacity-70 mb-2 shadow-md">
-    Fale com o RizonBot!
-    <div class="absolute left-1/2 bottom-[-5px] transform -translate-x-1/2 w-0 h-0 border-t-4 border-t-white border-x-4 border-x-transparent"></div>
-  </div>
+  id="speech-bubble"
+  class="relative inline-block bg-white text-gray-800 text-sm py-1 px-3 rounded-full opacity-70 mb-2 shadow-md hidden 2xl:block">
+  Fale com o RizonBot!
+  <div class="absolute left-1/2 bottom-[-5px] transform -translate-x-1/2 w-0 h-0 border-t-4 border-t-white border-x-4 border-x-transparent"></div>
+</div>
+
+
 
   <!-- Botão do robô -->
   <img 
@@ -474,56 +657,6 @@ window.open(url, '_blank');
 
 <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot-->
 
-
-
-    <footer class="bg-blue-600 text-white py-8">
-        <div class="container mx-auto px-6">
-            <div class="grid md:grid-cols-4 gap-8">
-                <!-- Logo com frase e bordão -->
-                <div class="text-center md:text-left">
-                    <img src="img/Rtec1.png" alt="Logo RizonTec" class="w-32 mx-auto md:mx-0">
-                    <p class="mt-4 text-gray-200">Inovação e excelência em soluções digitais. Confie em quem entende do digital e eleve sua presença online com RizonTec.</p>
-                </div>
-    
-                <!-- Localização -->
-                <div class="text-center md:text-left">
-                    <h3 class="text-xl font-bold">Localização</h3>
-                    <p class="mt-2 text-gray-200">Av. Luiz Boiteux Piazza, 130 - Cachoeira do Bom Jesus, Florianópolis - SC, 88056-000</p>
-                </div>
-    
-                <!-- Bordão da Empresa -->
-                <div class="text-center md:text-left">
-                    <h3 class="text-xl font-bold">Confie em quem entende do digital.</h3>
-                    <p class="mt-4 text-gray-200">RizonTec: Elevando sua presença online com soluções digitais inovadoras.</p>
-                </div>
-    
-                <!-- Redes Sociais -->
-                <div class="text-center md:text-center">
-                    <h3 class="text-xl font-bold">Siga-nos nas Redes Sociais</h3>
-                    <div class="mt-4 flex justify-center md:justify-center space-x-4">
-                        <a href="#" class="block w-10 h-10 bg-white rounded-full flex items-center justify-center text-blue-600 hover:bg-gray-200">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="block w-10 h-10 bg-white rounded-full flex items-center justify-center text-blue-600 hover:bg-gray-200">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="block w-10 h-10 bg-white rounded-full flex items-center justify-center text-blue-600 hover:bg-gray-200">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
-                        <a href="#" class="block w-10 h-10 bg-white rounded-full flex items-center justify-center text-blue-600 hover:bg-gray-200">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="text-center mt-4 text-gray-200">
-            &copy; 2024 RizonTec. Todos os direitos reservados.
-        </div>
-    </footer>
-    
-    
-    
     
     
     </body>

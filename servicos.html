@@ -3,12 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RizonTec - Contato</title>
+    <title>RizonTec - Serviços</title>
     <link href="styles.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- CSS do AOS -->
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+<!-- JS do AOS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
     <style>
         a.active span {
             width: 100%;
@@ -20,7 +26,7 @@
         <div class="container mx-auto px-6 lg:px-12 flex justify-between items-center"> <!-- Ajustei para ter um espaçamento maior -->
             <!-- Logo -->
             <a href="/" class="flex items-center space-x-3">
-                <img src="img/Rtec1.png" alt="Logo RizonTec" class="w-32 h-auto object-contain">
+                <img src="img/rt-logo.png" alt="Logo RizonTec" class="w-32 h-auto object-contain">
             </a>
     
             <!-- Botão do Menu Hambúrguer (Mobile) -->
@@ -217,238 +223,449 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
-<section class="py-16 bg-slate-100">
+
+
+
+
+
+
+  <section class="py-16 bg-slate-100"  data-aos="fade">
     <div class="container mx-auto px-6">
         <h2 class="text-5xl font-bold text-center mb-8 text-blue-600">Nossos Serviços</h2>
         <div class="grid md:grid-cols-3 gap-8">
             <!-- Card 1: Site Institucional -->
-            <div class="service-card relative bg-blue-700 text-white p-6 rounded-3xl shadow-2xl transform translate-y-10 transition-all duration-1000 ease-in-out hover:scale-105 hover:opacity-100  flex flex-col justify-between">
-                <div>
-                    <div class="icon-container mb-4 text-center">
-                        <i class="fas fa-laptop text-4xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-center">Sites Institucionais</h3>
-                    <p class="mt-4">
-                        Desenvolvemos sites institucionais modernos e funcionais para empresas de todos os portes, ajudando a fortalecer sua presença online e melhorar a comunicação com o público.
-                    </p>
+            <div class="service-card bg-gradient-to-br from-blue-500 via-blue-700 to-blue-900 text-white p-8 rounded-3xl shadow-xl transform transition-all duration-500 hover:scale-105 hover:shadow-2xl flex flex-col justify-between">
+                <div class="icon-container mb-6 text-center">
+                    <i class="fas fa-laptop text-5xl"></i>
                 </div>
-                <div class="mt-4">
-                    <button onclick="window.location.href='https://wa.me/+5548998143419?text=Gostaria%20de%20saber%20mais%20sobre%20sites%20institucionais.'" class="bg-white text-blue-700 px-6 py-3 rounded-full mb-2 w-full">Saiba mais</button>
-                    <button onclick="window.location.href='https://wa.me/+5548998143419?text=Quero%20um%20site%20institucional%20para%20minha%20empresa.'" class="bg-white text-blue-700 px-6 py-3 rounded-full mb-2 w-full">Solicitar Orçamento</button>
-                    <button onclick="window.location.href='https://wa.me/+5548998143419?text=Tenho%20interesse%20em%20um%20site%20institucional.'" class="bg-white text-blue-700 px-6 py-3 rounded-full mb-2 w-full">Mais Informações</button>
-                    <button onclick="window.location.href='https://wa.me/+5548998143419?text=Quero%20falar%20sobre%20um%20site%20institucional.'" class="bg-white text-blue-700 px-6 py-3 rounded-full w-full">Falar com um especialista</button>
+                <h3 class="text-2xl font-semibold text-center mb-4">Sites Institucionais</h3>
+                <div class="flex flex-col gap-4">
+                    <button onclick="scrollToSection('projetos')" class="bg-white text-blue-700 px-6 py-3 rounded-full w-full">Saiba mais</button>
+                    <button onclick="changeMessage('orcamento_institucional')" class="bg-white text-blue-700 px-6 py-3 rounded-full w-full">Solicitar Orçamento</button>
+                    <button onclick="scrollToSection('estatisticas-1')" class="bg-white text-blue-700 px-6 py-3 rounded-full w-full">Mais Informações</button>
+                    <button onclick="changeMessage('especialista_institucional')" class="bg-white text-blue-700 px-6 py-3 rounded-full w-full">Falar com um especialista</button>
                 </div>
+                <button onclick="window.location.href='https://wa.me/+5548998143419?text=Quero%20saber%20mais%20sobre%20site%20institucional.'" class="mt-6 text-white bg-blue-600 px-6 py-3 rounded-full w-full">Matéria</button>
             </div>
 
             <!-- Card 2: Sites Complexos -->
-            <div class="service-card relative bg-blue-700 text-white p-6 rounded-3xl shadow-2xl transform translate-y-10 transition-all duration-1000 ease-in-out hover:scale-105 hover:opacity-100 flex flex-col justify-between">
-                <div>
-                    <div class="icon-container mb-4 text-center">
-                        <i class="fas fa-laptop-code text-4xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-center">Sites Complexos</h3>
-                    <p class="mt-4">
-                        Criamos sites complexos com funcionalidades avançadas, como e-commerce, sistemas personalizados e integrações com outras plataformas, garantindo uma experiência completa para o usuário.
-                    </p>
+            <div class="service-card bg-gradient-to-br from-green-500 via-green-700 to-green-900 text-white p-8 rounded-3xl shadow-xl transform transition-all duration-500 hover:scale-105 hover:shadow-2xl flex flex-col justify-between">
+                <div class="icon-container mb-6 text-center">
+                    <i class="fas fa-laptop-code text-5xl"></i>
                 </div>
-                <div class="mt-4">
-                    <button onclick="window.location.href='https://wa.me/+5548998143419?text=Gostaria%20de%20saber%20mais%20sobre%20sites%20complexos.'" class="bg-white text-blue-700 px-6 py-3 rounded-full mb-2 w-full">Saiba mais</button>
-                    <button onclick="window.location.href='https://wa.me/+5548998143419?text=Quero%20um%20site%20complexo%20para%20minha%20empresa.'" class="bg-white text-blue-700 px-6 py-3 rounded-full mb-2 w-full">Solicitar Orçamento</button>
-                    <button onclick="window.location.href='https://wa.me/+5548998143419?text=Tenho%20interesse%20em%20um%20site%20complexo.'" class="bg-white text-blue-700 px-6 py-3 rounded-full mb-2 w-full">Mais Informações</button>
-                    <button onclick="window.location.href='https://wa.me/+5548998143419?text=Quero%20falar%20sobre%20um%20site%20complexo.'" class="bg-white text-blue-700 px-6 py-3 rounded-full w-full">Falar com um especialista</button>
+                <h3 class="text-2xl font-semibold text-center mb-4">Sites Complexos</h3>
+                <div class="flex flex-col gap-4">
+                    <button onclick="scrollToSection('projetos')" class="bg-white text-green-700 px-6 py-3 rounded-full w-full">Saiba mais</button>
+                    <button onclick="changeMessage('orcamento_complexo')" class="bg-white text-green-700 px-6 py-3 rounded-full w-full">Solicitar Orçamento</button>
+                    <button onclick="scrollToSection('estatisticas-2')" class="bg-white text-green-700 px-6 py-3 rounded-full w-full">Mais Informações</button>
+                    <button onclick="changeMessage('especialista_complexo')" class="bg-white text-green-700 px-6 py-3 rounded-full w-full">Falar com um especialista</button>
                 </div>
+                <button onclick="window.location.href='https://wa.me/+5548998143419?text=Quero%20saber%20mais%20sobre%20site%20complexo.'" class="mt-6 text-white bg-green-600 px-6 py-3 rounded-full w-full">Matéria</button>
             </div>
 
             <!-- Card 3: Design e Gerenciamento de Redes Sociais -->
-            <div class="service-card relative bg-blue-700 text-white p-6 rounded-3xl shadow-2xl transform translate-y-10 transition-all duration-1000 ease-in-out hover:scale-105 hover:opacity-100 flex flex-col justify-between">
-                <div>
-                    <div class="icon-container mb-4 text-center">
-                        <i class="fas fa-users-cog text-4xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-center">Redes Sociais</h3>
-                    <p class="mt-4">
-                        Oferecemos serviços completos de design e gerenciamento de redes sociais, criando conteúdos visuais impactantes e estratégias eficazes para engajar seu público e aumentar a presença online da sua marca.
-                    </p>
+            <div class="service-card bg-gradient-to-br from-purple-500 via-purple-700 to-purple-900 text-white p-8 rounded-3xl shadow-xl transform transition-all duration-500 hover:scale-105 hover:shadow-2xl flex flex-col justify-between">
+                <div class="icon-container mb-6 text-center">
+                    <i class="fas fa-users-cog text-5xl"></i>
                 </div>
-                <div class="mt-4">
-                    <button onclick="window.location.href='https://wa.me/+5548998143419?text=Gostaria%20de%20saber%20mais%20sobre%20redes%20sociais.'" class="bg-white text-blue-700 px-6 py-3 rounded-full mb-2 w-full">Saiba mais</button>
-                    <button onclick="window.location.href='https://wa.me/+5548998143419?text=Quero%20gerenciar%20minhas%20redes%20sociais.'" class="bg-white text-blue-700 px-6 py-3 rounded-full mb-2 w-full">Solicitar Orçamento</button>
-                    <button onclick="window.location.href='https://wa.me/+5548998143419?text=Tenho%20interesse%20em%20redes%20sociais.'" class="bg-white text-blue-700 px-6 py-3 rounded-full mb-2 w-full">Mais Informações</button>
-                    <button onclick="window.location.href='https://wa.me/+5548998143419?text=Quero%20falar%20sobre%20redes%20sociais.'" class="bg-white text-blue-700 px-6 py-3 rounded-full w-full">Falar com um especialista</button>
+                <h3 class="text-2xl font-semibold text-center mb-4">Redes Sociais</h3>
+                <div class="flex flex-col gap-4">
+                    <button onclick="scrollToSection('projetos')" class="bg-white text-purple-700 px-6 py-3 rounded-full w-full">Saiba mais</button>
+                    <button onclick="changeMessage('orcamento_sociais')" class="bg-white text-purple-700 px-6 py-3 rounded-full w-full">Solicitar Orçamento</button>
+                    <button onclick="scrollToSection('estatisticas-3')" class="bg-white text-purple-700 px-6 py-3 rounded-full w-full">Mais Informações</button>
+                    <button onclick="changeMessage('especialista_sociais')" class="bg-white text-purple-700 px-6 py-3 rounded-full w-full">Falar com um especialista</button>
                 </div>
+                <button onclick="window.location.href='https://wa.me/+5548998143419?text=Quero%20saber%20mais%20sobre%20redes%20sociais.'" class="mt-6 text-white bg-purple-600 px-6 py-3 rounded-full w-full">Matéria</button>
             </div>
         </div>
     </div>
 </section>
 
-
-
-
-<!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot-->
-
-
-<div class="fixed bottom-5 right-5 z-50 text-center">
-    <!-- Balão de fala acima do robô -->
-    <div 
-      id="speech-bubble"
-      class="relative inline-block bg-white text-gray-800 text-sm py-1 px-3 rounded-full opacity-70 mb-2 shadow-md">
-      Fale com o RizonBot!
-      <div class="absolute left-1/2 bottom-[-5px] transform -translate-x-1/2 w-0 h-0 border-t-4 border-t-white border-x-4 border-x-transparent"></div>
-    </div>
-  
-    <!-- Botão do robô -->
-    <img 
-      src="img/rizonbot.png" 
-      alt="Chatbot RizonTec" 
-      class="rizonbot-size cursor-pointer mx-auto" 
-      id="robot-button"
-    />
-  
-    <!-- Caixa de opções -->
-    <div 
-      id="chat-options" 
-      class="hidden bg-white shadow-lg rounded-3xl p-6 w-80 mt-2">
-      <div class="flex justify-between items-center mb-5">
-        <p class="text-xl font-semibold font-sans text-gray-800">O que você precisa?</p>
-        <button 
-          id="close-chat" 
-          class="text-gray-500 hover:text-red-500 text-3xl"
-        >&times;</button>
-      </div>
-      <button 
-        class="w-full bg-blue-500 text-white py-3 rounded-lg mb-3 shadow hover:bg-blue-600" 
-        data-target="landing-page">
-        Landing Page
-      </button>
-      <button 
-        class="w-full bg-blue-500 text-white py-3 rounded-lg mb-3 shadow hover:bg-blue-600" 
-        data-target="site-institucional">
-        Site Institucional
-      </button>
-      <button 
-        class="w-full bg-blue-500 text-white py-3 rounded-lg mb-3 shadow hover:bg-blue-600" 
-        data-target="site-profissional">
-        Site Profissional
-      </button>
-      <button 
-        class="w-full bg-blue-500 text-white py-3 rounded-lg mb-3 shadow hover:bg-blue-600" 
-        data-target="automacao">
-        Automação
-      </button>
-      <button 
-        class="w-full bg-blue-500 text-white py-3 rounded-lg shadow hover:bg-blue-600"
-        onclick="redirectToWhatsAppDirect('Quero um RizonBot')">
-        Quero um RizonBot
-      </button>
-    </div>
-  
-    <!-- Sub-opções genéricas -->
-    <div 
-      id="sub-options" 
-      class="hidden bg-white shadow-lg rounded-3xl p-6 w-80 mt-2">
-      <div class="flex justify-between items-center mb-5">
-        <p class="text-xl font-semibold font-sans text-gray-800">Escolha uma opção</p>
-        <button 
-          id="close-suboptions" 
-          class="text-gray-500 hover:text-red-500 text-2xl"
-        >&times;</button>
-      </div>
-      <div id="dynamic-buttons"></div>
-    </div>
-  </div>
-  
 <script>
-    const robotButton = document.getElementById('robot-button');
-const chatOptions = document.getElementById('chat-options');
-const subOptions = document.getElementById('sub-options');
-const speechBubble = document.getElementById('speech-bubble');
-const closeChat = document.getElementById('close-chat');
-const closeSuboptions = document.getElementById('close-suboptions');
-const dynamicButtons = document.getElementById('dynamic-buttons');
-
-const optionsMap = {
-  'landing-page': [
-    { text: 'Quero uma Landing Page.', message: 'Quero uma Landing Page.' },
-    { text: 'Quero Atualizar minha Landing Page.', message: 'Quero atualizar minha Landing Page.' },
-    { text: 'Saber Mais Sobre Landing Page.', message: 'Saber Mais Sobre Landing Page.' },
-  ],
-  'site-institucional': [
-    { text: 'Quero um Site Institucional.', message: 'Quero um Site Institucional.' },
-    { text: 'Quero Atualizar meu Site Institucional.', message: 'Quero atualizar meu Site Institucional.' },
-    { text: 'Saber Mais Sobre Site Institucional.', message: 'Saber Mais Sobre Site Institucional.' },
-  ],
-  'site-profissional': [
-    { text: 'Quero um Site Profissional.', message: 'Quero um Site Profissional.' },
-    { text: 'Quero Atualizar meu Site Profissional.', message: 'Quero atualizar meu Site Profissional.' },
-    { text: 'Saber Mais Sobre Site Profissional.', message: 'Saber Mais Sobre Site Profissional.' },
-  ],
-  'automacao': [
-    { text: 'Quero Automação.', message: 'Quero Automação.' },
-    { text: 'Quero Atualizar minha Automação.', message: 'Quero atualizar minha Automação.' },
-    { text: 'Saber Mais Sobre sobre Automação.', message: 'Saber Mais Sobre Automação.' },
-  ],
-};
-
-// Abrir chat e esconder balão de fala
-robotButton.addEventListener('click', () => {
-  chatOptions.classList.add('hidden');
-  subOptions.classList.add('hidden');
-  chatOptions.classList.toggle('hidden');
-  speechBubble.classList.add('hidden');
-});
-
-// Fechar chat principal
-closeChat.addEventListener('click', () => {
-  chatOptions.classList.add('hidden');
-});
-
-// Fechar subopções
-closeSuboptions.addEventListener('click', () => {
-  subOptions.classList.add('hidden');
-  chatOptions.classList.remove('hidden');
-});
-
-// Exibir subopções
-chatOptions.querySelectorAll('button').forEach((button) => {
-  button.addEventListener('click', () => {
-    const target = button.getAttribute('data-target');
-    if (optionsMap[target]) {
-      generateButtons(optionsMap[target]);
-      chatOptions.classList.add('hidden');
-      subOptions.classList.remove('hidden');
-    }
-  });
-});
-
-// Gerar botões dinâmicos
-function generateButtons(options) {
-  dynamicButtons.innerHTML = '';
-  options.forEach((option) => {
-    const btn = document.createElement('button');
-    btn.className = 'w-full bg-blue-500 text-white py-3 rounded-lg mb-3 shadow hover:bg-blue-600';
-    btn.textContent = option.text;
-    btn.onclick = () => redirectToWhatsApp(option.message);
-    dynamicButtons.appendChild(btn);
-  });
+    function scrollToSection(sectionId) {
+    const element = document.getElementById(sectionId);
+    window.scrollTo({
+        top: element.offsetTop,
+        behavior: 'smooth'
+    });
 }
 
-// Redirecionar para WhatsApp
-function redirectToWhatsApp(message) {
-  const phoneNumber = "+5548998143419"; // Número do WhatsApp
-  const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-  window.open(url, '_blank');
-}
-
-// Redirecionar direto para WhatsApp
-function redirectToWhatsAppDirect(message) {
-  const phoneNumber = "+5548998143419"; // Número do WhatsApp
-  const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-  window.open(url, '_blank');
-}
 </script>
 
-<!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot-->
+<script>
+    function changeMessage(service) {
+        let message = '';
+        switch(service) {
+            case 'institucional':
+                message = 'Gostaria%20de%20saber%20mais%20sobre%20sites%20institucionais.';
+                break;
+            case 'orcamento_institucional':
+                message = 'Quero%20um%20site%20institucional%20para%20minha%20empresa.';
+                break;
+            case 'informacoes_institucional':
+                message = 'Tenho%20interesse%20em%20um%20site%20institucional.';
+                break;
+            case 'especialista_institucional':
+                message = 'Quero%20falar%20sobre%20um%20site%20institucional.';
+                break;
+            case 'complexo':
+                message = 'Gostaria%20de%20saber%20mais%20sobre%20sites%20complexos.';
+                break;
+            case 'orcamento_complexo':
+                message = 'Quero%20um%20site%20complexo%20para%20minha%20empresa.';
+                break;
+            case 'informacoes_complexo':
+                message = 'Tenho%20interesse%20em%20um%20site%20complexo.';
+                break;
+            case 'especialista_complexo':
+                message = 'Quero%20falar%20sobre%20um%20site%20complexo.';
+                break;
+            case 'sociais':
+                message = 'Gostaria%20de%20saber%20mais%20sobre%20redes%20sociais.';
+                break;
+            case 'orcamento_sociais':
+                message = 'Quero%20gerenciar%20minhas%20redes%20sociais.';
+                break;
+            case 'informacoes_sociais':
+                message = 'Tenho%20interesse%20em%20redes%20sociais.';
+                break;
+            case 'especialista_sociais':
+                message = 'Quero%20falar%20sobre%20redes%20sociais.';
+                break;
+        }
+        window.location.href = 'https://wa.me/+5548998143419?text=' + message;
+    }
+</script>
 
+
+
+
+<section id="projetos"s class="py-16 bg-gray-200"  data-aos="fade">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">Nossos Projetos</h2>
+      <!-- Swiper Container -->
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <!-- Slide 1 -->
+          <div class="swiper-slide grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <div class="relative overflow-hidden rounded-lg shadow-lg group">
+              <img src="/img/sp3.webp" alt="Projeto 1 - Foto 1" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+            </div>
+            <div class="relative overflow-hidden rounded-lg shadow-lg group">
+              <img src="/img/sp3.webp" alt="Projeto 1 - Foto 2" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+            </div>
+            <div class="relative overflow-hidden rounded-lg shadow-lg group">
+              <img src="/img/sp3.webp" alt="Projeto 1 - Foto 3" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="swiper-slide grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <div class="relative overflow-hidden rounded-lg shadow-lg group">
+              <img src="/img/sp3.webp" alt="Projeto 2 - Foto 1" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+            </div>
+            <div class="relative overflow-hidden rounded-lg shadow-lg group">
+              <img src="/img/sp3.webp" alt="Projeto 2 - Foto 2" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+            </div>
+            <div class="relative overflow-hidden rounded-lg shadow-lg group">
+              <img src="/img/sp3.webp" alt="Projeto 2 - Foto 3" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+            </div>
+          </div>
+          <!-- Slide 3 -->
+          <div class="swiper-slide grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <div class="relative overflow-hidden rounded-lg shadow-lg group">
+              <img src="/img/sp3.webp" alt="Projeto 3 - Foto 1" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+            </div>
+            <div class="relative overflow-hidden rounded-lg shadow-lg group">
+              <img src="/img/sp3.webp" alt="Projeto 3 - Foto 2" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+            </div>
+            <div class="relative overflow-hidden rounded-lg shadow-lg group">
+              <img src="/img/sp3.webp" alt="Projeto 3 - Foto 3" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+            </div>
+          </div>
+          <!-- Slide 4 -->
+          <div class="swiper-slide grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <div class="relative overflow-hidden rounded-lg shadow-lg group">
+              <img src="/img/sp3.webp" alt="Projeto 3 - Foto 1" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+            </div>
+            <div class="relative overflow-hidden rounded-lg shadow-lg group">
+              <img src="/img/sp3.webp" alt="Projeto 3 - Foto 2" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+            </div>
+            <div class="relative overflow-hidden rounded-lg shadow-lg group">
+              <img src="/img/sp3.webp" alt="Projeto 3 - Foto 3" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+            </div>
+          </div>
+          <!-- Slide 5 -->
+          <div class="swiper-slide grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <div class="relative overflow-hidden rounded-lg shadow-lg group">
+              <img src="/img/sp3.webp" alt="Projeto 3 - Foto 1" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+            </div>
+            <div class="relative overflow-hidden rounded-lg shadow-lg group">
+              <img src="/img/sp3.webp" alt="Projeto 3 - Foto 2" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+            </div>
+            <div class="relative overflow-hidden rounded-lg shadow-lg group">
+              <img src="/img/sp3.webp" alt="Projeto 3 - Foto 3" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+            </div>
+          </div>
+          <!-- Slide 6 -->
+          <div class="swiper-slide grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <div class="relative overflow-hidden rounded-lg shadow-lg group">
+              <img src="/img/sp3.webp" alt="Projeto 3 - Foto 1" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+            </div>
+            <div class="relative overflow-hidden rounded-lg shadow-lg group">
+              <img src="/img/sp3.webp" alt="Projeto 3 - Foto 2" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+            </div>
+            <div class="relative overflow-hidden rounded-lg shadow-lg group">
+              <img src="/img/sp3.webp" alt="Projeto 3 - Foto 3" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+            </div>
+          </div>
+        </div>
+        <!-- Pagination -->
+      </div>
+    </div>
+  </section>
+  
+  <script>
+    const swiper = new Swiper('.swiper-container', {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      loop: true, // Habilita o loop
+      autoplay: {
+        delay: 5000, // 5 segundos entre os slides
+        disableOnInteraction: false, // Continua o autoplay mesmo após interação do usuário
+      },
+      breakpoints: {
+        640: {
+          slidesPerView: 1,
+        },
+        768: {
+          slidesPerView: 1,
+        },
+        1024: {
+          slidesPerView: 1,
+        },
+      },
+    });
+  </script>
+  
+
+
+  <section class="py-16 bg-blue-700 text-white"  data-aos="fade">
+    <div class="container mx-auto px-6 text-center">
+      <!-- Chamada para Ação -->
+      <h2 class="text-4xl font-bold mb-8">Está Pronto para Elevar o Nível da Sua Empresa?</h2>
+      <p class="text-lg mb-8">
+        Faça sua empresa se destacar com nossos serviços. Desde um site funcional até soluções completas de automação, estamos prontos para transformar suas ideias em realidade.
+      </p>
+      <a href="https://wa.me/5548998143419?text=Quero%20saber%20mais%20sobre%20os%20serviços" 
+         class="inline-block text-blue-700 bg-white px-6 py-3 rounded-lg hover:bg-gray-200 transition">
+        Entre em Contato Agora
+      </a>
+    </div>
+  </section>
+  
+
+  <section class="py-16 bg-white"  data-aos="fade">
+    <div class="container mx-auto px-6">
+      <!-- Título Principal -->
+      <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">
+        Transforme sua Empresa com Nossos Serviços
+      </h2>
+  
+      <!-- Benefícios Interativos -->
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Card 1 -->
+        <div class="bg-white p-6 rounded-3xl shadow-lg hover:shadow-2xl hover:scale-105 transition duration-300 relative group">
+          <h3 class="text-2xl font-semibold text-blue-700 mb-4">Aumente sua Credibilidade</h3>
+          <p class="text-gray-600 mb-4">
+            Empresas com sites profissionais são vistas como mais confiáveis pelos consumidores.
+          </p>
+          <p class="text-blue-700 font-bold">+70% dos clientes confiam mais em empresas com presença online profissional.</p>
+        </div>
+        <!-- Card 2 -->
+        <div class="bg-white p-6 rounded-3xl shadow-lg hover:shadow-2xl hover:scale-105 transition duration-300 relative group">
+          <h3 class="text-2xl font-semibold text-blue-700 mb-4">Impulsione Suas Vendas</h3>
+          <p class="text-gray-600 mb-4">
+            Ter um site otimizado aumenta suas chances de conversão e vendas.
+          </p>
+          <p class="text-blue-700 font-bold">+40% nas conversões de empresas que possuem um site funcional e rápido.</p>
+        </div>
+        <!-- Card 3 -->
+        <div class="bg-white p-6 rounded-3xl shadow-lg hover:shadow-2xl hover:scale-105 transition duration-300 relative group">
+          <h3 class="text-2xl font-semibold text-blue-700 mb-4">Economize Tempo</h3>
+          <p class="text-gray-600 mb-4">
+            Sites com automações reduzem o tempo gasto em tarefas manuais e atendimentos.
+          </p>
+          <p class="text-blue-700 font-bold">-25% no tempo gasto em atendimentos ao implementar automações.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="estatisticas-1" class="py-10 bg-gradient-to-br from-blue-500 via-blue-700 to-blue-900 text-white"  data-aos="fade">
+    <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-12">Estatísticas de Sites Simples</h2>
+        <div class="grid md:grid-cols-3 gap-8 text-center">
+            <!-- Estatística 1 -->
+            <div class="p-6 bg-white rounded-3xl shadow-lg">
+                <p class="text-6xl font-bold text-blue-700 counter" data-count="92">0<span class="text-4xl">%</span></p>
+                <p class="text-gray-600 mt-4">dos consumidores visitam um site antes de realizar uma compra.</p>
+            </div>
+            <!-- Estatística 2 -->
+            <div class="p-6 bg-white rounded-3xl shadow-lg">
+                <p class="text-6xl font-bold text-blue-700 counter" data-count="80">0<span class="text-4xl">%</span></p>
+                <p class="text-gray-600 mt-4">dos usuários confiam mais em empresas com sites modernos.</p>
+            </div>
+            <!-- Estatística 3 -->
+            <div class="p-6 bg-white rounded-3xl shadow-lg">
+                <p class="text-6xl font-bold text-blue-700 counter" data-count="65">0<span class="text-4xl">%</span></p>
+                <p class="text-gray-600 mt-4">das pequenas empresas relatam aumento nas vendas após criar um site.</p>
+            </div>
+        </div>
+        <p class="text-center mt-8 text-gray-500">
+            <a href="https://blog.impactamidia.com.br/alguns-dados-sobre-sites-que-podem-impactar-o-seu-negocio/?utm_source=chatgpt.com" class="text-blue-700 hover:text-blue-500 no-underline">Fonte</a>
+        </p>
+    </div>
+</section>
+
+<section id="estatisticas-2" class="py-10 bg-gradient-to-br from-green-500 via-green-700 to-green-900 text-white"  data-aos="fade">
+    <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-12">Estatísticas de Sites Complexos</h2>
+        <div class="grid md:grid-cols-3 gap-8 text-center">
+            <!-- Estatística 1 -->
+            <div class="p-6 bg-white rounded-3xl shadow-lg">
+                <p class="text-6xl font-bold text-green-700 counter" data-count="75">0<span class="text-4xl">%</span></p>
+                <p class="text-gray-600 mt-4">dos consumidores preferem comprar em lojas online com sites bem estruturados.</p>
+            </div>
+            <!-- Estatística 2 -->
+            <div class="p-6 bg-white rounded-3xl shadow-lg">
+                <p class="text-6xl font-bold text-green-700 counter" data-count="85">0<span class="text-4xl">%</span></p>
+                <p class="text-gray-600 mt-4">dos negócios com automações eficientes aumentam a produtividade.</p>
+            </div>
+            <!-- Estatística 3 -->
+            <div class="p-6 bg-white rounded-3xl shadow-lg">
+                <p class="text-6xl font-bold text-green-700 counter" data-count="68">0<span class="text-4xl">%</span></p>
+                <p class="text-gray-600 mt-4">das empresas que investem em lojas online reportam aumento significativo nas vendas.</p>
+            </div>
+        </div>
+        <p class="text-center mt-8 text-gray-500">
+            <a href="https://blog.impactamidia.com.br/alguns-dados-sobre-sites-que-podem-impactar-o-seu-negocio/?utm_source=chatgpt.com" class="text-green-700 hover:text-green-500 no-underline">Fonte</a>
+        </p>
+    </div>
+</section>
+
+<section id="estatisticas-3" class="py-10 my-0 bg-gradient-to-br from-purple-500 via-purple-700 to-purple-900 text-white"  data-aos="fade">
+    <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-12">Estatísticas de Empresas com Redes Sociais Ativas</h2>
+        <div class="grid md:grid-cols-3 gap-8 text-center">
+            <!-- Estatística 1 -->
+            <div class="p-6 bg-white rounded-3xl shadow-lg">
+                <p class="text-6xl font-bold text-purple-700 counter" data-count="90">0<span class="text-4xl">%</span></p>
+                <p class="text-gray-600 mt-4">das empresas com presença ativa nas redes sociais observam aumento no reconhecimento de marca.</p>
+            </div>
+            <!-- Estatística 2 -->
+            <div class="p-6 bg-white rounded-3xl shadow-lg">
+                <p class="text-6xl font-bold text-purple-700 counter" data-count="70">0<span class="text-4xl">%</span></p>
+                <p class="text-gray-600 mt-4">dos clientes preferem empresas que interagem com eles nas redes sociais.</p>
+            </div>
+            <!-- Estatística 3 -->
+            <div class="p-6 bg-white rounded-3xl shadow-lg">
+                <p class="text-6xl font-bold text-purple-700 counter" data-count="80">0<span class="text-4xl">%</span></p>
+                <p class="text-gray-600 mt-4">das empresas com estratégias de redes sociais bem definidas aumentam suas vendas.</p>
+            </div>
+        </div>
+        <p class="text-center mt-8 text-gray-500">
+            <a href="https://blog.impactamidia.com.br/alguns-dados-sobre-sites-que-podem-impactar-o-seu-negocio/?utm_source=chatgpt.com" class="text-purple-700 hover:text-purple-500 no-underline">Fonte</a>
+        </p>
+    </div>
+</section>
+
+<script>
+    // Função para animar os números
+    const animateCounters = () => {
+        const counters = document.querySelectorAll(".counter");
+        counters.forEach(counter => {
+            const updateCounter = () => {
+                const target = +counter.getAttribute("data-count");
+                const count = +counter.innerText.replace("%", ""); // Remover "%" para obter apenas o número
+                const increment = Math.ceil(target / 200); // Controla a velocidade da animação
+        
+                if (count < target) {
+                    counter.innerHTML = count + increment + '<span class="text-4xl">%</span>'; // Adiciona o "%" ao lado do número
+                    setTimeout(updateCounter, 10);
+                } else {
+                    counter.innerHTML = target + '<span class="text-4xl">%</span>'; // Garante que o "%" seja mantido após a contagem
+                }
+            };
+            updateCounter();
+        });
+    };
+    
+    // Observer para detectar quando a seção entra na tela
+    const observer = new IntersectionObserver(
+        entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    observer.disconnect(); // Evita repetir a animação
+                }
+            });
+        },
+        { threshold: 0.5 }
+    );
+    
+    document.querySelectorAll(".counter").forEach(counter => observer.observe(counter));
+</script>
+  
+  
+
+
+<section class="py-16 mt-0 bg-gray-100"  data-aos="fade">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold text-blue-600 mb-8">O que nossos clientes dizem</h2>
+      <div class="flex flex-wrap justify-center gap-8">
+        <!-- Depoimento 1 -->
+        <div class="w-full sm:w-1/2 md:w-1/3 p-6 bg-white rounded-3xl shadow-lg">
+          <p class="text-lg italic text-gray-600 mb-4">"O site que criaram para nossa empresa aumentou nossas vendas em mais de 30%. A equipe foi super atenciosa e o resultado ficou incrível!"</p>
+          <h4 class="text-xl font-semibold text-blue-700">João Silva</h4>
+          <p class="text-gray-500">Empresário - Loja Online</p>
+        </div>
+        <!-- Depoimento 2 -->
+        <div class="w-full sm:w-1/2 md:w-1/3 p-6 bg-white rounded-3xl shadow-lg">
+          <p class="text-lg italic text-gray-600 mb-4">"Trabalhar com a RizonTec foi uma das melhores decisões para a nossa marca. Eles criaram um site moderno e funcional que se encaixa perfeitamente com nosso público!"</p>
+          <h4 class="text-xl font-semibold text-blue-700">Maria Oliveira</h4>
+          <p class="text-gray-500">CEO - Empresa de Moda</p>
+        </div>
+        <!-- Depoimento 3 -->
+        <div class="w-full sm:w-1/2 md:w-1/3 p-6 bg-white rounded-3xl shadow-lg">
+          <p class="text-lg italic text-gray-600 mb-4">"A equipe da RizonTec fez um trabalho excepcional com o nosso site institucional. Além disso, nos ajudaram com a estratégia de marketing digital. Super recomendados!"</p>
+          <h4 class="text-xl font-semibold text-blue-700">Carlos Pereira</h4>
+          <p class="text-gray-500">Fundador - Empresa de Consultoria</p>
+        </div>
+      </div>
+      <p class="text-center mt-8 text-gray-500">
+        <a href="#contato" class="text-blue-700 hover:text-blue-500 no-underline">Entre em contato e saiba mais!</a>
+      </p>
+    </div>
+  </section>
+  
+  <style>
+    /* Remover a barra de rolagem horizontal */
+    body {
+      overflow-x: hidden;
+    }
+  </style>
+  
+  <script>
+    AOS.init({
+      duration: 1000, // Duração da animação em milissegundos
+      once: true,     // Anima apenas uma vez ao aparecer
+    });
+  </script>
 
 
     <footer class="bg-blue-600 text-white py-8">
@@ -592,5 +809,210 @@ function redirectToWhatsAppDirect(message) {
             window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(message)}`, '_blank');
         }
     </script>
+
+<!-- Botões de rolar -->
+<div class="button-high opacity-60 fixed bottom-52 right-16 z-50 flex flex-col items-center space-y-2">
+  <!-- Botão para rolar para cima -->
+  <button 
+      onclick="scrollToTop()" 
+      class="w-12 h-12 rounded-full bg-blue-500 opacity-60  text-white flex justify-center items-center shadow-md hover:bg-blue-600">
+      ▴
+  </button>
+  <!-- Botão para rolar para baixo -->
+  <button 
+      onclick="scrollToBottom()" 
+      class="w-12 h-12 rounded-full bg-blue-500 opacity-60  text-white flex justify-center items-center shadow-md hover:bg-blue-600">
+      ▾
+  </button>
+</div>
+
+<script>
+  // Função para rolar até o topo
+  function scrollToTop() {
+      window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+      });
+  }
+
+  // Função para rolar até o fim
+  function scrollToBottom() {
+      window.scrollTo({
+          top: document.body.scrollHeight,
+          behavior: 'smooth'
+      });
+  }
+</script>
+
+
+
+<!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot-->
+
+<div class="fixed bottom-5 right-5 z-50 text-center">
+
+  
+  <div 
+  id="speech-bubble"
+  class="relative inline-block bg-white text-gray-800 text-sm py-1 px-3 rounded-full opacity-70 mb-2 shadow-md hidden 2xl:block">
+  Fale com o RizonBot!
+  <div class="absolute left-1/2 bottom-[-5px] transform -translate-x-1/2 w-0 h-0 border-t-4 border-t-white border-x-4 border-x-transparent"></div>
+</div>
+
+
+
+  <!-- Botão do robô -->
+  <img 
+    src="img/rizonbot.png" 
+    alt="Chatbot RizonTec" 
+    class="rizonbot-size cursor-pointer mx-auto" 
+    id="robot-button"
+  />
+
+  <!-- Caixa de opções -->
+  <div 
+    id="chat-options" 
+    class="hidden bg-white shadow-lg rounded-3xl p-6 w-80 mt-2">
+    <div class="flex justify-between items-center mb-5">
+      <p class="text-xl font-semibold font-sans text-gray-800">O que você precisa?</p>
+      <button 
+        id="close-chat" 
+        class="text-gray-500 hover:text-red-500 text-3xl"
+      >&times;</button>
+    </div>
+    <button 
+      class="w-full bg-blue-500 text-white py-3 rounded-lg mb-3 shadow hover:bg-blue-600" 
+      data-target="landing-page">
+      Landing Page
+    </button>
+    <button 
+      class="w-full bg-blue-500 text-white py-3 rounded-lg mb-3 shadow hover:bg-blue-600" 
+      data-target="site-institucional">
+      Site Institucional
+    </button>
+    <button 
+      class="w-full bg-blue-500 text-white py-3 rounded-lg mb-3 shadow hover:bg-blue-600" 
+      data-target="site-profissional">
+      Site Profissional
+    </button>
+    <button 
+      class="w-full bg-blue-500 text-white py-3 rounded-lg mb-3 shadow hover:bg-blue-600" 
+      data-target="automacao">
+      Automação
+    </button>
+    <button 
+      class="w-full bg-blue-500 text-white py-3 rounded-lg shadow hover:bg-blue-600"
+      onclick="redirectToWhatsAppDirect('Quero um RizonBot')">
+      Quero um RizonBot
+    </button>
+  </div>
+
+  <!-- Sub-opções genéricas -->
+  <div 
+    id="sub-options" 
+    class="hidden bg-white shadow-lg rounded-3xl p-6 w-80 mt-2">
+    <div class="flex justify-between items-center mb-5">
+      <p class="text-xl font-semibold font-sans text-gray-800">Escolha uma opção</p>
+      <button 
+        id="close-suboptions" 
+        class="text-gray-500 hover:text-red-500 text-2xl"
+      >&times;</button>
+    </div>
+    <div id="dynamic-buttons"></div>
+  </div>
+</div>
+
+<script>
+  const robotButton = document.getElementById('robot-button');
+const chatOptions = document.getElementById('chat-options');
+const subOptions = document.getElementById('sub-options');
+const speechBubble = document.getElementById('speech-bubble');
+const closeChat = document.getElementById('close-chat');
+const closeSuboptions = document.getElementById('close-suboptions');
+const dynamicButtons = document.getElementById('dynamic-buttons');
+
+const optionsMap = {
+'landing-page': [
+  { text: 'Quero uma Landing Page.', message: 'Quero uma Landing Page.' },
+  { text: 'Quero Atualizar minha Landing Page.', message: 'Quero atualizar minha Landing Page.' },
+  { text: 'Saber Mais Sobre Landing Page.', message: 'Saber Mais Sobre Landing Page.' },
+],
+'site-institucional': [
+  { text: 'Quero um Site Institucional.', message: 'Quero um Site Institucional.' },
+  { text: 'Quero Atualizar meu Site Institucional.', message: 'Quero atualizar meu Site Institucional.' },
+  { text: 'Saber Mais Sobre Site Institucional.', message: 'Saber Mais Sobre Site Institucional.' },
+],
+'site-profissional': [
+  { text: 'Quero um Site Profissional.', message: 'Quero um Site Profissional.' },
+  { text: 'Quero Atualizar meu Site Profissional.', message: 'Quero atualizar meu Site Profissional.' },
+  { text: 'Saber Mais Sobre Site Profissional.', message: 'Saber Mais Sobre Site Profissional.' },
+],
+'automacao': [
+  { text: 'Quero Automação.', message: 'Quero Automação.' },
+  { text: 'Quero Atualizar minha Automação.', message: 'Quero atualizar minha Automação.' },
+  { text: 'Saber Mais Sobre sobre Automação.', message: 'Saber Mais Sobre Automação.' },
+],
+};
+
+// Abrir chat e esconder balão de fala
+robotButton.addEventListener('click', () => {
+chatOptions.classList.add('hidden');
+subOptions.classList.add('hidden');
+chatOptions.classList.toggle('hidden');
+speechBubble.classList.add('hidden');
+});
+
+// Fechar chat principal
+closeChat.addEventListener('click', () => {
+chatOptions.classList.add('hidden');
+});
+
+// Fechar subopções
+closeSuboptions.addEventListener('click', () => {
+subOptions.classList.add('hidden');
+chatOptions.classList.remove('hidden');
+});
+
+// Exibir subopções
+chatOptions.querySelectorAll('button').forEach((button) => {
+button.addEventListener('click', () => {
+  const target = button.getAttribute('data-target');
+  if (optionsMap[target]) {
+    generateButtons(optionsMap[target]);
+    chatOptions.classList.add('hidden');
+    subOptions.classList.remove('hidden');
+  }
+});
+});
+
+// Gerar botões dinâmicos
+function generateButtons(options) {
+dynamicButtons.innerHTML = '';
+options.forEach((option) => {
+  const btn = document.createElement('button');
+  btn.className = 'w-full bg-blue-500 text-white py-3 rounded-lg mb-3 shadow hover:bg-blue-600';
+  btn.textContent = option.text;
+  btn.onclick = () => redirectToWhatsApp(option.message);
+  dynamicButtons.appendChild(btn);
+});
+}
+
+// Redirecionar para WhatsApp
+function redirectToWhatsApp(message) {
+const phoneNumber = "+5548998143419"; // Número do WhatsApp
+const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+window.open(url, '_blank');
+}
+
+// Redirecionar direto para WhatsApp
+function redirectToWhatsAppDirect(message) {
+const phoneNumber = "+5548998143419"; // Número do WhatsApp
+const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+window.open(url, '_blank');
+}
+</script>
+
+<!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot--> <!-- RizonBot-->
+
+
 </body>
 </html>

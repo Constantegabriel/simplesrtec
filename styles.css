@@ -85,8 +85,7 @@ main {
     position: relative;
     overflow: hidden;
     height: 450px;
-    margin-bottom: -100px;
-
+    margin-bottom: -50px;
   }
 
   .swiper-slide img {
@@ -100,27 +99,65 @@ margin-bottom: 30px;
 margin-top: 10px;
    }
 
+
+
 }
+
 
 /* Classe padrão para o tamanho do RizonBot */
 .rizonbot-size {
-  width: 12rem; /* 48px */
-  height: 12rem; /* 48px */
+  width: 8rem; /* 48px */
+  height: 8rem; /* 48px */
 }
 
 /* Redução de tamanho para telas de PC */
-@media (min-width: 1024px) {
+@media (max-width: 1280px) {
   .rizonbot-size {
-    width: 9.6rem; /* 20% menor */
-    height: 9.6rem; /* 20% menor */
+    width: 7rem; /* 20% menor */
+    height: auto; /* Ajuste para telas pequenas */
+    margin-right: -20px;
+    opacity: 90%;
   }
+  .button-high{
+    margin-bottom: -40px;
+    margin-right: -20px;
+    width: 0.1rem;
+    height: 0.1rem;
+    
+    }
+}
+
+@media (max-width: 1024px) {
+  .rizonbot-size {
+    width: 5rem; /* 20% menor */
+    height: auto; /* Ajuste para telas pequenas */
+    margin-right: -20px;
+    opacity: 90%;
+  }
+  .button-high{
+    margin-bottom: -70px;
+    margin-right: -35px;
+    width: 0.1rem;
+    height: 0.1rem;
+    
+    }
 }
 
 /* Redução de tamanho para celulares */
 @media (max-width: 768px) {
   .rizonbot-size {
-    width: 6rem; /* Ajuste para telas pequenas */
-    height: 6rem; /* Ajuste para telas pequenas */
+    width: 5.2rem; /* Ajuste para telas pequenas */
+    height: auto; /* Ajuste para telas pequenas */
+    margin-right: -22px;
+    opacity: 90%;
+  }
+
+.button-high{
+  margin-bottom: -80px;
+  margin-right: -40px;
+  width: 0.6rem;
+  height: 0.6rem;
+  
   }
 }
 
@@ -156,4 +193,34 @@ margin-top: 10px;
   object-fit: cover;
   height: 100%;
   width: 100%;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+input[type="email"] {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+  width: 50%;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
 }
