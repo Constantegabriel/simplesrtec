@@ -29,7 +29,7 @@
         <div class="container mx-auto px-6 lg:px-12 flex justify-between items-center"> <!-- Ajustei para ter um espaçamento maior -->
             <!-- Logo -->
             <a href="/" class="flex items-center space-x-3">
-                <img src="img/rt-logo.png" alt="Logo RizonTec" class="w-32 h-auto object-contain">
+                <img src="img/rt-logo.png" alt="Logo RizonTec" class="w-56 h-auto object-contain">
             </a>
     
             <!-- Botão do Menu Hambúrguer (Mobile) -->
@@ -152,79 +152,104 @@
 
 
 
-<main class="mt-0">
-    <section class="relative">
-        <!-- Swiper -->
-        <div class="swiper h-screen">
-            <div class="swiper-wrapper" id="swiper-wrapper">
-                <!-- As imagens serão carregadas dinamicamente -->
-            </div>
-        </div>
-    </section>
-</main>
-
-<script>
-// Inicializa o Swiper
-document.addEventListener('DOMContentLoaded', () => {
-    const swiperWrapper = document.getElementById('swiper-wrapper');
-
-    // Define as imagens para desktop e mobile
-    const desktopImages = [
-        { src: 'img/sp1.webp', title: 'Soluções Digitais', text: 'Transformamos ideias em resultados para o seu negócio.' },
-        { src: 'img/sp2.webp', title: 'Estratégias Eficientes', text: 'Aumente sua visibilidade com soluções profissionais.' },
-        { src: 'img/sp3.webp', title: 'Resultados Garantidos', text: 'Conquiste novos patamares com nossa equipe.' },
-        { src: 'img/sp4.jpg', title: 'Inovação e Qualidade', text: 'Projetos que atendem suas necessidades.' },
-    ];
-
-    const mobileImages = [
-        { src: 'img/spc1.jpg', title: 'Soluções Digitais', text: 'Transformamos ideias em resultados para o seu negócio.' },
-        { src: 'img/spc2.jpeg', title: 'Estratégias Eficientes', text: 'Aumente sua visibilidade com soluções profissionais.' },
-        { src: 'img/spc3.jpeg', title: 'Resultados Garantidos', text: 'Conquiste novos patamares com nossa equipe.' },
-        { src: 'img/spc4.jpeg', title: 'Inovação e Qualidade', text: 'Projetos que atendem suas necessidades.' },
-    ];
-
-    // Função para carregar as imagens com base no tamanho da tela
-    function loadSwiperImages() {
-        swiperWrapper.innerHTML = ''; // Limpa os slides atuais
-        const images = window.innerWidth < 768 ? mobileImages : desktopImages;
-
-        images.forEach(({ src, title, text }) => {
-            const slide = document.createElement('div');
-            slide.className = 'swiper-slide relative';
-            slide.innerHTML = `
-                <img src="${src}" alt="${title}" class="absolute inset-0 w-full h-full object-cover">
-                <div class="absolute inset-0 flex items-center justify-center sm:items-end sm:justify-start sm:px-8 sm:pb-8 text-white">
-                    <div class="text-center sm:text-left">
-                        <h1 class="text-2xl md:text-4xl font-bold mb-4">${title}</h1>
-                        <p class="mb-6 text-sm md:text-lg">${text}</p>
-                        <div class="flex justify-center sm:justify-start space-x-4">
-                            <a href="contato.html" class="bg-blue-600 px-4 py-2 rounded-lg hover:bg-blue-700">
-                                Entre em Contato
-                            </a>
-                            <a href="servicos.html" class="bg-transparent border border-white px-4 py-2 rounded-lg hover:bg-white hover:text-blue-600">
-                                Ver Nossos Serviços
-                            </a>
-                        </div>
-                    </div>
+    <main class="mt-0">
+        <section class="relative">
+            <!-- Swiper -->
+            <div class="swiper h-screen">
+                <div class="swiper-wrapper" id="swiper-wrapper">
+                    <!-- As imagens serão carregadas dinamicamente -->
                 </div>
-            `;
-            swiperWrapper.appendChild(slide);
+            </div>
+        </section>
+    </main>
+    <script>
+        // Inicializa o Swiper
+        document.addEventListener('DOMContentLoaded', () => {
+            const swiperWrapper = document.getElementById('swiper-wrapper');
+        
+            // Define as imagens para diferentes tamanhos de tela
+            const imagesMobile = [
+                { src: 'img/z8.jpg', title: 'Para Seu Celular', text: 'Experiência otimizada para dispositivos móveis.' },
+                { src: 'img/z7.jpg', title: 'Compacto e Impactante', text: 'Soluções criadas para o seu alcance.' },
+                { src: 'img/z6.jpg', title: 'Compacto e Impactante', text: 'Soluções criadas para o seu alcance.' },
+                { src: 'img/z5.jpg', title: 'Compacto e Impactante', text: 'Soluções criadas para o seu alcance.' },
+            ];
+        
+            const imagesTablet = [
+                { src: 'img/f1.png', title: 'Para Seu Tablet', text: 'Soluções perfeitas para telas médias.' },
+                { src: 'img/f2.png', title: 'Visual Limpo e Funcional', text: 'Ideal para navegar e explorar.' },
+                { src: 'img/f3.png', title: 'Visual Limpo e Funcional', text: 'Ideal para navegar e explorar.' },
+                { src: 'img/f4.png', title: 'Visual Limpo e Funcional', text: 'Ideal para navegar e explorar.' },
+            ];
+        
+            const imagesNotebook = [
+                { src: 'img/e1.png', title: 'Para Seu Notebook', text: 'Design responsivo e elegante.' },
+                { src: 'img/e2.png', title: 'Feito Para Impressionar', text: 'Desempenho e estilo na medida certa.' },
+                { src: 'img/e3.png', title: 'Para Seu Notebook', text: 'Design responsivo e elegante.' },
+                { src: 'img/e4.png', title: 'Para Seu Notebook', text: 'Design responsivo e elegante.' },
+            ];
+        
+            const imagesPC = [
+                { src: 'img/k1.png', title: 'Para Seu PC', text: 'Aproveite toda a largura de uma grande tela.' },
+                { src: 'img/k2.png', title: '', text: '' },
+                { src: 'img/k3.png', title: '', text: '' },
+            ];
+        
+            // Função para carregar as imagens com base no tamanho da tela
+            function loadSwiperImages() {
+                swiperWrapper.innerHTML = ''; // Limpa os slides atuais
+                let images;
+        
+                if (window.innerWidth < 1023) {
+                    images = imagesMobile;
+                } else if (window.innerWidth <= 1024) {
+                    images = imagesTablet;
+                } else if (window.innerWidth <= 1280) {
+                    images = imagesNotebook;
+                } else {
+                    images = imagesPC;
+                }
+        
+                images.forEach(({ src, title, text }) => {
+                    const slide = document.createElement('div');
+                    slide.className = 'swiper-slide relative';
+                    slide.innerHTML = `
+                        <img src="${src}" alt="${title}" class="absolute inset-0 w-full h-full object-cover">
+                        <div class="absolute inset-0 flex items-center justify-center sm:items-end sm:justify-start sm:px-8 sm:pb-8 text-white">
+                            <div class="text-center sm:text-left">
+                                <h1 class="text-2xl md:text-4xl font-bold mb-4">${title}</h1>
+                                <p class="mb-6 text-sm md:text-lg">${text}</p>
+                                <div class="flex justify-center sm:justify-start space-x-4">
+                                    <a href="contato.html" class="bg-blue-600 px-4 py-2 rounded-lg hover:bg-blue-700">
+                                        Entre em Contato
+                                    </a>
+                                    <a href="servicos.html" class="bg-transparent border border-white px-4 py-2 rounded-lg hover:bg-white hover:text-blue-600">
+                                        Ver Nossos Serviços
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    swiperWrapper.appendChild(slide);
+                });
+        
+                // Re-inicializa o Swiper para reconhecer os novos slides
+                new Swiper('.swiper', {
+                    loop: true,
+                    autoplay: {
+                        delay: 5000,
+                    },
+                });
+            }
+        
+            // Carrega as imagens ao iniciar e quando a janela é redimensionada
+            loadSwiperImages();
+            window.addEventListener('resize', loadSwiperImages);
         });
+        </script>
+    
 
-        // Re-inicializa o Swiper para reconhecer os novos slides
-        new Swiper('.swiper', {
-            loop: true,
-            autoplay: {
-                delay: 5000,
-            },
-        });
-    }
 
-    // Carrega as imagens ao iniciar e quando a janela é redimensionada
-    loadSwiperImages();
-    window.addEventListener('resize', loadSwiperImages);
-});
-</script>
     
 
 <section 

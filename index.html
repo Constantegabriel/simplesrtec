@@ -27,7 +27,7 @@
         <div class="container mx-auto px-6 lg:px-12 flex justify-between items-center"> <!-- Ajustei para ter um espaçamento maior -->
             <!-- Logo -->
             <a href="/" class="flex items-center space-x-3">
-                <img src="img/rt-logo.png" alt="Logo RizonTec" class="w-32 h-auto object-contain">
+                <img src="img/rt-logo.png" alt="Logo RizonTec" class="w-56 h-auto object-contain">
             </a>
     
             <!-- Botão do Menu Hambúrguer (Mobile) -->
@@ -167,10 +167,10 @@
     
         // Define as imagens para diferentes tamanhos de tela
         const imagesMobile = [
-            { src: 'img/ce1.png', title: 'Para Seu Celular', text: 'Experiência otimizada para dispositivos móveis.' },
-            { src: 'img/spc3.jpeg', title: 'Compacto e Impactante', text: 'Soluções criadas para o seu alcance.' },
-            { src: 'img/spc3.jpeg', title: 'Compacto e Impactante', text: 'Soluções criadas para o seu alcance.' },
-            { src: 'img/spc3.jpeg', title: 'Compacto e Impactante', text: 'Soluções criadas para o seu alcance.' },
+            { src: 'img/z8.jpg', title: 'Para Seu Celular', text: 'Experiência otimizada para dispositivos móveis.' },
+            { src: 'img/z7.jpg', title: 'Compacto e Impactante', text: 'Soluções criadas para o seu alcance.' },
+            { src: 'img/z6.jpg', title: 'Compacto e Impactante', text: 'Soluções criadas para o seu alcance.' },
+            { src: 'img/z5.jpg', title: 'Compacto e Impactante', text: 'Soluções criadas para o seu alcance.' },
         ];
     
         const imagesTablet = [
@@ -199,7 +199,7 @@
             swiperWrapper.innerHTML = ''; // Limpa os slides atuais
             let images;
     
-            if (window.innerWidth < 768) {
+            if (window.innerWidth < 1023) {
                 images = imagesMobile;
             } else if (window.innerWidth <= 1024) {
                 images = imagesTablet;
@@ -277,7 +277,7 @@
 
             <!-- Imagem sobre a empresa -->
             <div class=" translate-y-10 transition-all duration-1000 ease-in-out hover:scale-105 hover:opacity-100 hover:translate-y-0">
-                <img src="img/sp3.webp" alt="Sobre a RizonTec" class="w-full rounded-lg shadow-xl object-cover h-full">
+                <img src="img/mkt.jpg" alt="Sobre a RizonTec" class="w-full rounded-lg shadow-xl object-cover h-full">
             </div>
         </div>
     </div>
