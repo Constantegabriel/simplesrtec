@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link rel="icon" href="/img/iconrt.png" type="image/x-icon">
+
     <!-- CSS do AOS -->
 <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
 
@@ -252,7 +254,7 @@
 
 
 
-  <section class="py-16 bg-slate-100"  data-aos="fade">
+  <section class="py-16 pb-8 bg-slate-100"  data-aos="fade">
     <div class="container mx-auto px-6">
         <h2 class="text-5xl font-bold text-center mb-8 text-blue-600">Nossos Serviços</h2>
         <div class="grid md:grid-cols-3 gap-8">
@@ -263,9 +265,9 @@
                 </div>
                 <h3 class="text-2xl font-semibold text-center mb-4">Sites Institucionais</h3>
                 <div class="flex flex-col gap-4">
-                    <button onclick="scrollToSection('projetos')" class="bg-white text-blue-700 px-6 py-3 rounded-full w-full">Saiba mais</button>
+                    <button onclick="scrollToSection('precos')" class="bg-white text-blue-700 px-6 py-3 rounded-full w-full">Saiba mais</button>
                     <button onclick="changeMessage('orcamento_institucional')" class="bg-white text-blue-700 px-6 py-3 rounded-full w-full">Solicitar Orçamento</button>
-                    <button onclick="scrollToSection('estatisticas-1')" class="bg-white text-blue-700 px-6 py-3 rounded-full w-full">Mais Informações</button>
+                    <button onclick="scrollToSection('projetos')" class="bg-white text-blue-700 px-6 py-3 rounded-full w-full">Ultimos Projetos</button>
                     <button onclick="changeMessage('especialista_institucional')" class="bg-white text-blue-700 px-6 py-3 rounded-full w-full">Falar com um especialista</button>
                 </div>
                 <button onclick="window.location.href='https://wa.me/+5548998143419?text=Quero%20saber%20mais%20sobre%20site%20institucional.'" class="mt-6 text-white bg-blue-600 px-6 py-3 rounded-full w-full">Matéria</button>
@@ -278,9 +280,9 @@
                 </div>
                 <h3 class="text-2xl font-semibold text-center mb-4">Sites Complexos</h3>
                 <div class="flex flex-col gap-4">
-                    <button onclick="scrollToSection('projetos')" class="bg-white text-green-700 px-6 py-3 rounded-full w-full">Saiba mais</button>
+                    <button onclick="scrollToSection('precos')" class="bg-white text-green-700 px-6 py-3 rounded-full w-full">Saiba mais</button>
                     <button onclick="changeMessage('orcamento_complexo')" class="bg-white text-green-700 px-6 py-3 rounded-full w-full">Solicitar Orçamento</button>
-                    <button onclick="scrollToSection('estatisticas-2')" class="bg-white text-green-700 px-6 py-3 rounded-full w-full">Mais Informações</button>
+                    <button onclick="scrollToSection('projetos')" class="bg-white text-green-700 px-6 py-3 rounded-full w-full">Ultimos Projetos</button>
                     <button onclick="changeMessage('especialista_complexo')" class="bg-white text-green-700 px-6 py-3 rounded-full w-full">Falar com um especialista</button>
                 </div>
                 <button onclick="window.location.href='https://wa.me/+5548998143419?text=Quero%20saber%20mais%20sobre%20site%20complexo.'" class="mt-6 text-white bg-green-600 px-6 py-3 rounded-full w-full">Matéria</button>
@@ -293,9 +295,9 @@
                 </div>
                 <h3 class="text-2xl font-semibold text-center mb-4">Redes Sociais</h3>
                 <div class="flex flex-col gap-4">
-                    <button onclick="scrollToSection('projetos')" class="bg-white text-yellow-700 px-6 py-3 rounded-full w-full">Saiba mais</button>
+                    <button onclick="scrollToSection('precos')" class="bg-white text-yellow-700 px-6 py-3 rounded-full w-full">Saiba mais</button>
                     <button onclick="changeMessage('orcamento_sociais')" class="bg-white text-yellow-700 px-6 py-3 rounded-full w-full">Solicitar Orçamento</button>
-                    <button onclick="scrollToSection('estatisticas-3')" class="bg-white text-yellow-700 px-6 py-3 rounded-full w-full">Mais Informações</button>
+                    <button onclick="scrollToSection('projetos')" class="bg-white text-yellow-700 px-6 py-3 rounded-full w-full">Ultimos Projetos</button>
                     <button onclick="changeMessage('especialista_sociais')" class="bg-white text-yellow-700 px-6 py-3 rounded-full w-full">Falar com um especialista</button>
                 </div>
                 <button onclick="window.location.href='https://wa.me/+5548998143419?text=Quero%20saber%20mais%20sobre%20redes%20sociais.'" class="mt-6 text-white bg-yellow-600 px-6 py-3 rounded-full w-full">Matéria</button>
@@ -360,6 +362,135 @@
     }
 </script>
 
+<section id="estatisticas" class="py-0 pb-0 bg-gray-100 text-black" data-aos="fade">
+  <div class="container mx-auto px-6">
+      <div class="grid md:grid-cols-3 gap-8 text-center">
+          <!-- Estatística de Sites Simples -->
+          <div class="p-6 bg-gradient-to-br from-blue-500 via-blue-700 to-blue-900 text-white rounded-3xl shadow-lg">
+              <p class="text-6xl font-bold counter" data-count="92">0<span class="text-4xl">%</span></p>
+              <p class="mt-4">dos consumidores visitam um site antes de realizar uma compra.</p>
+              <p class="mt-4">
+                  <a href="https://blog.impactamidia.com.br/alguns-dados-sobre-sites-que-podem-impactar-o-seu-negocio/?utm_source=chatgpt.com" 
+                  class="bg-inherit text-blue-800">Fonte</a>
+                </p>
+          </div>
+          <!-- Estatística de Sites Complexos -->
+          <div class="p-6 bg-gradient-to-br from-green-500 via-green-700 to-green-900 text-white rounded-3xl shadow-lg">
+              <p class="text-6xl font-bold counter" data-count="85">0<span class="text-4xl">%</span></p>
+              <p class="mt-4">dos negócios com automações eficientes aumentam a produtividade.</p>
+              <p class="mt-4">
+                  <a href="https://blog.impactamidia.com.br/alguns-dados-sobre-sites-que-podem-impactar-o-seu-negocio/?utm_source=chatgpt.com" 
+                  class="bg-inherit text-green-800">Fonte</a>
+                </p>
+          </div>
+          <!-- Estatística de Redes Sociais -->
+          <div class="p-6 bg-gradient-to-br from-yellow-500 via-yellow-700 to-yellow-900 text-white rounded-3xl shadow-lg">
+              <p class="text-6xl font-bold counter" data-count="90">0<span class="text-4xl">%</span></p>
+              <p class="mt-4">das empresas com presença ativa nas redes sociais observam aumento no reconhecimento de marca.</p>
+              <p class="mt-4">
+                  <a href="https://blog.impactamidia.com.br/alguns-dados-sobre-sites-que-podem-impactar-o-seu-negocio/?utm_source=chatgpt.com" 
+                     class="bg-inherit text-yellow-800">Fonte</a>
+              </p>
+          </div>
+      </div>
+  </div>
+</section>
+
+<script>
+  // Função para animar os números
+  const animateCounters = () => {
+      const counters = document.querySelectorAll(".counter");
+      counters.forEach(counter => {
+          const updateCounter = () => {
+              const target = +counter.getAttribute("data-count");
+              const count = +counter.innerText.replace("%", "");
+              const increment = Math.ceil(target / 200);
+      
+              if (count < target) {
+                  counter.innerHTML = count + increment + '<span class="text-4xl">%</span>';
+                  setTimeout(updateCounter, 50);
+              } else {
+                  counter.innerHTML = target + '<span class="text-4xl">%</span>';
+              }
+          };
+          updateCounter();
+      });
+  };
+  
+  // Observer para ativar a animação ao entrar na tela
+  const observer = new IntersectionObserver(
+      entries => {
+          entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                  animateCounters();
+                  observer.disconnect();
+              }
+          });
+      },
+      { threshold: 0.5 }
+  );
+  
+  document.querySelectorAll(".counter").forEach(counter => observer.observe(counter));
+</script>
+
+
+<main id="precos" class="container mx-auto px-10 py-10 my-0">
+  <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4 gap-8">
+      <div class="bg-gradient-to-br from-blue-500 via-blue-700 to-blue-900 text-white p-10 rounded-3xl shadow-lg w-full md:w-1/3">
+          <h2 class="text-xl font-bold mb-2">Criação de Sites Simples</h2>
+          <p class="mb-4">Sites práticos, personalizados e modernos, perfeitos para apresentar sua empresa ou negocio ao mundo digital.</p>
+          <p class="text-3xl font-bold mb-2">A PARTIR DE</p>
+          <p class="text-4xl font-bold mb-2">R$ R$ 800,00*</p>
+          <p class="text-sm mb-4">Mais mensalidade (manutenção)</p>
+          <p class="text-sm mb-4"> Ideal para quem busca presença online com baixo custo e alta qualidade.</p>
+          <button class="bg-white text-blue-700 font-bold py-2 px-4 rounded-full mb-4">Solicitar Orçamento</button>
+          <ul class="space-y-2">
+              <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>Design responsivo para celulares e desktops.</li>
+              <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>Páginas essenciais (Home, Sobre, Contato).</li>
+              <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>Otimização para SEO básico.</li>
+              <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>Integração com redes sociais.</li>
+          </ul>
+      </div>
+      <div class="bg-gradient-to-br from-green-500 via-green-700 to-green-900 text-white p-10 rounded-3xl shadow-lg w-full md:w-1/3">
+          <h2 class="text-xl font-bold mb-2">Desenvolvimento de Sites Complexos</h2>
+          <p class="mb-4"> Soluções completas para empresas que precisam de funcionalidades avançadas e automações personalizadas.</p>
+          <p class="text-3xl font-bold mb-2">A PARTIR DE</p>
+          <p class="text-4xl font-bold mb-2">R$ 2.500,00*</p>
+          <p class="text-sm mb-4">Mais mensalidade (manutenção)</p>
+          <p class="text-sm mb-4">nerfeito para negócios que necessitam de plataformas robustas e otimizadas.</p>
+          <button class="bg-white text-green-700 font-bold py-2 px-4 rounded-full mb-4">Solicitar Orçamento</button>
+          <ul class="space-y-2">
+              <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> área de login, automações, e-commerce</li>
+              <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>Design exclusivo e altamente profissional.</li>
+              <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>Otimização avançada para SEO.</li>
+              <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>Ferramentas externas (CRM, ERP, entre outros).</li>
+          </ul>
+      </div>
+      <div class="bg-gradient-to-br from-yellow-500 via-yellow-700 to-yellow-900 text-white p-10 rounded-3xl shadow-lg w-full md:w-1/3">
+          <h2 class="text-xl font-bold mb-2">Gerenciamento de Redes Sociais</h2>
+          <p class="mb-4">Deixe sua marca sempre ativa e conectada com seus clientes por meio de estratégias criativas e eficazes.</p>
+          <p class="text-3xl font-bold mb-2">A PARTIR DE</p>
+          <p class="text-4xl font-bold mb-2">R$ 600,00/mês*</p>
+          <p class="text-sm mb-4">(mensalidade unica)</p>
+          <p class="text-sm mb-4"> Ideal para empresas que buscam maior engajamento e resultados nas redes sociais.</p>
+          <button class="bg-white text-yellow-700 font-bold py-2 px-4 rounded-full mb-4"> Solicitar Orçamento</button>
+          <ul class="space-y-2">
+              <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>Criação de conteúdo (posts, stories e reels).</li>
+              <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>Planejamento estratégico mensal.</li>
+              <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>Monitoramento de métricas e performance.</li>
+              <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>Resposta a mensagens e interações.</li>
+              <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>Relatórios mensais de desempenho.</li>
+          </ul>
+      </div>
+  </div>
+</main>
+
+<footer class="bg-white shadow mt-8">
+  <div class="container mx-auto px-4 py-4 text-center text-gray-600">
+      <p>Os preços, taxas e condições promocionais podem variar de acordo com o pedido e com o prazo.</p>
+  </div>
+</footer>
+
 
 
 
@@ -372,73 +503,73 @@
           <!-- Slide 1 -->
           <div class="swiper-slide grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             <div class="relative overflow-hidden rounded-lg shadow-lg group">
-              <img src="/img/sp3.webp" alt="Projeto 1 - Foto 1" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+              <img src="/img/nos1.png" alt="Projeto 1 - Foto 1" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
             </div>
             <div class="relative overflow-hidden rounded-lg shadow-lg group">
-              <img src="/img/sp3.webp" alt="Projeto 1 - Foto 2" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+              <img src="/img/nos1.png" alt="Projeto 1 - Foto 2" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
             </div>
             <div class="relative overflow-hidden rounded-lg shadow-lg group">
-              <img src="/img/sp3.webp" alt="Projeto 1 - Foto 3" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+              <img src="/img/nos1.png" alt="Projeto 1 - Foto 3" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
             </div>
           </div>
           <!-- Slide 2 -->
           <div class="swiper-slide grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             <div class="relative overflow-hidden rounded-lg shadow-lg group">
-              <img src="/img/sp3.webp" alt="Projeto 2 - Foto 1" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+              <img src="/img/nos2.png" alt="Projeto 2 - Foto 1" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
             </div>
             <div class="relative overflow-hidden rounded-lg shadow-lg group">
-              <img src="/img/sp3.webp" alt="Projeto 2 - Foto 2" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+              <img src="/img/nos2.png" alt="Projeto 2 - Foto 2" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
             </div>
             <div class="relative overflow-hidden rounded-lg shadow-lg group">
-              <img src="/img/sp3.webp" alt="Projeto 2 - Foto 3" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+              <img src="/img/nos2.png" alt="Projeto 2 - Foto 3" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
             </div>
           </div>
           <!-- Slide 3 -->
           <div class="swiper-slide grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             <div class="relative overflow-hidden rounded-lg shadow-lg group">
-              <img src="/img/sp3.webp" alt="Projeto 3 - Foto 1" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+              <img src="/img/nos3.png" alt="Projeto 3 - Foto 1" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
             </div>
             <div class="relative overflow-hidden rounded-lg shadow-lg group">
-              <img src="/img/sp3.webp" alt="Projeto 3 - Foto 2" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+              <img src="/img/nos3.png" alt="Projeto 3 - Foto 2" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
             </div>
             <div class="relative overflow-hidden rounded-lg shadow-lg group">
-              <img src="/img/sp3.webp" alt="Projeto 3 - Foto 3" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+              <img src="/img/nos3.png" alt="Projeto 3 - Foto 3" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
             </div>
           </div>
           <!-- Slide 4 -->
           <div class="swiper-slide grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             <div class="relative overflow-hidden rounded-lg shadow-lg group">
-              <img src="/img/sp3.webp" alt="Projeto 3 - Foto 1" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+              <img src="/img/nos4.png" alt="Projeto 3 - Foto 1" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
             </div>
             <div class="relative overflow-hidden rounded-lg shadow-lg group">
-              <img src="/img/sp3.webp" alt="Projeto 3 - Foto 2" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+              <img src="/img/nos4.png" alt="Projeto 3 - Foto 2" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
             </div>
             <div class="relative overflow-hidden rounded-lg shadow-lg group">
-              <img src="/img/sp3.webp" alt="Projeto 3 - Foto 3" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+              <img src="/img/nos4.png" alt="Projeto 3 - Foto 3" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
             </div>
           </div>
           <!-- Slide 5 -->
           <div class="swiper-slide grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             <div class="relative overflow-hidden rounded-lg shadow-lg group">
-              <img src="/img/sp3.webp" alt="Projeto 3 - Foto 1" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+              <img src="/img/nos3.png" alt="Projeto 3 - Foto 1" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
             </div>
             <div class="relative overflow-hidden rounded-lg shadow-lg group">
-              <img src="/img/sp3.webp" alt="Projeto 3 - Foto 2" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+              <img src="/img/nos3.png" alt="Projeto 3 - Foto 2" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
             </div>
             <div class="relative overflow-hidden rounded-lg shadow-lg group">
-              <img src="/img/sp3.webp" alt="Projeto 3 - Foto 3" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+              <img src="/img/nos3.png" alt="Projeto 3 - Foto 3" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
             </div>
           </div>
           <!-- Slide 6 -->
           <div class="swiper-slide grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             <div class="relative overflow-hidden rounded-lg shadow-lg group">
-              <img src="/img/sp3.webp" alt="Projeto 3 - Foto 1" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+              <img src="/img/nos2.png" alt="Projeto 3 - Foto 1" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
             </div>
             <div class="relative overflow-hidden rounded-lg shadow-lg group">
-              <img src="/img/sp3.webp" alt="Projeto 3 - Foto 2" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+              <img src="/img/nos2.png" alt="Projeto 3 - Foto 2" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
             </div>
             <div class="relative overflow-hidden rounded-lg shadow-lg group">
-              <img src="/img/sp3.webp" alt="Projeto 3 - Foto 3" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+              <img src="/img/nos2.png" alt="Projeto 3 - Foto 3" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
             </div>
           </div>
         </div>
@@ -529,120 +660,8 @@
   </section>
 
 
-  <section id="estatisticas-1" class="py-10 bg-gradient-to-br from-blue-500 via-blue-700 to-blue-900 text-white"  data-aos="fade">
-    <div class="container mx-auto px-6">
-        <h2 class="text-4xl font-bold text-center mb-12">Estatísticas de Sites Simples</h2>
-        <div class="grid md:grid-cols-3 gap-8 text-center">
-            <!-- Estatística 1 -->
-            <div class="p-6 bg-white rounded-3xl shadow-lg">
-                <p class="text-6xl font-bold text-blue-700 counter" data-count="92">0<span class="text-4xl">%</span></p>
-                <p class="text-gray-600 mt-4">dos consumidores visitam um site antes de realizar uma compra.</p>
-            </div>
-            <!-- Estatística 2 -->
-            <div class="p-6 bg-white rounded-3xl shadow-lg">
-                <p class="text-6xl font-bold text-blue-700 counter" data-count="80">0<span class="text-4xl">%</span></p>
-                <p class="text-gray-600 mt-4">dos usuários confiam mais em empresas com sites modernos.</p>
-            </div>
-            <!-- Estatística 3 -->
-            <div class="p-6 bg-white rounded-3xl shadow-lg">
-                <p class="text-6xl font-bold text-blue-700 counter" data-count="65">0<span class="text-4xl">%</span></p>
-                <p class="text-gray-600 mt-4">das pequenas empresas relatam aumento nas vendas após criar um site.</p>
-            </div>
-        </div>
-        <p class="text-center mt-8 text-gray-500">
-            <a href="https://blog.impactamidia.com.br/alguns-dados-sobre-sites-que-podem-impactar-o-seu-negocio/?utm_source=chatgpt.com" class="text-blue-700 hover:text-blue-500 no-underline">Fonte</a>
-        </p>
-    </div>
-</section>
 
-<section id="estatisticas-2" class="py-10 bg-gradient-to-br from-green-500 via-green-700 to-green-900 text-white"  data-aos="fade">
-    <div class="container mx-auto px-6">
-        <h2 class="text-4xl font-bold text-center mb-12">Estatísticas de Sites Complexos</h2>
-        <div class="grid md:grid-cols-3 gap-8 text-center">
-            <!-- Estatística 1 -->
-            <div class="p-6 bg-white rounded-3xl shadow-lg">
-                <p class="text-6xl font-bold text-green-700 counter" data-count="75">0<span class="text-4xl">%</span></p>
-                <p class="text-gray-600 mt-4">dos consumidores preferem comprar em lojas online com sites bem estruturados.</p>
-            </div>
-            <!-- Estatística 2 -->
-            <div class="p-6 bg-white rounded-3xl shadow-lg">
-                <p class="text-6xl font-bold text-green-700 counter" data-count="85">0<span class="text-4xl">%</span></p>
-                <p class="text-gray-600 mt-4">dos negócios com automações eficientes aumentam a produtividade.</p>
-            </div>
-            <!-- Estatística 3 -->
-            <div class="p-6 bg-white rounded-3xl shadow-lg">
-                <p class="text-6xl font-bold text-green-700 counter" data-count="68">0<span class="text-4xl">%</span></p>
-                <p class="text-gray-600 mt-4">das empresas que investem em lojas online reportam aumento significativo nas vendas.</p>
-            </div>
-        </div>
-        <p class="text-center mt-8 text-gray-500">
-            <a href="https://blog.impactamidia.com.br/alguns-dados-sobre-sites-que-podem-impactar-o-seu-negocio/?utm_source=chatgpt.com" class="text-green-700 hover:text-green-500 no-underline">Fonte</a>
-        </p>
-    </div>
-</section>
 
-<section id="estatisticas-3" class="py-10 my-0 bg-gradient-to-br from-yellow-500 via-yellow-700 to-yellow-900 text-white"  data-aos="fade">
-    <div class="container mx-auto px-6">
-        <h2 class="text-4xl font-bold text-center mb-12">Estatísticas de Empresas com Redes Sociais Ativas</h2>
-        <div class="grid md:grid-cols-3 gap-8 text-center">
-            <!-- Estatística 1 -->
-            <div class="p-6 bg-white rounded-3xl shadow-lg">
-                <p class="text-6xl font-bold text-yellow-700 counter" data-count="90">0<span class="text-4xl">%</span></p>
-                <p class="text-gray-600 mt-4">das empresas com presença ativa nas redes sociais observam aumento no reconhecimento de marca.</p>
-            </div>
-            <!-- Estatística 2 -->
-            <div class="p-6 bg-white rounded-3xl shadow-lg">
-                <p class="text-6xl font-bold text-yellow-700 counter" data-count="70">0<span class="text-4xl">%</span></p>
-                <p class="text-gray-600 mt-4">dos clientes preferem empresas que interagem com eles nas redes sociais.</p>
-            </div>
-            <!-- Estatística 3 -->
-            <div class="p-6 bg-white rounded-3xl shadow-lg">
-                <p class="text-6xl font-bold text-yellow-700 counter" data-count="80">0<span class="text-4xl">%</span></p>
-                <p class="text-gray-600 mt-4">das empresas com estratégias de redes sociais bem definidas aumentam suas vendas.</p>
-            </div>
-        </div>
-        <p class="text-center mt-8 text-gray-500">
-            <a href="https://blog.impactamidia.com.br/alguns-dados-sobre-sites-que-podem-impactar-o-seu-negocio/?utm_source=chatgpt.com" class="text-yellow-700 hover:text-yellow-500 no-underline">Fonte</a>
-        </p>
-    </div>
-</section>
-
-<script>
-    // Função para animar os números
-    const animateCounters = () => {
-        const counters = document.querySelectorAll(".counter");
-        counters.forEach(counter => {
-            const updateCounter = () => {
-                const target = +counter.getAttribute("data-count");
-                const count = +counter.innerText.replace("%", ""); // Remover "%" para obter apenas o número
-                const increment = Math.ceil(target / 200); // Controla a velocidade da animação
-        
-                if (count < target) {
-                    counter.innerHTML = count + increment + '<span class="text-4xl">%</span>'; // Adiciona o "%" ao lado do número
-                    setTimeout(updateCounter, 10);
-                } else {
-                    counter.innerHTML = target + '<span class="text-4xl">%</span>'; // Garante que o "%" seja mantido após a contagem
-                }
-            };
-            updateCounter();
-        });
-    };
-    
-    // Observer para detectar quando a seção entra na tela
-    const observer = new IntersectionObserver(
-        entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateCounters();
-                    observer.disconnect(); // Evita repetir a animação
-                }
-            });
-        },
-        { threshold: 0.5 }
-    );
-    
-    document.querySelectorAll(".counter").forEach(counter => observer.observe(counter));
-</script>
   
   
 
