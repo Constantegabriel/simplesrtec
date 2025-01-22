@@ -118,13 +118,6 @@ margin-top: 10px;
     margin-right: -20px;
     opacity: 90%;
   }
-  .button-high{
-    margin-bottom: -40px;
-    margin-right: -20px;
-    width: 0.1rem;
-    height: 0.1rem;
-    
-    }
 }
 
 @media (max-width: 1024px) {
@@ -134,13 +127,6 @@ margin-top: 10px;
     margin-right: -20px;
     opacity: 90%;
   }
-  .button-high{
-    margin-bottom: -70px;
-    margin-right: -35px;
-    width: 0.1rem;
-    height: 0.1rem;
-    
-    }
 }
 
 /* Redução de tamanho para celulares */
@@ -152,13 +138,6 @@ margin-top: 10px;
     opacity: 90%;
   }
 
-.button-high{
-  margin-bottom: -80px;
-  margin-right: -40px;
-  width: 0.6rem;
-  height: 0.6rem;
-  
-  }
 }
 
 /* Animação para as divs */
